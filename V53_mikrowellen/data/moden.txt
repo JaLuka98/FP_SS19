@@ -1,0 +1,8 @@
+#f/Mhz	#U_l/V	#U_max/V	#U_r/V	#A/mV
+9020	53	38		0	30
+9015	78	70		60	50.75
+9012	117	108		93	91.9
+
+#U_refl=50V
+#Dämpfung=32dB
+#50_Sinus-Modulation

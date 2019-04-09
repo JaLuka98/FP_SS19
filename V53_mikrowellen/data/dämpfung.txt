@@ -1,0 +1,14 @@
+#Dämpfung/dB	#d/mm
+0		0
+1		1.6
+2		1.7
+3		1.75
+4		1.85
+5		1.93
+6		2.07
+7		2.14
+8		2.29
+9		2.40
+10		2.51
+
+#komisches_geraet_auf_50dB_eingestellt

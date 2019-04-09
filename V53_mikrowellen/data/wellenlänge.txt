@@ -1,0 +1,10 @@
+#x/mm
+54.4
+79.9
+104.5
+128.6
+
+#Dämpfung=20dB
+#U_refl=163V
+#1kHz_Rechteck-Modulation
+#f_dip=9006MHz
