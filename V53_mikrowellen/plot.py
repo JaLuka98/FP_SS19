@@ -44,6 +44,7 @@ for i in range(0, 3):
     plt.xlabel(r'$U_\mathrm{refl}$/V')
     plt.ylabel(r'$A/$mV')
     plt.savefig('build/modes.pdf')
+    plt.clf()
 
 # Frequenz- und Wellenlängen untersuchen
 
@@ -66,3 +67,16 @@ f_exp = 3*1e11*unp.sqrt(1/lam_g**2 + 1/(2*a)**2)
 print('f_exp ist', f_exp)
 v_ph = f_exp*lam_g
 print('v_phase', v_ph)
+
+# Betrachtung der Dämpfung
+
+dB_selbst, d_selbst = np.genfromtxt('data/daempfung.txt', unpack=True, comments='#')
+d_dort, dB_dort = np.genfromtxt('data/daempfungbild.txt', unpack=True, comments='#')
+
+plt.plot(d_selbst, dB_selbst, 'rx', label='Eigene Messung')
+plt.plot(d_dort, dB_dort, 'bx', label='Herstellerangabe')
+plt.grid()
+plt.legend()
+plt.xlabel(r'$d/$mm')
+plt.ylabel(r'$$dB')
+plt.savefig('build/daempfung.pdf')
