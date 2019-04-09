@@ -5,6 +5,7 @@ import uncertainties.unumpy as unp
 from scipy import optimize
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
+from scipy import stats
 
 
 def parabola(x, a, b, c):
@@ -21,10 +22,12 @@ d2=67.9
 #Abschwächer Methode
 A_3=42  #dB
 
+# Untersuchung der Moden
+
 f, U_l, U_max, U_r, A = np.genfromtxt('data/moden.txt', unpack=True, comments='#')
 
-jet= plt.get_cmap('jet')
-colors = iter(jet(np.linspace(0,1,10)))
+jet = plt.get_cmap('jet')
+colors = iter(jet(np.linspace(0, 1, 10)))
 
 for i in range(0, 3):
     x = np.array([U_r[i], U_max[i], U_l[i]])
@@ -41,3 +44,25 @@ for i in range(0, 3):
     plt.xlabel(r'$U_\mathrm{refl}$/V')
     plt.ylabel(r'$A/$mV')
     plt.savefig('build/modes.pdf')
+
+# Frequenz- und Wellenlängen untersuchen
+
+# Abmessungen des Hohlleiters hier einfügen (in millimetern)
+a = 22.86
+b = 10
+
+x = np.genfromtxt('data/wellenlaenge.txt', unpack=True, comments='#')
+x1 = x[1] - x[0]
+x2 = x[2] - x[1]
+x3 = x[3] - x[2]
+x = np.array([x1, x2, x3])  # x in mm
+lam_g = ufloat(np.mean(x), stats.sem(x))  # default ddof = 1
+print('Wellenlänge im Hohlleiter', lam_g)
+lam_c = 2*a
+print('Grenzwellenlänge des Hohlleiters', lam_c)
+lam_0 = 1/unp.sqrt(1/lam_g**2 + 1/(2*a)**2)
+print('Wellenlänge im freien Raum', lam_0)
+f_exp = 3*1e11*unp.sqrt(1/lam_g**2 + 1/(2*a)**2)
+print('f_exp ist', f_exp)
+v_ph = f_exp*lam_g
+print('v_phase', v_ph)
