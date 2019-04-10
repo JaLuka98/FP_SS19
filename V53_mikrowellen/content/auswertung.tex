@@ -34,5 +34,61 @@ Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
   \label{fig:moden}
 \end{figure}
 
-\subsection{Untersuchung der Moden}
-\label{subsec:auswertungModen}
+\subsection{Bestimmung der Wellenlänge und Frequenz}
+\label{subsec:auswertungfrequenz}
+
+
+\subsection{Bestimmung der Dämpfungskurve}
+\label{subsec:auswertungdämpfung}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/daempfung.pdf}
+  \caption{Darstellung der gemessenen Werte sowie der Herstellerangaben
+  für die Dämpfung.}
+  \label{fig:daempfung}
+\end{figure}
+
+
+\subsection{Bestimmung des Stehwellenverhältnisses}
+\label{subsec:auswertungswr}
+
+Die Messwerte zur direkten Messung des Stehwellenverhältnisses sind in Tabelle
+\ref{tab:direkt}
+dargestellt.
+
+\begin{table}
+\centering
+\caption{Messwerte für das Stehwellenverhältnis aus der direkten Methode.}
+\label{tab:direkt}
+\begin{tabular}{c c}
+\toprule
+Stifttiefe/mm & SWR \\
+\midrule
+ 0 & 1.02 \tabularnewline
+ 3 & 1.12 \tabularnewline
+ 5 & 1.57 \tabularnewline
+ 7 & 3.3 \tabularnewline
+ 9 & \infty \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bei der 3dB Methode ergeben sich für eine Stifttiefe von 9mm die beiden Messwerte
+\begin{align*}
+  x_1=\SI{69.6}{\milli\metre} \,, \\
+  x_2=\SI{67.9}{\milli\metre} \,.
+\end{align*}
+
+Nach Gleichung \eqref{eqn:3dB} ergibt sich damit für das Stehwellenverhältnis
+\begin{align*}
+  WERT EINFÜGEN
+\end{align*}
+
+Bei der Abschwächermethode wird bei einer Stifftiefe von 9mm und der Einstellung
+des Dämpfungsgliedes auf $A_1=\SI{20}{decibel}$ und dem in Kapitel \ref{subsec:swr}
+beschriebenen Messverfahren der Wert $A_2=\SI{42}{\decibel}$ aufgenommen. Nach
+Gleichung \eqref{eqn:abschwaecher} ergibt sich für das Stehwellenverhältnis
+\begin{align*}
+  WERT EINFÜGEN
+\end{align*}
