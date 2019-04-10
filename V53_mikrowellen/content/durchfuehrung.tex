@@ -12,7 +12,7 @@ und ein Gleitschraubentransformator hinzugefügt. Zur Messung stehen ein Oszillo
 und ein SWR Meter zur Verfügung.
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{data/Aufbau.png}
+  \includegraphics[width=0.7\textwidth]{data/Aufbau.png}
   \caption{Aufbau der zentralen Elemente \cite{Versuchsanleitung_neu}.}
   \label{fig:aufbau}
 \end{figure}
@@ -25,7 +25,7 @@ aufgebaut.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{data/aufbau_mode.png}
+  \includegraphics[width=0.7\textwidth]{data/aufbau_mode.png}
   \caption{Aufbau zum Vermessen der Moden \cite{Versuchsanleitung_alt}.}
   \label{fig:aufbau_mode}
 \end{figure}
@@ -39,9 +39,24 @@ Verlauf wie er in Abbildung \ref{fig:mode} dargestellt ist.
 
 \begin{figure}
   \centering
-  \includegraphics[width=100pt]{data/mode.png}
-  \caption{Typischer Verlauf einer Mode \cite{Versuchsanleitung_alt}.}
-  \label{fig:mode}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[height=100pt]{data/mode.png}
+    \caption{Typischer Verlauf einer Mode \cite{Versuchsanleitung_alt}.}
+    \label{fig:mode}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[height=100pt]{data/seite.png}
+    \caption{Skizze zum Vermessen der Mode mithilfe von Cursorn \cite{Versuchsanleitung_alt}.}
+    \label{fig:seite}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[height=100pt]{data/dip.png}
+    \caption{Skizze zum Messen der Frequenz mithilfe des Frequenzmessers \cite{Versuchsanleitung_alt}.}
+    \label{fig:dip}
+  \end{subfigure}
 \end{figure}
 
 Mithilfe von Cursorn werden die Startposition des Anstiegs bzw. die Endposition
@@ -52,23 +67,23 @@ Variation der Reflektorspannung mit einem Cursor als Fixpunkt bestimmt. Die Refl
 bei der sich die Kurve so verschoben hat, dass der zu messende Punkt gerade auf dem
 Cursor liegt, wird als Messwert notiert.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=100pt]{data/seite.png}
-  \caption{Skizze zum Vermessen der Mode mithilfe von Cursorn \cite{Versuchsanleitung_alt}.}
-  \label{fig:seite}
-\end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=100pt]{data/seite.png}
+%  \caption{Skizze zum Vermessen der Mode mithilfe von Cursorn \cite{Versuchsanleitung_alt}.}
+%  \label{fig:seite}
+%\end{figure}
 
 Mithilfe des Frequenzmessers
 wird die Frequenz gemessen, indem die Frequenz so lange variiert wird, bis ein
 sogenannter dip auf einem der Maxima der Moden liegt (siehe Abbildung \ref{fig:dip}.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=100pt]{data/dip.png}
-  \caption{Skizze zum Messen der Frequenz mithilfe des Frequenzmessers \cite{Versuchsanleitung_alt}.}
-  \label{fig:dip}
-\end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=100pt]{data/dip.png}
+%  \caption{Skizze zum Messen der Frequenz mithilfe des Frequenzmessers \cite{Versuchsanleitung_alt}.}
+%  \label{fig:dip}
+%\end{figure}
 
 Diese Frequenz entspricht dann der Frequenz der jeweiligen Mode.
 
@@ -105,7 +120,7 @@ abgelesen und das Wertepaar notiert.
 Das Stehwellenverhältnis wird über drei verschiedene Verfahren bestimmt: Die direkte
 Methode, die für kleine und mittlere SWR geeignet ist, die 3dB Methode, die für hohe
 SWR verwendet wird und die Abschwächer Methode, die ebenfalls für hohe SWR verwendet
-wird. Es wird der Aufbau aus Abbildung \ref{aufbau_swr} verwendet.
+wird. Es wird der Aufbau aus Abbildung \ref{fig:aufbau_swr} verwendet.
 
 \begin{figure}
   \centering
@@ -128,7 +143,7 @@ Stellen gesucht, an denen sich ein Vollausschlag einstellt. Die Schlittenpositio
 dieser beiden Stellen werden notiert. Es lässt sich über den Zusammenhang
 \begin{equation}
   S=\sqrt{1+\frac{1}{\sin^2\left(\frac{\pi(x_1-x_2)}{\lambda_{\symup{g}}}\right)}}
-  \label{3dB}
+  \label{eqn:3dB}
 \end{equation}
 das Stehwellenverhältnis bestimmen. Dabei sind $x_{\symup{i}}$ die beiden gemessenen
 Schlittenpositionen.
@@ -140,6 +155,6 @@ Maximum die gleiche Zeigerposition wie zuvor im Minimum ergibt. Daraus kann dann
 das Stehwellenverhältnis mit Hilfe von
 \begin{equation}
   S=10^{\frac{A_2-A_1}{20}}
-  \label{abschwaecher}
+  \label{eqn:abschwaecher}
 \end{equation}
 berechnet werden. Hier sind $A_{\symup{i}}$ die eingestellten Dämpfungen.
