@@ -49,8 +49,8 @@ for i in range(0, 3):
 # Frequenz- und Wellenlängen untersuchen
 
 # Abmessungen des Hohlleiters hier einfügen (in millimetern)
-a = 22.86
-b = 10
+a = 23.0  #mm
+b = 10.2  #mm
 
 x = np.genfromtxt('data/wellenlaenge.txt', unpack=True, comments='#')
 x1 = x[1] - x[0]
@@ -73,8 +73,8 @@ print('v_phase', v_ph)
 dB_selbst, d_selbst = np.genfromtxt('data/daempfung.txt', unpack=True, comments='#')
 d_dort, dB_dort = np.genfromtxt('data/daempfungbild.txt', unpack=True, comments='#')
 
-plt.plot(d_selbst, dB_selbst, 'rx', label='Eigene Messung')
-plt.plot(d_dort, dB_dort, 'bx', label='Herstellerangabe')
+plt.plot(d_selbst, dB_selbst, 'rx', mew=0.5, label='Eigene Messung')
+plt.plot(d_dort, dB_dort, 'bo', mew=0.5, markersize=4, label='Herstellerangabe')
 plt.grid()
 plt.legend()
 plt.xlabel(r'$d/$mm')
