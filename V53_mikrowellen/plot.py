@@ -57,7 +57,7 @@ x = np.genfromtxt('data/wellenlaenge.txt', unpack=True, comments='#')
 x1 = x[1] - x[0]
 x2 = x[2] - x[1]
 x3 = x[3] - x[2]
-x = np.array([x1, x2, x3])  # x in mm
+x = 2*np.array([x1, x2, x3])  # x in mm
 lam_g = ufloat(np.mean(x), stats.sem(x))  # default ddof = 1
 print('Wellenlänge im Hohlleiter', lam_g)
 lam_c = 2*a
