@@ -13,9 +13,9 @@ In dem ersten Teil der Auswertung wird die Ausbildung von Moden verschiedener Fr
 \toprule
 & $f/$Mhz & $U_\text{l}$/V  & $U_\text{max}$/V & $U_\text{r}$/V & $A$/mV \\
 \midrule
- Erste Mode & 9020 &  0 & 38  & 53\tabularnewline
-Zweite Mode & 9015 & 60 & 70  & 78\tabularnewline
-Dritte Mode & 9012 & 93 & 108 & 117\tabularnewline
+ Erste Mode & 9020 &  0 & 38  & 53  & 30    \tabularnewline
+Zweite Mode & 9015 & 60 & 70  & 78  & 50.75 \tabularnewline
+Dritte Mode & 9012 & 93 & 108 & 117 & 91.9  \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -27,7 +27,7 @@ Näherungsweise lassen sich die Moden als Parabeln beschreiben. Aus den drei Pun
 wobei der Graph von $f$ die Mode beschreiben soll.
 Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics{build/modes.pdf}
   \caption{Aufgenomme Datepunkte der Moden und daraus berechnete Parabeln.}
@@ -37,6 +37,29 @@ Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
 \subsection{Bestimmung der Wellenlänge und Frequenz}
 \label{subsec:auswertungfrequenz}
 
+Im Folgenden sollen einige charakteristische Größen der vorliegenden Mikrowelle im Hohlleiter bestimmt werden.
+Dazu wurde der Hohlleiter mit einer Schieblehre vermessen. Seine als fehlerlos angenommenen Abmessungen betragen $a = \SI{23}{\milli\meter}$ und $b = \SI{10.2}{\milli\meter}$. Es lässt sich dann für $m=1$ und $n=0$ Gleichung \eqref{eqn:hohlleiterc} zu $\lambda_\symup{c} = 2a$ nähern, sodass sich die Grenzwellenlänge zu $\SI{46}{\milli\meter}$ ergibt.\\
+% Wir machen es mal ohne Tabelle, sind ja nur vier Werte.
+Die gemessenen Minima waren an den Positionen (in Millimetern) $54{,}4$; $79{,}9$; $104{,}5$ und $128{,}6$ aufzufinden. Die Wellenlänge ist gerade als Abstand zweier Punkte definiert, die in Ordinatenwert und Steigung übereinstimmen, sodass der Abstand zweier Minima gerade die Wellenlänge ist. Eine Mittelung der Differenzen der Stellen ergibt somit für die Wellenlänge im Hohlleiter einen Wert von $\lambda_\symup{g} = \SI{24.7}{\milli\meter}$ mit einer relativen Unsicherheit von $1{,}62\%$.\\
+Die Wellenlänge im freien Raum bestimmt sich dann gemäß $\lambda_0 = \frac{1}{\sqrt{ \frac{1}{\lambda_\symup{g}^2} + \frac{1}{(2a)^2}}} = \SI{21.78(28)}{\milli\meter}$, die relative Unsicherheit beträgt $1{,}29\%$.\\
+Die Frequenz im freien Raum ergibt sich durch Multiplikation von $\lambda_0$ mit der Lichtgeschwindigkeit im Vakuum $c_0 \approx \SI{3e11}{\milli\meter\per\second}$ zu $f_\symup{exp} = \SI{13770(18)}{\mega\hertz}$, wohingegen die Dip-Methode einen Wert von $f_\symup{dip} = \SI{9006}{\mega\hertz}$ ergibt. Daraus folgt ein relativer Fehler von $-52{,}90\%$.\\
+Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu $v_\symup{ph} = f_\symup{exp} \lambda_\symup{g} = \SI{3.406(13)e+11}{\milli\meter\per\second}$.
+%(1.377+/-0.018)e+10$
+%9006MHz
+%Die gemessenen Positionen der Minima, welche zur Bestimmung der Wellenlänge im Hohlleiter verwendet werden, sind in Tabelle \ref{tab:minima} angegeben.
+
+%\begin{table}
+%\centering
+%\caption{Positionen der Minima der Mikrowelle im Hohlleiter in Millimetern.}
+%\label{tab:moden}
+%\begin{tabular}{c c c c}
+%\toprule
+%1 & 2 & 3 & 4 \\
+%\midrule
+%54,4 & 79,9 & 104,5 & 128,6 \tabularnewline
+%\bottomrule
+%\end{tabular}
+%\end{table}
 
 \subsection{Bestimmung der Dämpfungskurve}
 \label{subsec:auswertungdämpfung}

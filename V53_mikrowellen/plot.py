@@ -44,7 +44,8 @@ for i in range(0, 3):
     plt.xlabel(r'$U_\mathrm{refl}$/V')
     plt.ylabel(r'$A/$mV')
     plt.savefig('build/modes.pdf')
-    plt.clf()
+
+plt.clf()
 
 # Frequenz- und Wellenlängen untersuchen
 
