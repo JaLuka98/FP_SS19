@@ -40,10 +40,10 @@ Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
 Im Folgenden sollen einige charakteristische Größen der vorliegenden Mikrowelle im Hohlleiter bestimmt werden.
 Dazu wurde der Hohlleiter mit einer Schieblehre vermessen. Seine als fehlerlos angenommenen Abmessungen betragen $a = \SI{23}{\milli\meter}$ und $b = \SI{10.2}{\milli\meter}$. Es lässt sich dann für $m=1$ und $n=0$ Gleichung \eqref{eqn:hohlleiterc} zu $\lambda_\symup{c} = 2a$ nähern, sodass sich die Grenzwellenlänge zu $\SI{46}{\milli\meter}$ ergibt.\\
 % Wir machen es mal ohne Tabelle, sind ja nur vier Werte.
-Die gemessenen Minima waren an den Positionen (in Millimetern) $54{,}4$; $79{,}9$; $104{,}5$ und $128{,}6$ aufzufinden. Die Wellenlänge ist gerade als Abstand zweier Punkte definiert, die in Ordinatenwert und Steigung übereinstimmen, sodass der Abstand zweier Minima gerade die Wellenlänge ist. Eine Mittelung der Differenzen der Stellen ergibt somit für die Wellenlänge im Hohlleiter einen Wert von $\lambda_\symup{g} = \SI{24.7}{\milli\meter}$ mit einer relativen Unsicherheit von $1{,}62\%$.\\
-Die Wellenlänge im freien Raum bestimmt sich dann gemäß $\lambda_0 = \frac{1}{\sqrt{ \frac{1}{\lambda_\symup{g}^2} + \frac{1}{(2a)^2}}} = \SI{21.78(28)}{\milli\meter}$, die relative Unsicherheit beträgt $1{,}29\%$.\\
-Die Frequenz im freien Raum ergibt sich durch Multiplikation von $\lambda_0$ mit der Lichtgeschwindigkeit im Vakuum $c_0 \approx \SI{3e11}{\milli\meter\per\second}$ zu $f_\symup{exp} = \SI{13770(18)}{\mega\hertz}$, wohingegen die Dip-Methode einen Wert von $f_\symup{dip} = \SI{9006}{\mega\hertz}$ ergibt. Daraus folgt ein relativer Fehler von $-52{,}90\%$.\\
-Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu $v_\symup{ph} = f_\symup{exp} \lambda_\symup{g} = \SI{3.406(13)e+11}{\milli\meter\per\second}$.
+Die gemessenen Minima waren an den Positionen (in Millimetern) $54{,}4$; $79{,}9$; $104{,}5$ und $128{,}6$ aufzufinden. Die Messwerte wurden mit eingebautem Kurzschluss aufgenommen, sodass sich in guter Näherung eine stehende Welle ergibt, bei dieser der Abstand zweier Minima die halbe Wellenlänge der urspünglich einfallenden Mikrowelle ist. Eine Mittelung der Differenzen der Stellen und Multiplikation mit 2 ergibt somit für die Wellenlänge im Hohlleiter einen Wert von $\lambda_\symup{g} = \SI{49.5(8)}{\milli\meter}$ mit einer relativen Unsicherheit von $1{,}62\%$.\\
+Die Wellenlänge im freien Raum bestimmt sich dann gemäß $\lambda_0 = \frac{1}{\sqrt{ \frac{1}{\lambda_\symup{g}^2} + \frac{1}{(2a)^2}}} = \SI{33.69(26)}{\milli\meter}$, die relative Unsicherheit beträgt $0{,}77\%$.\\
+Die Frequenz im freien Raum ergibt sich durch Multiplikation von $\lambda_0$ mit der Lichtgeschwindigkeit im Vakuum $c_0 \approx \SI{3e11}{\milli\meter\per\second}$ zu $f_\symup{exp} = \SI{8910(70)}{\mega\hertz}$, wohingegen die Dip-Methode einen Wert von $f_\symup{dip} = \SI{9006}{\mega\hertz}$ ergibt. Daraus folgt ein relativer Fehler von $-1{,}07\%$.\\
+Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu $v_\symup{ph} = f_\symup{exp} \lambda_\symup{g} = \SI{4.41(4)e+11}{\milli\meter\per\second}$.
 %(1.377+/-0.018)e+10$
 %9006MHz
 %Die gemessenen Positionen der Minima, welche zur Bestimmung der Wellenlänge im Hohlleiter verwendet werden, sind in Tabelle \ref{tab:minima} angegeben.
@@ -68,27 +68,38 @@ Die aufgenommenen Wertepaare für den Stand der Mikrometerschraube $d$ und die D
 
 \begin{table}
 \centering
-\caption{Messwerte zur Untersuchung der Dämpfung.}
+\caption{Stände der Mikrometerschraube und abgelesene Dämpfung auf dem SWR-Methode.}
 \label{tab:daempfung}
 \begin{tabular}{c c}
 \toprule
 $d$/mm & $D$/dB \\
 \midrule
- \tabularnewline
- \tabularnewline
- \tabularnewline
+  0    &  0 \tabularnewline
+  1.60 &  1 \tabularnewline
+  1.70 &  2 \tabularnewline
+  1.75 &  3 \tabularnewline
+  1.85 &  4 \tabularnewline
+  1.93 &  5 \tabularnewline
+  2.07 &  6 \tabularnewline
+  2.14 &  7 \tabularnewline
+  2.29 &  8 \tabularnewline
+  2.40 &  9 \tabularnewline
+  2.51 & 10 \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
+In \ref{fig:daempfungOhneKorrektur} sind diese Wertepaare gegeneinander gemeinsam mit den Herstellerangaben aufgetragen.
+
 \begin{figure}
   \centering
-  \includegraphics{build/daempfung.pdf}
+  \includegraphics{build/daempfungOhneKorrektur.pdf}
   \caption{Darstellung der gemessenen Werte sowie der Herstellerangaben
   für die Dämpfung.}
-  \label{fig:daempfung}
+  \label{fig:daempfungOhneKorrektur}
 \end{figure}
 
+Insbesondere die ersten drei bis vier von $D=0$ verschiedenen selbst aufgenommenen Punkte decken sich nicht mit der exponentiell ansteigenden Kurve der Herstellerangaben. Eine Verschiebung dieser Punkte nach links würde gewährleisten, dass die Krümmung des selbst gemessenen Verlaufes qualitativ korrekt wäre.
 
 \subsection{Bestimmung des Stehwellenverhältnisses}
 \label{subsec:auswertungswr}

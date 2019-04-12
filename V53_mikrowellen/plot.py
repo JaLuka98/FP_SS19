@@ -80,4 +80,16 @@ plt.grid()
 plt.legend()
 plt.xlabel(r'$d/$mm')
 plt.ylabel(r'$$dB')
-plt.savefig('build/daempfung.pdf')
+plt.savefig('build/daempfungOhneKorrektur.pdf')
+plt.clf()
+
+d_selbst -= 1,5
+d_selbst[0] += 1.5
+#d_dort -= 1.5
+plt.plot(d_selbst, dB_selbst, 'rx', mew=0.5, label='Eigene Messung')
+plt.plot(d_dort, dB_dort, 'bo', mew=0.5, markersize=4, label='Herstellerangabe')
+plt.grid()
+plt.legend()
+plt.xlabel(r'$d/$mm')
+plt.ylabel(r'$D/$dB')
+plt.savefig('build/daempfungMitKorrektur.pdf')
