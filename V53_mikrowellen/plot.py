@@ -79,11 +79,12 @@ plt.plot(d_dort, dB_dort, 'bo', mew=0.5, markersize=4, label='Herstellerangabe')
 plt.grid()
 plt.legend()
 plt.xlabel(r'$d/$mm')
-plt.ylabel(r'$$dB')
+plt.ylabel(r'$D/$dB')
 plt.savefig('build/daempfungOhneKorrektur.pdf')
 plt.clf()
 
-d_selbst -= 1,5
+print(d_selbst)
+d_selbst -= 1.5
 d_selbst[0] += 1.5
 #d_dort -= 1.5
 plt.plot(d_selbst, dB_selbst, 'rx', mew=0.5, label='Eigene Messung')
@@ -93,3 +94,15 @@ plt.legend()
 plt.xlabel(r'$d/$mm')
 plt.ylabel(r'$D/$dB')
 plt.savefig('build/daempfungMitKorrektur.pdf')
+
+# 3db Methode
+x_1 = 69.6
+x_2 = 67.9
+S_3db = unp.sqrt(1 + 1/(unp.sin(np.pi*(x_1-x_2)/lam_g))**2)
+print('S durch 3db Methode', S_3db)
+
+# Abschwächermethode
+A_1 = 20
+A_2 = 42
+S_ab = 10**((A_2-A_1)/20)
+print('S durch Abschwächermethode', S_ab)

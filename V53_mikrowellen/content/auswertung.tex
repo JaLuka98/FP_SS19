@@ -94,19 +94,23 @@ In \ref{fig:daempfungOhneKorrektur} sind diese Wertepaare gegeneinander gemeinsa
 \begin{figure}
   \centering
   \includegraphics{build/daempfungOhneKorrektur.pdf}
-  \caption{Darstellung der gemessenen Werte sowie der Herstellerangaben
-  für die Dämpfung.}
+  \caption{Darstellung der gemessenen Werte sowie der Herstellerangaben für die Dämpfung.}
   \label{fig:daempfungOhneKorrektur}
 \end{figure}
 
-Insbesondere die ersten drei bis vier von $D=0$ verschiedenen selbst aufgenommenen Punkte decken sich nicht mit der exponentiell ansteigenden Kurve der Herstellerangaben. Eine Verschiebung dieser Punkte nach links würde gewährleisten, dass die Krümmung des selbst gemessenen Verlaufes qualitativ korrekt wäre.
+Insbesondere die ersten drei bis vier von $D=0$ verschiedenen selbst aufgenommenen Punkte decken sich nicht mit der exponentiell ansteigenden Kurve der Herstellerangaben. Eine Verschiebung dieser Punkte nach links würde gewährleisten, dass die Krümmung des selbst gemessenen Verlaufes qualitativ korrekt wäre. Solch eine unbegründete Verschiebung der Messpunkte kann jedoch nicht gerechtfertigt werden. Stattdessen wird ein zweites Diagramm angefertigt, bei dem die Messpunkte um $\SI{1.5}{\milli\meter}$ nach links verschoben werden, was einer anderen Definition des Nullpunktes der Mikrometerschraube entspricht.
+
+\begin{figure}
+  \centering
+  \includegraphics{build/daempfungMitKorrektur.pdf}
+  \caption{Darstellung der um $\SI{1.5}{\milli\meter}$ verschobenen gemessenen Werte sowie der Herstellerangaben für die Dämpfung.}
+  \label{fig:daempfungMitKorrektur}
+\end{figure}
 
 \subsection{Bestimmung des Stehwellenverhältnisses}
 \label{subsec:auswertungswr}
 
-Die Messwerte zur direkten Messung des Stehwellenverhältnisses sind in Tabelle
-\ref{tab:direkt}
-dargestellt.
+Die Messwerte zur direkten Messung des Stehwellenverhältnisses mit dem SWR-Meter sind in Tabelle \ref{tab:direkt} dargestellt.
 
 \begin{table}
 \centering
@@ -133,13 +137,13 @@ Bei der 3dB Methode ergeben sich für eine Stifttiefe von 9mm die beiden Messwer
 
 Nach Gleichung \eqref{eqn:3dB} ergibt sich damit für das Stehwellenverhältnis
 \begin{align*}
-  WERT EINFÜGEN
+  S_{\text{3\,db}} = \SI{9.15(33)}.
 \end{align*}
 
 Bei der Abschwächermethode wird bei einer Stifftiefe von 9mm und der Einstellung
-des Dämpfungsgliedes auf $A_1=\SI{20}{decibel}$ und dem in Kapitel \ref{subsec:swr}
+des Dämpfungsgliedes auf $A_1=\SI{20}{\decibel}$ und dem in Kapitel \ref{subsec:swr}
 beschriebenen Messverfahren der Wert $A_2=\SI{42}{\decibel}$ aufgenommen. Nach
-Gleichung \eqref{eqn:abschwaecher} ergibt sich für das Stehwellenverhältnis
+Gleichung \eqref{eqn:abschwaecher} ergibt sich für das Stehwellenverhältnis ungefähr
 \begin{align*}
-  WERT EINFÜGEN
+  S_{\text{abschw}} = \SI{12.59}.
 \end{align*}
