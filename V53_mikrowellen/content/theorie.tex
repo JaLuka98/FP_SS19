@@ -10,15 +10,15 @@ ein Metallrohr, durch das elektromagnetische Wellen verlustarm geleitet werden k
 Sehr gängig sind dabei Rechteckhohlleiter, auf die auch im Folgenden weiter eingegangen
 werden soll.
 
-Jeder Hohlleiter kann verschiedene Typen von Wellen, auch Moden genannt, leiten.
+Jeder Hohlleiter kann verschiedene Formen von Wellen, auch Moden genannt, leiten.
 Die Moden unterscheiden sich in der Verteilung des elektrischen und des magnetischen
-Feldes. Man unterscheidet TE-Moden, bei denen das eletkrische Feld transversal zur
+Feldes. Man unterscheidet TE-Moden, bei denen das elektrische Feld transversal zur
 Ausbreitungsrichtung der Welle und TM-Moden, bei denen das magnetische Feld transversal
 zur Ausbreitungsrichtung schwingt. Ein spezialfall sind TEM-Moden, bei denen sowohl
-das elektrische alsauch das magnetische Feld transversal zur Ausbreitungsrichtung
-schwingt. Für jede Mode im Hohlleiter gibt es eine untere Grenzfrequenz, unterhalb
+das elektrische, als auch das magnetische Feld transversal zur Ausbreitungsrichtung
+schwingt. Für jede Mode im Hohlleiter existiert eine untere Grenzfrequenz, unterhalb
 der kein Energietransport im Hohlleiter möglich ist. Sie kommt durch die Abmessungen
-des Hohlleiters und die damit verbundenen Randbedingungen zustande.
+des Hohlleiters und die damit verbundenen Randbedingungen bei der Lösung der Wellengleichung zustande.
 
 Im freien Raum gilt der Zusammenhang
 \begin{equation}
@@ -29,30 +29,35 @@ Dabei ist $c$ die Lichtgeschwindigkeit im Vakuum, $\lambda_0$ die Wellenlänge i
 freien Raum und $f$ die Frequenz der Welle.
 Für TE- und TM-Moden in einem lufgefüllten Hohlleiter gilt
 \begin{align}
-  \lambda_{\symup{g}}=\frac{\lambda_0}{\sqrt{1-\left(\frac{\lambda_0}
+  \lambda_{\symup{g}}&=\frac{\lambda_0}{\sqrt{1-\left(\frac{\lambda_0}
   {\lambda_{\symup{c}}}\right)^2}} \,, \label{eqn:hohlleiterg}\\
-  \lambda_{\symup{c}}=\frac{2}{\sqrt{\left(\frac{m}{a}\right)^2+
+  \lambda_{\symup{c}}&=\frac{2}{\sqrt{\left(\frac{m}{a}\right)^2+
   \left(\frac{n}{b}\right)^2}} \,.
   \label{eqn:hohlleiterc}
 \end{align}
 Hier ist $\lambda_{\symup{g}}$ die Wellenlänge im Hohlleiter und $\lambda_{\symup{c}}$
-die Grenzwellenlänge im Hohlleiter. $a$ und $b$ sind Länge und breite des Hohlleiters.
-$m$ und $n$ sind die Zahlen, die die Mode der Welle bestimmen.
+die Grenzwellenlänge im Hohlleiter. Die Abmessungen $a$ und $b$ beschreiben Länge und Breite des Hohlleiters.
+Die Moden werden durch Angabe der Zahlen $m$ und $n$ genauer bestimmt.
 Wie an diesen Formeln zu erkennen ist, ist die Wellenlänge im Hohlleiter
-größer als die im freien Raum.
+größer als die der selben Wellen im freien Raum.
 
-Wird im Hohhleiter ein Teil der Welle an einer Störstelle reflektiert, so bildet
-sich eine stehende Welle. Es bilden sich also Minima und Maxima der Einhüllenden
-aus, wobei zwei Minima bzw. zwei Maxima eine halbe Wellenlänge voneinander entfernt
+%Wird im Hohhleiter ein Teil der Welle an einer Störstelle reflektiert, so bildet
+%sich eine stehende Welle.
+Wird im Hohlleiter ein Teil der Welle an einer Störstelle reflektiert, so interferieren
+einfallende und reflektierte Welle. Aufgrund der hohen Frequenz der Mikrowelle kann praktisch nur eine
+Einhüllende gemessen werden, bei der sich Minima und Maxima ausbilden,
+%Es bilden sich also Minima und Maxima der Einhüllenden
+%aus,
+wobei zwei Minima bzw. zwei Maxima eine halbe Wellenlänge voneinander entfernt
 sind. Für diese Wellen kann ein Stehwellenverhältnis oder auch SWR (Standing Wave
-Ratio) berechnet werden. Es gilt
+Ratio) berechnet werden. Für dieses gilt
 \begin{equation}
   S=\frac{E_{\symup{max}}}{E_{\symup{min}}}=\frac{|E_{\symup{ein}}|+|E_{\symup{refl}}|}
   {|E_{\symup{ein}}|-|E_{\symup{refl}}|}\,.
 \end{equation}
 
 
-\subsection{Das Refelxklystron}
+\subsection{Das Reflexklystron}
 \label{subsec:klystron}
 Mikrowellen können durch verschiedene Bauteile erzeugt werden. Ein besonders häufig
 verwendetes Bauteil ist das Reflexklystron. Eine Skizze zur Funktionsweise desselben
@@ -74,10 +79,15 @@ Da ein LC Kreis aufgrund des Widerstandes nicht ewig weiterschwingen kann und ih
 zusätzlich Leistung entzogen wird, bedarf es einer Methode, um ihm Energie zuzuführen.
 Dafür treten aus einer Glühwendel Elektronen aus, die daraufhin zu einer Kathode hin
 beschleunigt werden. Danach durchlaufen sie das elektrische Feld zwischen den beiden
-Gittern. Dabei können sie, je nach Phase der Schwingung auf ein beschleunigendes
+Gittern. Dabei können sie, je nach Phase der Schwingung, auf ein beschleunigendes
 oder auf ein abbremsendes elektrisches Feld stoßen. Nach dem Durchgang durch die Gitter fliegen sie in das entgegengesetzt
 zur Kathode ausgerichtete Reflektorfeld, in dem sie in die andere Richtung beschleunigt
 werden. Daraufhin kehren die Elektronen zum Gitter zurück, wo sie erneut entweder
 abgebremst oder beschleunigt werden. Diejenigen Elektronen, die abgebremst werden,
 deponieren dabei Energie im elektrischen Feld des Resonators. Somit kann der LC Kreis
 in Schwingung gehalten werden.
+
+Die größten Resonanzeffekte treten gerade dann auf, wenn die Verweildauer der Elektron im Resonater
+gleich ($3/4 + n$), mit $n$ als einer natürlichen Zahl (inklusive Null), mal der Periodendauer des Schwingkreises ist. Das Ziel ist es, diesen Modus zu erreichen, um
+eine maximale Leistung zu generieren.\\
+Eine Modulation der Frequenz und der Amplitude der Mikrowellen ist sowohl durch eine mechanische Abstimmung, also zum Beispiel eine Änderung des Hohlraumresonatorvolumens, als auch durch elektronische Abstimmung möglich. Dies umfasst das Anlegen unterschiedlicher Wechselspannungen als Reflektorspannungen.

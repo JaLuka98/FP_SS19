@@ -8,8 +8,8 @@ Zur Erzeugung der Mikrowellen wird ein Reflexklystron verwendet. Auf dem Hohhlei
 sind ein Isolator, ein Frequenzmesser und ein Dämpfunglied befestigt. Dies ist
 in Abbildung \ref{fig:aufbau} dargestellt. Je nach
 Aufgabenteil werden noch ein Stehwellendetektor, ein Abschluss, ein Kurzschluss
-und ein Gleitschraubentransformator hinzugefügt. Zur Messung stehen ein Oszilloskop
-und ein SWR Meter zur Verfügung.
+und ein Gleitschraubentransformator hinzugefügt. Zur Messung stehen außerdem noch ein Oszilloskop
+und ein SWR-Meter zur Verfügung.
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{data/Aufbau.png}
@@ -66,6 +66,7 @@ Oszilloskop abgelesen. Die Werte für die Anstiege und das Maximum werden durch
 Variation der Reflektorspannung mit einem Cursor als Fixpunkt bestimmt. Die Reflektorspannung,
 bei der sich die Kurve so verschoben hat, dass der zu messende Punkt gerade auf dem
 Cursor liegt, wird als Messwert notiert.
+%danke für das Hinzufügen!
 
 %\begin{figure}
 %  \centering
@@ -74,8 +75,7 @@ Cursor liegt, wird als Messwert notiert.
 %  \label{fig:seite}
 %\end{figure}
 
-Mithilfe des Frequenzmessers
-wird die Frequenz gemessen, indem die Frequenz so lange variiert wird, bis ein
+Mithilfe des Frequenzmessers wird die Frequenz gemessen, indem die Frequenz so lange variiert wird, bis ein
 sogenannter dip auf einem der Maxima der Moden liegt (siehe Abbildung \ref{fig:dip}).
 
 %\begin{figure}
@@ -102,7 +102,8 @@ Stehwellendetektors Minima gesucht und deren Positionen notiert.
   \label{fig:aufbau_frequenz}
 \end{figure}
 
-Für einen rechteckigen Hohlleiter ergibt sich für die Frequez im freien Raum
+Für einen rechteckigen Hohlleiter ergibt sich für die Frequenz im freien Raum
+bei der hier mäherungsweise vorliegenden niedrigsten Mode
 \begin{equation}
   f=c \sqrt{\left(\frac{1}{\lambda_{\symup{g}}}\right)^2+\left(\frac{1}{2a}\right)^2} \,.
 \end{equation}
@@ -111,8 +112,14 @@ Für einen rechteckigen Hohlleiter ergibt sich für die Frequez im freien Raum
 \label{subsec:dämpfung}
 Bei gleichem Aufbau wird die Dämpfung von 0 aus immer weiter aufgedreht. Bei jedem
 vollen Dezibelschritt auf dem SWR Meter wird der Stand der Mikrometerschraube
-abgelesen und das Wertepaar notiert.
+abgelesen und das Wertepaar notiert. Um später die Messwerte mit den Herstellerangaben vergleichen zu können, werden letztere aus dem Aufdruck auf dem Dämpfungsglied, siehe Abbildung \ref{fig:aufdruckDaempfung}, abgelesen und notiert.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/theorieDaempfung.png}
+  \caption{Herstellerangabe der Dämpfungskurve, Aufdruck auf dem Dämpfungsglied.}
+  \label{fig:aufdruckDaempfung}
+\end{figure}
 
 \subsection{Bestimmung des Stehwellenverhältnisses}
 \label{subsec:swr}
