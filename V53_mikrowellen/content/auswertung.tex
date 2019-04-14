@@ -3,7 +3,7 @@
 
 \subsection{Untersuchung der Moden}
 \label{subsec:auswertungModen}
-In dem ersten Teil der Auswertung wird die Ausbildung von Moden verschiedener Frequenzen in einem Hohlleiter bei unterschiedlichen Reflektorspannungen untersucht. Die Messdaten sind in \ref{tab:moden} dargestellt; die Größe $A$ bezeichne die Amplitude der Mode.\\
+In dem ersten Teil der Auswertung wird die Ausbildung von Moden verschiedener Frequenzen in einem Hohlleiter bei unterschiedlichen Reflektorspannungen untersucht. Die Messdaten sind in Tabelle \ref{tab:moden} dargestellt; die Größe $A$ bezeichne die Amplitude der Mode.\\
 
 \begin{table}
 \centering
@@ -25,7 +25,7 @@ Näherungsweise lassen sich die Moden als Parabeln beschreiben. Aus den drei Pun
   f(x) = ax^2 + bx + c\,,
 \end{equation}
 wobei der Graph von $f$ die Mode beschreiben soll.
-Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
+Die aufgetragenen Punkte und Graphen sind in Abbidldung \ref{fig:moden} ersichtlich.
 
 \begin{figure}[H]
   \centering
@@ -34,16 +34,26 @@ Die aufgetragenen Punkte und Graphen sind in \ref{fig:moden} ersichtlich.
   \label{fig:moden}
 \end{figure}
 
+Die beiden rechten Moden entsprechen auch der auf dem Oszilloskop beobachteten Form der Moden. Die linke
+hingegen ist breiter als die beobachtete Mode.
+
 \subsection{Bestimmung der Wellenlänge und Frequenz}
 \label{subsec:auswertungfrequenz}
 
 Im Folgenden sollen einige charakteristische Größen der vorliegenden Mikrowelle im Hohlleiter bestimmt werden.
-Dazu wurde der Hohlleiter mit einer Schieblehre vermessen. Seine als fehlerlos angenommenen Abmessungen betragen $a = \SI{23}{\milli\meter}$ und $b = \SI{10.2}{\milli\meter}$. Es lässt sich dann für $m=1$ und $n=0$ Gleichung \eqref{eqn:hohlleiterc} zu $\lambda_\symup{c} = 2a$ nähern, sodass sich die Grenzwellenlänge zu $\SI{46}{\milli\meter}$ ergibt.\\
+Dazu wurde der Hohlleiter mit einer Schieblehre vermessen. Seine als fehlerlos angenommenen Abmessungen betragen $a = \SI{23.0}{\milli\meter}$ und $b = \SI{10.2}{\milli\meter}$. Es lässt sich dann für $m=1$ und $n=0$ Gleichung \eqref{eqn:hohlleiterc} zu $\lambda_\symup{c} = 2a$ nähern, sodass sich die Grenzwellenlänge zu $\SI{46}{\milli\meter}$ ergibt.\\
 % Wir machen es mal ohne Tabelle, sind ja nur vier Werte.
-Die gemessenen Minima waren an den Positionen (in Millimetern) $54{,}4$; $79{,}9$; $104{,}5$ und $128{,}6$ aufzufinden. Die Messwerte wurden mit eingebautem Kurzschluss aufgenommen, sodass sich in guter Näherung eine stehende Welle ergibt, bei dieser der Abstand zweier Minima die halbe Wellenlänge der urspünglich einfallenden Mikrowelle ist. Eine Mittelung der Differenzen der Stellen und Multiplikation mit 2 ergibt somit für die Wellenlänge im Hohlleiter einen Wert von $\lambda_\symup{g} = \SI{49.5(8)}{\milli\meter}$ mit einer relativen Unsicherheit von $1{,}62\%$.\\
-Die Wellenlänge im freien Raum bestimmt sich dann gemäß $\lambda_0 = \frac{1}{\sqrt{ \frac{1}{\lambda_\symup{g}^2} + \frac{1}{(2a)^2}}} = \SI{33.69(26)}{\milli\meter}$, die relative Unsicherheit beträgt $0{,}77\%$.\\
+Die gemessenen Minima waren an den Positionen (in Millimetern) $54{,}4$; $79{,}9$; $104{,}5$ und $128{,}6$ aufzufinden. Die Messwerte wurden mit eingebautem Kurzschluss aufgenommen, sodass sich in guter Näherung eine stehende Welle ergibt. Bei dieser beträgt der Abstand zweier Minima die halbe Wellenlänge der urspünglich einfallenden Mikrowelle. Eine Mittelung der Differenzen der Stellen und Multiplikation mit 2 ergibt somit für die Wellenlänge im Hohlleiter einen Wert von $\lambda_\symup{g} = \SI{49.5(8)}{\milli\meter}$ mit einer relativen Unsicherheit von $1{,}62\%$.\\
+Die Wellenlänge im freien Raum bestimmt sich dann gemäß
+\begin{equation*}
+  \lambda_0 = \frac{1}{\sqrt{ \frac{1}{\lambda_\symup{g}^2} + \frac{1}{(2a)^2}}} = \SI{33.69(26)}{\milli\meter} \,.
+\end{equation*}
+Die relative Unsicherheit beträgt $0{,}77\%$.\\
 Die Frequenz im freien Raum ergibt sich durch Multiplikation von $\lambda_0$ mit der Lichtgeschwindigkeit im Vakuum $c_0 \approx \SI{3e11}{\milli\meter\per\second}$ zu $f_\symup{exp} = \SI{8910(70)}{\mega\hertz}$, wohingegen die Dip-Methode einen Wert von $f_\symup{dip} = \SI{9006}{\mega\hertz}$ ergibt. Daraus folgt ein relativer Fehler von $-1{,}07\%$.\\
-Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu $v_\symup{ph} = f_\symup{exp} \lambda_\symup{g} = \SI{4.41(4)e+11}{\milli\meter\per\second}$.
+Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu
+\begin{equation*}
+  v_\symup{ph} = f_\symup{exp} \lambda_\symup{g} = \SI{4.41(4)e+11}{\milli\meter\per\second} \,.
+\end{equation*}
 %(1.377+/-0.018)e+10$
 %9006MHz
 %Die gemessenen Positionen der Minima, welche zur Bestimmung der Wellenlänge im Hohlleiter verwendet werden, sind in Tabelle \ref{tab:minima} angegeben.
@@ -64,11 +74,11 @@ Die Phasengeschwindigkeit der Welle im Hohlleiter ergibt sich zu $v_\symup{ph} =
 \subsection{Bestimmung der Dämpfungskurve}
 \label{subsec:auswertungdämpfung}
 
-Die aufgenommenen Wertepaare für den Stand der Mikrometerschraube $d$ und die Dämpfung $D$ sind \ref{tab:daempfung} zu entnehmen.
+Die aufgenommenen Wertepaare für den Stand der Mikrometerschraube $d$ und die Dämpfung $D$ sind Tabelle \ref{tab:daempfung} zu entnehmen.
 
 \begin{table}
 \centering
-\caption{Stände der Mikrometerschraube und abgelesene Dämpfung auf dem SWR-Methode.}
+\caption{Stände der Mikrometerschraube und abgelesene Dämpfung auf dem SWR Meter.}
 \label{tab:daempfung}
 \begin{tabular}{c c}
 \toprule
@@ -89,7 +99,7 @@ $d$/mm & $D$/dB \\
 \end{tabular}
 \end{table}
 
-In \ref{fig:daempfungOhneKorrektur} sind diese Wertepaare gegeneinander gemeinsam mit den Herstellerangaben aufgetragen.
+In Abbildung \ref{fig:daempfungOhneKorrektur} sind diese Wertepaare gegeneinander gemeinsam mit den Herstellerangaben aufgetragen.
 
 \begin{figure}
   \centering
@@ -99,6 +109,7 @@ In \ref{fig:daempfungOhneKorrektur} sind diese Wertepaare gegeneinander gemeinsa
 \end{figure}
 
 Insbesondere die ersten drei bis vier von $D=0$ verschiedenen selbst aufgenommenen Punkte decken sich nicht mit der exponentiell ansteigenden Kurve der Herstellerangaben. Eine Verschiebung dieser Punkte nach links würde gewährleisten, dass die Krümmung des selbst gemessenen Verlaufes qualitativ korrekt wäre. Solch eine unbegründete Verschiebung der Messpunkte kann jedoch nicht gerechtfertigt werden. Stattdessen wird ein zweites Diagramm angefertigt, bei dem die Messpunkte um $\SI{1.5}{\milli\meter}$ nach links verschoben werden, was einer anderen Definition des Nullpunktes der Mikrometerschraube entspricht.
+Auch hier zeigt sich ein grundlegend anderer Verlauf als der der Herstellerangabe.
 
 \begin{figure}
   \centering
@@ -120,16 +131,16 @@ Die Messwerte zur direkten Messung des Stehwellenverhältnisses mit dem SWR-Mete
 \toprule
 Stifttiefe/mm & SWR \\
 \midrule
- 0 & 1.02 \tabularnewline
- 3 & 1.12 \tabularnewline
- 5 & 1.57 \tabularnewline
- 7 & 3.3 \tabularnewline
+ 0 & 1,02 \tabularnewline
+ 3 & 1,12 \tabularnewline
+ 5 & 1,57 \tabularnewline
+ 7 & 3,3 \tabularnewline
  9 & \infty \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
-Bei der 3dB Methode ergeben sich für eine Stifttiefe von 9mm die beiden Messwerte
+Bei der \SI{3}{\decibel} Methode ergeben sich für eine Stifttiefe von 9mm die beiden Messwerte
 \begin{align*}
   x_1=\SI{69.6}{\milli\metre} \,, \\
   x_2=\SI{67.9}{\milli\metre} \,.
@@ -137,7 +148,7 @@ Bei der 3dB Methode ergeben sich für eine Stifttiefe von 9mm die beiden Messwer
 
 Nach Gleichung \eqref{eqn:3dB} ergibt sich damit für das Stehwellenverhältnis
 \begin{align*}
-  S_{\text{3\,db}} = \SI{9.15(33)}.
+  S_{\text{3\,dB}} = \SI{9.15(33)}\,.
 \end{align*}
 
 Bei der Abschwächermethode wird bei einer Stifftiefe von 9mm und der Einstellung
@@ -145,5 +156,5 @@ des Dämpfungsgliedes auf $A_1=\SI{20}{\decibel}$ und dem in Kapitel \ref{subsec
 beschriebenen Messverfahren der Wert $A_2=\SI{42}{\decibel}$ aufgenommen. Nach
 Gleichung \eqref{eqn:abschwaecher} ergibt sich für das Stehwellenverhältnis ungefähr
 \begin{align*}
-  S_{\text{abschw}} = \SI{12.59}.
+  S_{\text{abschw}} = \SI{12.59}\,.
 \end{align*}
