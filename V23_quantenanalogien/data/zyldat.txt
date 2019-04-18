@@ -1,0 +1,12 @@
+data/zyl/1zyl.txt
+data/zyl/2zyl.txt
+data/zyl/3zyl.txt
+data/zyl/4zyl.txt
+data/zyl/5zyl.txt
+data/zyl/6zyl.txt
+data/zyl/7zyl.txt
+data/zyl/8zyl.txt
+data/zyl/9zyl.txt
+data/zyl/10zyl.txt
+data/zyl/11zyl.txt
+data/zyl/12zyl.txt
