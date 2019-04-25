@@ -5,18 +5,30 @@ import uncertainties.unumpy as unp
 from scipy import optimize
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
+from uncertainties import correlated_values
+from matrix2latex import matrix2latex
 
 #Zylinderkette
+def linfit(x,a,b):
+    return a*x+b
 
-zylinderanzahl, f1, a1 , b1, A1, f2, a2, b2, A2 = np.genfromtxt('data/roehre.txt', unpack=True)
+zylinder, f1, a1 , b1, A1, f2, a2, b2, A2 = np.genfromtxt('data/roehre.txt', unpack=True)
 
-deltaf=1000*(f2-f1)
+deltaf=np.log(1000*(f2-f1))
+zylinderanzahl=np.log(zylinder)
+linspace = np.linspace(-0.1, 2.7, 500)
+params, covariance_matrix = optimize.curve_fit(linfit, zylinderanzahl, deltaf)
+a, b = correlated_values(params, covariance_matrix)
+print('Fit zur Schallgeschwindigkeitsbestimmung')
+print('a=', a)
+print('b=', b)
 
 plt.plot(zylinderanzahl, deltaf, 'rx', mew=0.5, label='Messwerte')
-plt.yscale('log')
-plt.xscale('log')
-plt.xlabel(r'Anzahl der Zylinder')
-plt.ylabel(r'$\Delta f$/Hz')
+plt.plot(linspace, linfit(linspace, *params),'b-', label='Ausgleichrechnung', linewidth=0.5)
+#plt.yscale('log')
+#plt.xscale('log')
+plt.xlabel(r'$\log$(Anzahl der Zylinder)')
+plt.ylabel(r'$\log(\Delta f)$')
 plt.tight_layout()
 plt.legend()
 plt.grid()

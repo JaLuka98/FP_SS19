@@ -1,2 +1,80 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Zur Auswertung der ersten Messreihe wird die Differenz der gemessenen
+Resonanzfrequenzen doppelt logarithmisch gegen die Anzahl der verwendeten Zylinder
+aufgetragen. Die zugrundeliegenden Daten befinden sich in Tabelle (TABELLE EINFÜGEN).
+Außerdem wird mit den bereits logarithmierten Daten eine Ausgleichsrechnung der
+Form
+\begin{align*}
+  f(x)=ax+b
+\end{align*}
+durchgeführt. Dafür wird (NUMPY UND SO EINFÜGEN) verwendet. Es ergeben sich die
+Fit-Parameter
+\begin{align*}
+  a&=\SI{-0.996(004)}{\Hz} EINHEIT?!\,, \\
+  b&=\SI{8.138(007)}{\Hz}\,.
+\end{align*}
+In Abbildung \ref{fig:roehre} sind die Messdaten sowie die Ausgleichsrechnung grafisch
+dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/roehre.pdf}
+  \caption{Grafische Darstellung der Messdaten und der zugehörigen Ausgleichsrechnung
+  zur Bestimmung der Schallgeschwindigkeit.}
+  \label{fig:roehre}
+\end{figure}
+
+Aus den Fit-Parametern wird nun die Schallgeschwindigkeit gemäß (JA, WIE DENN NUN?)
+bestimmt.
+
+
+Nun sollen die Messungen am Oszilloskop mit denen am Computer verglichen werden.
+Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabelle
+(TABELLE EINFÜGEN) augeführt.
+In den Abbildungen \ref{fig:zyl2} und \ref{fig:zyl12} sind die mit dem Computer gemessenen
+Spektren dargestellt. Die roten senkrechten Linien zeigen die Frequenzen, bei denen
+auch am Oszilloskop eine Resonanz gemessen wurde. Beispielhaft ist hier ein Spektrum
+gezeigt, bei dem beide Messungen gut übereinstimmen und eines, bei denen am Oszilloskop
+viel mehr Resonanzen gemessen wurden als am PC. Die restlichen Abbildungen zu dieser
+Messreihe befinden sich im Anhang.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/zyl2.pdf}
+  \caption{Am Computer augenommenes Frequenzspektrum für zwei aneinandergelegte
+  Zylinder. Die am Oszilloskop gemessenen Resonanzfrequenzen sind als rote vertikale
+  Linien eingezeichnet.}
+  \label{fig:zyl2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/zyl12.pdf}
+  \caption{Am Computer augenommenes Frequenzspektrum für zwölf aneinandergelegte
+  Zylinder. Die am Oszilloskop gemessenen Resonanzfrequenzen sind als rote vertikale
+  Linien eingezeichnet.}
+  \label{fig:zyl12}
+\end{figure}
+
+
+Allgemein lässt sich feststellen, dass die Ungenauigkeiten mit steigender Zylinderanzahl
+bzw. wachsender Röhrenlänge zunehmen. Für wenige Zylinder, also kurze Röhren, stimmen
+die beiden Messungen jedoch grob überein.
+
+Das Frequenzspektrum des Kugelresonators ist in Abbildung \ref{fig:hatomalles} dargestellt.
+Auch hier sind in rot die Resonanzen dargestellt, die auch mit dem Oszilloskop
+gemessen wurden. Es zeigt sich eine gute Übereinstimmung.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/hatomalles.pdf}
+  \caption{Am Computer augenommenes Frequenzspektrum für den Kugelresonator.
+  Die am Oszilloskop gemessenen Resonanzfrequenzen sind als rote vertikale
+  Linien eingezeichnet.}
+  \label{fig:hatomalles}
+\end{figure}
+
+
+Die Frequenzsprektren für die Messung der Druckamplituden in Abhängigkeit vom
+Drehwinkel $\alpha$ befinden sich im Anhang. Aus den zugehörigen Daten werden
+die Amplituden ausgelesen. Die Daten sind in Tabelle (REFERENZ) dargestellt.
