@@ -1,8 +1,38 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Vorbereitende Experimente}
+\label{subsec:vorbereitung}
 Zur Auswertung der ersten Messreihe wird die Differenz der gemessenen
 Resonanzfrequenzen doppelt logarithmisch gegen die Anzahl der verwendeten Zylinder
-aufgetragen. Die zugrundeliegenden Daten befinden sich in Tabelle (TABELLE EINFÜGEN).
+aufgetragen. Die zugrundeliegenden Daten befinden sich in Tabelle \ref{tab:zyl}.
+
+\begin{table}[htp]
+	\begin{center}
+    \caption{Messwerte zum Zylinderresonator und daraus berechnete Werte.}
+    \label{tab:zyl}
+		\begin{tabular}{ccccc}
+		\toprule
+			{Zylinderanzahl} & {Resonatorlänge/cm} & {$f_1/$Hz} & {$f_2/$Hz} & {$\Delta f/$Hz}\\
+			\midrule
+			1 & 5 & 6880 & 10280 & 3400\\
+			2 & 10 & 6900 & 8610 & 1710\\
+			3 & 15 & 6910 & 8060 & 1150\\
+			4 & 20 & 6910 & 7770 & 860\\
+			5 & 25 & 6920 & 7610 & 690\\
+			6 & 30 & 6910 & 7490 & 580\\
+			7 & 35 & 6910 & 7410 & 500\\
+			8 & 40 & 6910 & 7340 & 430\\
+			9 & 45 & 6920 & 7300 & 380\\
+			10 & 50 & 6920 & 7260 & 340\\
+			11 & 55 & 6920 & 7230 & 310\\
+			12 & 60 & 6920 & 7210 & 290\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
 Außerdem wird mit den bereits logarithmierten Daten eine Ausgleichsrechnung der
 Form
 \begin{align*}
@@ -11,7 +41,7 @@ Form
 durchgeführt. Dafür wird (NUMPY UND SO EINFÜGEN) verwendet. Es ergeben sich die
 Fit-Parameter
 \begin{align*}
-  a&=\SI{-0.996(004)}{\Hz} EINHEIT?!\,, \\
+  a&=\SI{-0.996(004)}{\Hz\per\centi\metre} EINHEIT?!\,, \\
   b&=\SI{8.138(007)}{\Hz}\,.
 \end{align*}
 In Abbildung \ref{fig:roehre} sind die Messdaten sowie die Ausgleichsrechnung grafisch
@@ -28,10 +58,41 @@ dargestellt.
 Aus den Fit-Parametern wird nun die Schallgeschwindigkeit gemäß (JA, WIE DENN NUN?)
 bestimmt.
 
+Überlegungen: Jeder Zylinder ist 5 cm lang -> man bekommt irgendwas mit Hz/m. Nur
+die logarithmen stören mich noch irgendwie...
+
 
 Nun sollen die Messungen am Oszilloskop mit denen am Computer verglichen werden.
 Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabelle
-(TABELLE EINFÜGEN) augeführt.
+\ref{tab:oszi} augeführt.
+
+\begin{table}[htp]
+	\begin{center}
+    \caption{Am Oszilloskop aufgenommene Messwerte für die Resonanzfrequenzen. Der
+    Index kennzeichnet die Anzahl der für den Resonator verwendeten Zylinder.}
+    \label{tab:oszi}
+    \tiny
+		\begin{tabular}{cccccccccccc}
+		\toprule
+			{$f_1$/Hz} & {$f_2$/Hz} & {$f_3$/Hz} & {$f_4$/Hz} & {$f_5$/Hz} & {$f_6$/Hz} & {$f_7$/Hz} & {$f_8$/Hz} & {$f_9$/Hz} & {$f_{10}$/Hz} & {$f_{11}$/Hz} & {$f_{12}$/Hz}\\
+			\midrule
+			6686 & 5330 & 4503 & 5197 & 4849 & 5236 & 5042 & 4732 & 4639 & 4849 & 4733 & 4616\\
+			10173 & 6918 & 5786 & 6089 & 5585 & 5997 & 5430 & 5197 & 4965 & 5313 & 5081 & 4888\\
+			13545 & 8507 & 6790 & 6941 & 6305 & 6283 & 5934 & 5663 & 5489 & 5546 & 5391 & 5236\\
+			{-} & 10251 & 7990 & 7794 & 6903 & 6864 & 6399 & 6050 & 5779 & 5972 & 5701 & 5469\\
+			{-} & 11956 & 9190 & 8608 & 7600 & 7445 & 6903 & 6438 & 6205 & 6205 & 6050 & 5779\\
+			{-} & 13739 & 10320 & 9383 & 8453 & 8026 & 7368 & 6941 & 6631 & 6593 & 6283 & 6011\\
+			{-} & {-} & 11560 & 10351 & 8956 & 8569 & 7949 & 7445 & 7019 & 6941 & 6631 & 6321\\
+			{-} & {-} & 12560 & {-} & 9663 & 9111 & 8259 & 7794 & 7406 & 7329 & 6941 & 6631\\
+			{-} & {-} & {-} & {-} & 10351 & 9770 & 8995 & 8220 & 7755 & 7639 & 7251 & 6941\\
+			{-} & {-} & {-} & {-} & {-} & 10390 & 9344 & 8569 & 8065 & 7949 & 7561 & 7174\\
+			{-} & {-} & {-} & {-} & {-} & {-} & 9809 & 8995 & 8491 & 8298 & 7910 & 7484\\
+			{-} & {-} & {-} & {-} & {-} & {-} & 10429 & {-} & {-} & 8646 & {-} & {-}\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
 In den Abbildungen \ref{fig:zyl2} und \ref{fig:zyl12} sind die mit dem Computer gemessenen
 Spektren dargestellt. Die roten senkrechten Linien zeigen die Frequenzen, bei denen
 auch am Oszilloskop eine Resonanz gemessen wurde. Beispielhaft ist hier ein Spektrum
@@ -61,9 +122,36 @@ Allgemein lässt sich feststellen, dass die Ungenauigkeiten mit steigender Zylin
 bzw. wachsender Röhrenlänge zunehmen. Für wenige Zylinder, also kurze Röhren, stimmen
 die beiden Messungen jedoch grob überein.
 
+\subsection{Das Wasserstoffatom}
+\label{subsec:hatom}
+
 Das Frequenzspektrum des Kugelresonators ist in Abbildung \ref{fig:hatomalles} dargestellt.
 Auch hier sind in rot die Resonanzen dargestellt, die auch mit dem Oszilloskop
-gemessen wurden. Es zeigt sich eine gute Übereinstimmung.
+gemessen wurden. Die Messwerte befinden sich in Tabelle (REFERENZ).
+
+\begin{table}[htp]
+	\begin{center}
+    \caption{Am Oszilloskop gemessene Resonanzfrequenzen für den Kugelkondensator.}
+		\begin{tabular}{c}
+		\toprule
+			{$f_\symup{res}$/Hz}\\
+			\midrule
+			2394\\
+			3673\\
+			5029\\
+			6269\\
+			6618\\
+			7431\\
+			8051\\
+			8671\\
+			9446\\
+			9756\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Es zeigt sich eine gute Übereinstimmung.
 
 \begin{figure}
   \centering
@@ -77,4 +165,63 @@ gemessen wurden. Es zeigt sich eine gute Übereinstimmung.
 
 Die Frequenzsprektren für die Messung der Druckamplituden in Abhängigkeit vom
 Drehwinkel $\alpha$ befinden sich im Anhang. Aus den zugehörigen Daten werden
-die Amplituden ausgelesen. Die Daten sind in Tabelle (REFERENZ) dargestellt.
+die Amplituden ausgelesen. Die Daten sind in Tabelle \ref{tab:alpha} dargestellt.
+
+\begin{table}[htp]
+	\begin{center}
+    \caption{Messwerte für drei Peaks bei $f_1=2317$\,Hz, $f_2=3700$\, Hz und
+    $f_3=4981$\,Hz in Abhängigkeit vom Verschiebungswinkel $\alpha$.}
+    \label{tab:alpha}
+		\begin{tabular}{cccc}
+		\toprule
+			{$\alpha$/°} & {$A_1$} & {$A_2$} & {$A_3$}\\
+			\midrule
+			0 & 1,11 & 37,40 & 1,43\\
+			10 & 0,95 & 14,94 & 1,11\\
+			20 & 1,04 & 40,56 & 1,62\\
+			30 & 1,26 & 40,60 & 0,98\\
+			40 & 1,66 & 33,81 & 1,43\\
+			50 & 1,14 & 37,10 & 0,86\\
+			60 & 2,53 & 35,19 & 1,37\\
+			70 & 1,16 & 11,24 & 0,57\\
+			80 & 19,07 & 0,68 & 0,64\\
+			90 & 26,35 & 0,65 & 0,72\\
+			100 & 26,96 & 0,62 & 0,62\\
+			110 & 30,94 & 0,87 & 0,73\\
+			120 & 31,72 & 33,94 & 0,73\\
+			130 & 32,46 & 35,39 & 1,10\\
+			140 & 31,93 & 35,88 & 24,25\\
+			150 & 30,20 & 42,94 & 39,94\\
+			160 & 34,01 & 31,98 & 32,04\\
+			170 & 27,65 & 36,20 & 43,90\\
+			180 & 27,32 & 15,98 & 39,36\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Nun wird die Amplitude in einem Polarplot gegen den Verschiebungswinkel aufgetragen.
+Außerdem wird eine Theoriekurve gemäß (IRGENDEINE FORMEL) eingezeichnet. Das Ergebnis
+ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und \ref{fig:polar3} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/polar1.pdf}
+  \caption{Polarplot der Amplitude des Peaks bei $f=2317$\,Hz in Abhängigkeit vom
+  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  \label{fig:polar1}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/polar2.pdf}
+  \caption{Polarplot der Amplitude des Peaks bei $f=3700$\,Hz in Abhängigkeit vom
+  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  \label{fig:polar2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/polar3.pdf}
+  \caption{Polarplot der Amplitude des Peaks bei $f=4981$\,Hz in Abhängigkeit vom
+  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  \label{fig:polar3}
+\end{figure}
