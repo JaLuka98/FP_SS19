@@ -14,10 +14,11 @@ def linfit(x, a, b):
     return a*x+b
 
 
-zylinder, f1, a1 , b1, A1, f2, a2, b2, A2 = np.genfromtxt('data/roehre.txt', unpack=True)
+zylinder, f1, a1, b1, A1, f2, a2, b2, A2 = np.genfromtxt('data/roehre.txt', unpack=True)
 
 deltaf = np.log(1000*(f2-f1))
 zylinderanzahl = np.log(zylinder)
+#L = np.linspace(5,60,12)
 linspace = np.linspace(-0.1, 2.7, 500)
 params, covariance_matrix = optimize.curve_fit(linfit, zylinderanzahl, deltaf)
 a, b = correlated_values(params, covariance_matrix)

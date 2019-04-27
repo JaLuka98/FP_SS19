@@ -32,7 +32,7 @@ In der Quantenmechanik wird ein Teilchen der Masse $m$ vollständig durch eine o
 \end{equation}
 Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das reduzierte Plancksche Wirkungsquantum und $V$ ein zeitunabhängiges Potenzial. Der hermitesche Hamiltonoperator $H$ verfügt über Energieeigenwerte. Diese werden nach harmonischer Zeitabseperation $\psi(\vec{r},t) = \exp(-i E t / \hbar) \phi(\vec{r})$ in der zeitunabhängigen Schrödingergleichung
 \begin{equation}
-  E \phi(\vec{r}) = H \phi(\vec{r}).
+  E \phi(\vec{r}) = H \phi(\vec{r})
   \label{eqn:schroedingerZeitunabhaengig}
 \end{equation}
 sichtbar. Gefordert wird außerdem, dass der Zustand normiert sein muss, was im Falle der Ortsdarstellung durch die $L^2$-Norm realisiert wird: $\lvert\lvert \psi \rvert\rvert_{L^2} = 1\,.$ Observabel ist die Wellenfunktion $\psi$ selbst nicht. Stattdessen ist $\lvert \psi \rvert ^2$ die Aufenthaltswahrscheinlichkeitsdichte für das Teilchen. Dieser Zusammenhang verdeutlicht, dass die Quantenmechanik im Gegensatz zur klassischen Physik nichtdeterministisch ist. In ihrem System können für Messwerte nur Wahrscheinlichkeitsaussagen getroffen werden.
@@ -60,11 +60,34 @@ Es ist ersichtlich, dass die Lösung für den Druck $p$ und die Wellenfunktion $
 Diese Gemeinsamkeiten betreffen wichtige Charakteristika der Systeme und erlauben deswegen, eine Analogie zwischen ihnen zu sehen. Dennoch ergeben sich auch große Unterschiede, die sowohl bei der Berechnung als auch bei der Interpretation der Ergebnisse zu beachten sind:
 \begin{itemize}
   \item Die Bestimmungsgleichungen unterscheiden sich in der Ordnung der zeitlichen Ableitung. Während die Wellengleichung zweiter Ordnung in der Zeit ist, sorgt bei der Schrödingergleichung die erste Ableitung multipliziert mit der imaginären Einheit für die harmonische Zeitabhängigkeit.
-  \item Wie bereits erwähnt ist $\psi$ nicht direkt observal, nur mit dem Betragsquadrat lassen sich statistische Aussagen treffen. Dagegen ist der Druck $p$ klassisch observabel.
+  \item Wie bereits erwähnt ist $\psi$ nicht direkt observabel, nur mit dem Betragsquadrat lassen sich statistische Aussagen treffen. Dagegen ist der Druck $p$ klassisch observabel.
   \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen.
   \item Die Dispersionsrelationen für die beiden Regime der Physik unterscheiden sich grundlegend. In der klassischen Physik hängen Frequenz und Wellenzahl linear miteinander zusammen, während die Proportionalität in der Quantenmechanik quadratisch ist.
 \end{itemize}
 
-\subsection{Kugelartige Systeme}
-\label{subsec:kugelartig}
+\subsection{Dreidimensionale Systeme}
+\label{subsec:dreidimsyst}
+
+\subsubsection{Theorie des Wasserstoffatoms}
+\label{subsubsec:hatom}
+Das Wasserstoffatom besteht aus einem zentralen Proton mit Ladung $+e$ und einem Hüllenelektron mit Ladung $-e$. Im Folgenden wird die Masse des Protons als unendlich im Vergleich zum Elektron genähert, sodass das Proton stationär ist. Es wird angenommen, dass beide Teilchen nur über die elektromagnetische Wechselwirkung interagieren. Die Problemstellung besteht also aus der Lösung der Schrödingergleichung mit dem radialsymmetrischen Coloumb-Potenzial
+\begin{equation}
+  V(r) = - \frac{1}{4 \pi \epsilon_0}{e^2}{r}\,.
+  \label{eqn:coloumb}
+\end{equation}
+Um die Symmetrie des Problems zu berücksichtigen, werden Kugelkoordinaten gewählt. Der Laplace-Operator in der Schrödingergleichung hat in diesen Koordinaten einen radialen und einen Winkelteil:
+\begin{equation}
+  \Laplace = \Laplace_r + \frac{1}{r^2} \Laplace_{\theta, \phi}\,.
+  \label{eqn:laplaceWinkel}
+\end{equation}
+Somit erscheint ein Seperationsansatz sinnvoll. Es stellt sich heraus, dass die vollständige Lösung des Problems durch
+\begin{equation}
+  \psi_{nlm}(r,t) = R_{nl}(r) Y_{lm}(\theta, \phi) \exp(-i E_n t / \hbar)
+  \label{eqn:hatomloesung}
+\end{equation}
+gegeben ist. Dabei stellt $R_{nl}$ die Lösung des Radialteils dar. Der Winkelteil wird durch die sogenannten Kugelflächenfunktionen $Y_{lm}$ gelöst.\\
+Bestimmtes Merkmal dieser Lösungen ist ihre Quantisierung. Die Hauptquantenzahl $n$ ist Element der natürlichen Zahlen ohne null. Anschaulich gibt $n$ eine Art Bahn des Elektrons an, also in welchem Abstand sich das Elektron am wahrscheinlichsten aufhält. Die Drehimpulsquantenzahl $l$ geht von 0,1,... bis $n-1$ und beschreibt die räumliche Form des Orbitals. Die magnetische Quantenzahl $m$ kann ganzzahlige Werte von $-l$ bis $l$ annehmen und gibt die Projektion des Drehimpulses auf die $z$-Achse an.\\
+Die Energieeigenwerte $E_n = -E_{\text{Ryd}} \frac{1}{n^2} \approx -\SI{13.6}{\electronvolt} \frac{1}{n^2}$ hängen nur von $n$ ab. Sie sind somit in $l$ und $m$ entartet. Die $m$-Entartung kann durch das Anlegen eines schwachen magnetischen Feldes im Rahmen des Zeeman-Effektes aufgehoben werden. Dann wird die Rotationssymmetrie durch das Ausbilden einer Vorzugsrichtung des Magnetfeldes gebrochen. Die zu einem $l$ gehörenden Niveaus spalten in $(2m+1)$ sogenannte Zeeman-Niveaus auf. 
+
 \subsubsection{Der Kugelresonator}
+\label{subsubsec:kugelresonator}
