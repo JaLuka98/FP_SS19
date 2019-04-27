@@ -1,2 +1,34 @@
 \section{Theorie}
 \label{sec:Theorie}
+In diesem Versuch werden selbst keine quantenmechanischen Systeme behandelt. Es lassen sich allerdings durch die Betrachtung von akustischen Phänomenen Analogien zu quantenmechanischen Systemen finden, die insbesondere auf ähnlichen mathematischen Strukturen der theoretischen Lösung der Probleme basieren. Auf Unterschiede in den Systemen wird stets hingewiesen, dennoch sind die Analogien ausreichend, um durch die Betrachtung der in diesem Versuch untersuchten Modelle einige Grundlagen der Quantenmechanik kennenzulernen.
+\subsection{Eindimensionale Systeme}
+\label{subsec:eindimsyst}
+\subsubsection{Der eindimensionale Resonator}
+Betrachtet werden soll ein Rohr mit verschlossenen Enden. Bei perfekter Reflexion einer einfallenden Welle bildet sich eine stehende Welle mit Geschwindigkeitsknoten und Druckbäuchen an den Enden aus. Die Bedingung an Wellenlänge bzw. Frequenz und Schallgeschwindigkeit lautet
+\begin{equation}
+  \lambda_n = \frac{c}{f_n} = \frac{2L}{n}\,.
+  \label{eqn:stehendeWelle}
+\end{equation}
+Dabei bezeichnet $\lambda_n$ die Wellenlänge der $n$-ten Mode mit $n$ Bäuchen der Geschwindigkeit, $f_n$ die Frequenz dieser Mode, $c$ die Schallgeschwindigkeit und $n$ ist eine natürliche Zahl, 0 ausgenommen.
+Diese Beziehung lässt sich aus der Forderung nach der Beschaffenheit der Welle in Bezug auf ihre Knoten und Bäuche, aus der Interferenz von einlaufender und reflektierter Welle oder der Lösung der Wellengleichung mit entsprechenden Randbedingungen ableiten. Diese lautet
+\begin{equation}
+  \frac{\partial^2 p}{\partial t^2} = \frac{1}{\rho \kappa} \Delta p\,,
+  \label{eqn:wellengleichung}
+\end{equation}
+wobei $p$ den Druck, $t$ die Zeit, $\rho$ die Dichte, $\kappa$ die Kompressibilität des Mediums und $\Delta$ den Laplace-Operator bezeichnet, der hier eindimensional zu verstehen ist. Die Schallgeschwindigkeit ist durch $c^2 = \frac{1}{\rho \kappa}$ bestimmt.
+
+XXXXXX
+
+\subsubsection{Teilchen im Kasten}
+\label{subsubsec:kasten}
+In der Quantenmechanik wird ein Teilchen der Masse $m$ vollständig durch eine orts- und zeitabhängige Wellenfunktion $\psi$ beschrieben. In der nichtrelativistischen Quantenmechanik ist die Bestimmungsgleichung für $\psi$ die zeitabhängige Schrödingergleichung in der Form
+\begin{equation}
+  i \hbar \frac{\partial \psi(\vec{r},t)}{\partial t} = H \psi(\vec{r},t) = \left(- \frac{\hbar^2}{2 m} \Delta + V(\vec{r})\right) \psi(\vec{r},t)\,.
+  \label{eqn:schroedingerZeitabhaengig}
+\end{equation}
+Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das reduzierte Plancksche Wirkungsquantum und $V$ ein zeitunabhängiges Potenzial. Der hermitesche Hamiltonoperator $H$ verfügt über Energieeigenwerte. Diese werden nach harmonischer Zeitabseperation $\psi(\vec{r},t) = \exp(-i E t / \hbar) \phi(\vec{})$ in der zeitunabhängigen Schrödingergleichung
+\begin{equation}
+  E \phi(\vec{r}) = H \phi(\vec{r}).
+  \label{eqn:schroedingerZeitunabhaengig}
+\end{equation}
+sichtbar.
