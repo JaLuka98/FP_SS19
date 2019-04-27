@@ -1,6 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
-In diesem Versuch werden selbst keine quantenmechanischen Systeme behandelt. Es lassen sich allerdings durch die Betrachtung von akustischen Phänomenen Analogien zu quantenmechanischen Systemen finden, die insbesondere auf ähnlichen mathematischen Strukturen der theoretischen Lösung der Probleme basieren. Auf Unterschiede in den Systemen wird stets hingewiesen, dennoch sind die Analogien ausreichend, um durch die Betrachtung der in diesem Versuch untersuchten Modelle einige Grundlagen der Quantenmechanik kennenzulernen.
+In diesem Versuch werden selbst keine quantenmechanischen Systeme behandelt. Es lassen sich allerdings durch die Betrachtung von akustischen Phänomenen Analogien zu quantenmechanischen Systemen finden, die insbesondere auf ähnlichen mathematischen Strukturen der theoretischen Lösung der Probleme basieren. Auf Unterschiede in den Systemen wird stets hingewiesen, dennoch sind die Analogien ausreichend, um durch die Betrachtung der in diesem Versuch untersuchten Modelle einige Grundlagen der Quantenmechanik kennenzulernen. Im Folgenden sollen zwei konkrete physikalische Systeme untersucht werden, jeweils in einer klassischen und in einer quantenmechanischen Version, um danach die Zusammenhänge zu diskutieren.
+
 \subsection{Eindimensionale Systeme}
 \label{subsec:eindimsyst}
 \subsubsection{Der eindimensionale Resonator}
@@ -12,18 +13,21 @@ Betrachtet werden soll ein Rohr mit verschlossenen Enden. Bei perfekter Reflexio
 Dabei bezeichnet $\lambda_n$ die Wellenlänge der $n$-ten Mode mit $n$ Bäuchen der Geschwindigkeit, $f_n$ die Frequenz dieser Mode, $c$ die Schallgeschwindigkeit und $n$ ist eine natürliche Zahl, 0 ausgenommen.
 Diese Beziehung lässt sich aus der Forderung nach der Beschaffenheit der Welle in Bezug auf ihre Knoten und Bäuche, aus der Interferenz von einlaufender und reflektierter Welle oder der Lösung der Wellengleichung mit entsprechenden Randbedingungen ableiten. Diese lautet
 \begin{equation}
-  \frac{\partial^2 p}{\partial t^2} = \frac{1}{\rho \kappa} \Delta p\,,
+  \frac{\partial^2 p(\vec{r},t)}{\partial t^2} = \frac{1}{\rho \kappa} \Laplace p(\vec{r},t)\,,
   \label{eqn:wellengleichung}
 \end{equation}
-wobei $p$ den Druck, $t$ die Zeit, $\rho$ die Dichte, $\kappa$ die Kompressibilität des Mediums und $\Delta$ den Laplace-Operator bezeichnet, der hier eindimensional zu verstehen ist. Die Schallgeschwindigkeit ist durch $c^2 = \frac{1}{\rho \kappa}$ bestimmt.
-
-XXXXXX
+wobei $p$ den Druck, $t$ die Zeit, $\rho$ die Dichte, $\kappa$ die Kompressibilität des Mediums und $\Laplace$ den Laplace-Operator bezeichnet, der hier eindimensional zu verstehen ist. Die Schallgeschwindigkeit ist durch $c^2 = \frac{1}{\rho \kappa}$ bestimmt.\\
+Die Lösung dieser Gleichung unter den gegebenen Bedingungen für den Druck ist
+\begin{equation}
+  p(x,t) = p_\text{m} \cos\left(\frac{n \pi x}{L}\right) \cos(\omega t)\,.
+  \label{eqn:stehendeWelle}
+\end{equation}
 
 \subsubsection{Teilchen im Kasten}
 \label{subsubsec:kasten}
 In der Quantenmechanik wird ein Teilchen der Masse $m$ vollständig durch eine orts- und zeitabhängige Wellenfunktion $\psi$ beschrieben. In der nichtrelativistischen Quantenmechanik ist die Bestimmungsgleichung für $\psi$ die zeitabhängige Schrödingergleichung in der Form
 \begin{equation}
-  i \hbar \frac{\partial \psi(\vec{r},t)}{\partial t} = H \psi(\vec{r},t) = \left(- \frac{\hbar^2}{2 m} \Delta + V(\vec{r})\right) \psi(\vec{r},t)\,.
+  i \hbar \frac{\partial \psi(\vec{r},t)}{\partial t} = H \psi(\vec{r},t) = \left(- \frac{\hbar^2}{2 m} \Laplace + V(\vec{r})\right) \psi(\vec{r},t)\,.
   \label{eqn:schroedingerZeitabhaengig}
 \end{equation}
 Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das reduzierte Plancksche Wirkungsquantum und $V$ ein zeitunabhängiges Potenzial. Der hermitesche Hamiltonoperator $H$ verfügt über Energieeigenwerte. Diese werden nach harmonischer Zeitabseperation $\psi(\vec{r},t) = \exp(-i E t / \hbar) \phi(\vec{r})$ in der zeitunabhängigen Schrödingergleichung
@@ -31,4 +35,36 @@ Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das red
   E \phi(\vec{r}) = H \phi(\vec{r}).
   \label{eqn:schroedingerZeitunabhaengig}
 \end{equation}
-sichtbar.
+sichtbar. Gefordert wird außerdem, dass der Zustand normiert sein muss, was im Falle der Ortsdarstellung durch die $L^2$-Norm realisiert wird: $\lvert\lvert \psi \rvert\rvert_{L^2} = 1\,.$ Observabel ist die Wellenfunktion $\psi$ selbst nicht. Stattdessen ist $\lvert \psi \rvert ^2$ die Aufenthaltswahrscheinlichkeitsdichte für das Teilchen. Dieser Zusammenhang verdeutlicht, dass die Quantenmechanik im Gegensatz zur klassischen Physik nichtdeterministisch ist. In ihrem System können für Messwerte nur Wahrscheinlichkeitsaussagen getroffen werden.
+\\\\
+Das Teilchen im Kasten oder auch Teilchen im unendlich hohen Potenzialtopf genannt ist ein klassisches einführendes Beispiel aus der Quantenmechanik. Der Kasten erstrecke sich (eindimensional) von 0 bis $L$, sodass sich das Teilchen dort frei bewegen kann. Dies entspricht einem Potenzial von $V \equiv 0$. Dort gilt also die zeitunabhängige Schrödingergleichung in der Form
+\begin{equation}
+  E \phi(x) = - \frac{\hbar^2}{2 m}  \frac{\partial^2 \phi(x)} {\partial x^2} \,.
+  \label{eqn:schroedingerKasten}
+\end{equation}
+An den Wänden soll das Potenzial auf einen unendlich hohen Wert ansteigen, was so gedeutet werden kann, dass das Teilchen sich in dem Bereich außerhalb des Kastens nicht aufhalten kann.\\
+Unter Beachtung der Normierung sind die Lösungen
+\begin{equation}
+  \psi_n(x,t)_ = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) \exp(-i E t / \hbar)\,.
+  \label{eqn:kastenLoesung}
+\end{equation}
+Die Energieeigenwerte, also das Spektrum von H, lassen sich durch die Energiedispersionsrelation des freien Teilchens $E = \frac{\hbar^2 k^2}{2m}$ mit der Wellenzahl $k = 2 \pi / \lambda$ zu
+\begin{equation}
+  E_n = \frac{\hbar^2 \pi^2}{2 m L^2} n^2
+  \label{eqn:kastenEnergien}
+\end{equation}
+bestimmen.
+
+\subsubsection{Gemeinsamkeiten und Unterschiede der eindimensionalen Probleme}
+Es ist ersichtlich, dass die Lösung für den Druck $p$ und die Wellenfunktion $\psi$ im Grunde mathematisch äquivalent sind. Die Wellenfunktion ist zwar komplex, jedoch beschreiben beide Funktionen stehende Wellen. Außerdem erfolgt in beiden Fällen die gleiche Diskretisierung bzw. Quantisierung der bestimmenden Größen (Eigenfrequenzen und Eigenenergien).\\
+Diese Gemeinsamkeiten betreffen wichtige Charakteristika der Systeme und erlauben deswegen, eine Analogie zwischen ihnen zu sehen. Dennoch ergeben sich auch große Unterschiede, die sowohl bei der Berechnung als auch bei der Interpretation der Ergebnisse zu beachten sind:
+\begin{itemize}
+  \item Die Bestimmungsgleichungen unterscheiden sich in der Ordnung der zeitlichen Ableitung. Während die Wellengleichung zweiter Ordnung in der Zeit ist, sorgt bei der Schrödingergleichung die erste Ableitung multipliziert mit der imaginären Einheit für die harmonische Zeitabhängigkeit.
+  \item Wie bereits erwähnt ist $\psi$ nicht direkt observal, nur mit dem Betragsquadrat lassen sich statistische Aussagen treffen. Dagegen ist der Druck $p$ klassisch observabel.
+  \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen.
+  \item Die Dispersionsrelationen für die beiden Regime der Physik unterscheiden sich grundlegend. In der klassischen Physik hängen Frequenz und Wellenzahl linear miteinander zusammen, während die Proportionalität in der Quantenmechanik quadratisch ist.
+\end{itemize}
+
+\subsection{Kugelartige Systeme}
+\label{subsec:kugelartig}
+\subsubsection{Der Kugelresonator}
