@@ -32,20 +32,23 @@ aufgetragen. Die zugrundeliegenden Daten befinden sich in Tabelle \ref{tab:zyl}.
 	\end{center}
 \end{table}
 
-
-Außerdem wird mit den bereits logarithmierten Daten eine Ausgleichsrechnung der
-Form
+Gemäß Gleichung \eqref{eqn:stehendeWelle} ist ein Zusammenhang der Form $f_n = nc/(2 L)$
+für die $n$-te Resonanzfrequenz zu erwarten. Dementsprechend gilt für die Resonanzfrequenzdifferenz
+\begin{equation}
+	\Delta f = f_{n+1} - f_n = \frac{1}{2L} c\,.
+	\label{eqn:deltaf}
+\end{equation}
+Dabei ist zu beachten, dass die niedrigere gemessene Resonanzfrequenz als $f_n$ und die höhere als $f_{n+1}$ anzusetzen ist, da ihre Ordnungen unbekannt sind.\\
+Es wird eine lineare Ausgleichrechnung der Form $f(x)=ax+b$ durchgeführt, wobei die $x$-Werte bereits als $1/(2L)$ gegeben werden, sodass bei perfekter Messung $a$ der Schallgeschwindigkeit $c$ entspricht und $b$ null ist.\\
+Die Berechnungen werden in Python 3.7.1, unterstützt durch das Paket NumPy \cite{numpy}, durchgeführt.
+Für die Ausgleichsrechnung wird SciPy \cite{scipy} verwendet. Die Abbildungen werden mit matplotlib \cite{matplotlib} erstellt. Es ergeben sich die Parameter
 \begin{align*}
-  f(x)=ax+b
-\end{align*}
-durchgeführt. Dafür wird (NUMPY UND SO EINFÜGEN) verwendet. Es ergeben sich die
-Fit-Parameter
-\begin{align*}
-  a&=\SI{-0.996(004)}{\Hz\per\centi\metre} EINHEIT?!\,, \\
-  b&=\SI{8.138(007)}{\Hz}\,.
+  a&=\SI{339.7(7)}{\meter\per\second}\,, \\
+  b&=\SI{8.2(25)}{\Hz}\,.
 \end{align*}
 In Abbildung \ref{fig:roehre} sind die Messdaten sowie die Ausgleichsrechnung grafisch
 dargestellt.
+Der Literaturwert der Schallgeschwindigkeit beträgt $\SI{342.60}{\meter\per\second}$ \cite{Schallgeschwindigkeit}, sodass sich eine relative Abweichung von $-0{,}85\%$ ergibt.
 
 \begin{figure}
   \centering
@@ -54,13 +57,6 @@ dargestellt.
   zur Bestimmung der Schallgeschwindigkeit.}
   \label{fig:roehre}
 \end{figure}
-
-Aus den Fit-Parametern wird nun die Schallgeschwindigkeit gemäß (JA, WIE DENN NUN?)
-bestimmt.
-
-Überlegungen: Jeder Zylinder ist 5 cm lang -> man bekommt irgendwas mit Hz/m. Nur
-die logarithmen stören mich noch irgendwie...
-
 
 Nun sollen die Messungen am Oszilloskop mit denen am Computer verglichen werden.
 Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabelle
