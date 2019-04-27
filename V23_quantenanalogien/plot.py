@@ -8,14 +8,16 @@ from uncertainties import ufloat
 from uncertainties import correlated_values
 from matrix2latex import matrix2latex
 
-#Zylinderkette
-def linfit(x,a,b):
+
+# Zylinderkette
+def linfit(x, a, b):
     return a*x+b
+
 
 zylinder, f1, a1 , b1, A1, f2, a2, b2, A2 = np.genfromtxt('data/roehre.txt', unpack=True)
 
-deltaf=np.log(1000*(f2-f1))
-zylinderanzahl=np.log(zylinder)
+deltaf = np.log(1000*(f2-f1))
+zylinderanzahl = np.log(zylinder)
 linspace = np.linspace(-0.1, 2.7, 500)
 params, covariance_matrix = optimize.curve_fit(linfit, zylinderanzahl, deltaf)
 a, b = correlated_values(params, covariance_matrix)
@@ -24,7 +26,7 @@ print('a=', a)
 print('b=', b)
 
 plt.plot(zylinderanzahl, deltaf, 'rx', mew=0.5, label='Messwerte')
-plt.plot(linspace, linfit(linspace, *params),'b-', label='Ausgleichrechnung', linewidth=0.5)
+plt.plot(linspace, linfit(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
 #plt.yscale('log')
 #plt.xscale('log')
 plt.xlabel(r'$\log$(Anzahl der Zylinder)')
@@ -35,23 +37,23 @@ plt.grid()
 plt.savefig('build/roehre.pdf')
 plt.clf()
 
-hr = ['Zylinderanzahl', 'Resonatorlänge/cm' '$f_1/$Hz','$f_2/$Hz','$\Delta f/$Hz']
+hr = ['Zylinderanzahl', 'Resonatorlänge/cm' '$f_1/$Hz', '$f_2/$Hz', '$\Delta f/$Hz']
 m = np.zeros((12, 5))
 m[:,0] = zylinder
 m[:,1] = 5*zylinder
 m[:,2] = f1*1000
 m[:,3] = f2*1000
 m[:,4] = 1000*(f2-f1)
-t=matrix2latex(m, headerRow=hr, format='%.2f')
+t = matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
-zylinder=np.loadtxt('data/zyldat.txt', dtype=np.str)
+zylinder = np.genfromtxt('data/zyldat.txt', dtype=np.str)
 
-for i in range (0, len(zylinder)):
+for i in range(0, len(zylinder)):
     f, A = np.genfromtxt(zylinder[i], unpack=True)
     #plt.plot(f, A, 'ro', mew=0.5)
     plt.plot(f, A, 'b-', linewidth=0.5, label='Frequenzspektrum')
-    f_osz=np.genfromtxt('data/oszispektrum.txt', usecols=(i))
+    f_osz = np.genfromtxt('data/oszispektrum.txt', usecols=(i))
     for a in range(0, len(f_osz)):
         plt.axvline(f_osz[a]*1000, color='r', linestyle='--', linewidth=0.4)
     plt.xlabel(r'$f/$Hz')
@@ -109,7 +111,7 @@ t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
 
-wasserstoff=np.loadtxt('data/hatomdat.txt', dtype=np.str)
+wasserstoff=np.genfromtxt('data/hatomdat.txt', dtype=np.str)
 
 for i in range (0, len(wasserstoff)):
     f, A = np.genfromtxt(wasserstoff[i], unpack=True)
