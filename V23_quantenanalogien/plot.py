@@ -9,6 +9,47 @@ from uncertainties import correlated_values
 from matrix2latex import matrix2latex
 
 
+#Polarplot
+
+alpha, A1, A2, A3=np.genfromtxt('data/peaks.txt', unpack=True)
+
+hr = ['$\alpha$/°', '$A_1$', '$A_2$','$A_3$']
+m = np.zeros((19, 4))
+m[:,0] = alpha
+m[:,1] = A1
+m[:,2] = A2
+m[:,3] = A3
+t=matrix2latex(m, headerRow=hr, format='%.2f')
+print(t)
+
+#Vermutlich P_1,0
+plt.figure(3)
+phirange = np.linspace(0, 2*np.pi, 1000)
+plt.polar(np.arccos(1/2*np.cos(alpha/360*2*np.pi)-1/2), A1/np.max(A1), "rx", mew=0.5, label="Messwerte")
+plt.polar(phirange, np.abs(np.cos(phirange))/max(np.abs(np.cos(phirange))), "b-", label="Theorie", linewidth=0.5)
+plt.legend()
+plt.savefig("build/polar1.pdf")
+plt.clf()
+
+#Vermutlich P_2,0
+plt.figure(3)
+plt.polar(np.arccos(1/2*np.cos(alpha/360*2*np.pi)-1/2), A2/np.max(A2), "rx", mew=0.5, label="Messwerte")
+plt.polar(phirange, 1/2*(3*(np.abs(np.cos(phirange)))**2-1)/max(1/2*(3*(np.abs(np.cos(phirange)))**2-1)), "b-", label="Theorie", linewidth=0.5)
+plt.legend()
+plt.savefig("build/polar2.pdf")
+plt.clf()
+
+#Vermutlich P_3,0... der passt mit dem gemogelten Minus und ein bisschen Phantasie
+plt.figure(3)
+plt.polar(np.arccos(1/2*np.cos(alpha/360*2*np.pi)-1/2), A3/np.max(A3), "rx", mew=0.5, label="Messwerte")
+plt.polar(phirange, (np.abs(np.cos(phirange))/2*(5*np.cos(phirange)**2-3))/max((np.cos(phirange))/2*(5*((np.cos(phirange)))**2-3)), "b-", label="Theorie", linewidth=0.5)
+#Das Minus gehört da eigentlich nicht hin, aber sonst kommt da nichts raus was auch
+#nur annähernd zu den Messwerten passt...
+plt.legend()
+plt.savefig("build/polar3.pdf")
+plt.clf()
+
+
 # Zylinderkette
 def linfit(x, a, b):
     return a*x+b
@@ -130,43 +171,3 @@ for i in range (0, len(wasserstoff)):
     plt.grid()
     plt.savefig('build/hatom'+str(i)+'.pdf')
     plt.clf()
-
-#Polarplot
-
-alpha, A1, A2, A3=np.genfromtxt('data/peaks.txt', unpack=True)
-
-hr = ['$\alpha$/°', '$A_1$', '$A_2$','$A_3$']
-m = np.zeros((19, 4))
-m[:,0] = alpha
-m[:,1] = A1
-m[:,2] = A2
-m[:,3] = A3
-t=matrix2latex(m, headerRow=hr, format='%.2f')
-print(t)
-
-
-
-plt.figure(3)
-#phirange = np.linspace(0, np.pi/2, 10000)
-plt.polar(alpha/360*2*np.pi, A1, "rx", mew=0.5, label="Messwerte")
-#plt.polar(phirange, np.cos(phirange), "b-", label="Theorie")
-plt.legend()
-plt.savefig("build/polar1.pdf")
-plt.clf()
-
-
-plt.figure(3)
-#phirange = np.linspace(0, np.pi/2, 10000)
-plt.polar(alpha/360*2*np.pi, A2, "bx", mew=0.5, label="Messwerte")
-#plt.polar(phirange, np.cos(phirange), "b-", label="Theorie")
-plt.legend()
-plt.savefig("build/polar2.pdf")
-plt.clf()
-
-plt.figure(3)
-#phirange = np.linspace(0, np.pi/2, 10000)
-plt.polar(alpha/360*2*np.pi, A3, "gx", mew=0.5, label="$Messwerte$")
-#plt.polar(phirange, np.cos(phirange), "b-", label="Theorie")
-plt.legend()
-plt.savefig("build/polar3.pdf")
-plt.clf()

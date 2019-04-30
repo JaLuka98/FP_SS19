@@ -123,11 +123,12 @@ die beiden Messungen jedoch grob überein.
 
 Das Frequenzspektrum des Kugelresonators ist in Abbildung \ref{fig:hatomalles} dargestellt.
 Auch hier sind in rot die Resonanzen dargestellt, die auch mit dem Oszilloskop
-gemessen wurden. Die Messwerte befinden sich in Tabelle (REFERENZ).
+gemessen wurden. Die Messwerte befinden sich in Tabelle \ref{fig:oszires}.
 
 \begin{table}[htp]
 	\begin{center}
     \caption{Am Oszilloskop gemessene Resonanzfrequenzen für den Kugelkondensator.}
+		\label{tab:oszires}
 		\begin{tabular}{c}
 		\toprule
 			{$f_\symup{res}$/Hz}\\
@@ -197,27 +198,32 @@ die Amplituden ausgelesen. Die Daten sind in Tabelle \ref{tab:alpha} dargestellt
 \end{table}
 
 Nun wird die Amplitude in einem Polarplot gegen den Verschiebungswinkel aufgetragen.
-Außerdem wird eine Theoriekurve gemäß (IRGENDEINE FORMEL) eingezeichnet. Das Ergebnis
-ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und \ref{fig:polar3} zu sehen.
-
+Außerdem wird eine Theoriekurve gemäß der zugeordneten Legendrepolynome eingezeichnet.
+Das Ergebnis ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und
+\ref{fig:polar3} zu sehen. Die verwendeten zugeordneten Legendrepolynome sind
+\begin{align*}
+	P_{1,0}(x)=x \,,\\
+	P_{2,0}(x)=\frac{1}{2}(3x^2-1) \,,\\
+	P_{3,0}(x)=\frac{x}{2}(5x^2-3) \,.
+\end{align*}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{build/polar1.pdf}
   \caption{Polarplot der Amplitude des Peaks bei $f=2317$\,Hz in Abhängigkeit vom
-  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  Winkel $\alpha$ und zugehörige Theoriekurve $P_{1,0}$.}
   \label{fig:polar1}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{build/polar2.pdf}
   \caption{Polarplot der Amplitude des Peaks bei $f=3700$\,Hz in Abhängigkeit vom
-  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  Winkel $\alpha$ und zugehörige Theoriekurve $P_{2,0}$.}
   \label{fig:polar2}
 \end{figure}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{build/polar3.pdf}
   \caption{Polarplot der Amplitude des Peaks bei $f=4981$\,Hz in Abhängigkeit vom
-  Winkel $\alpha$ und zugehöroige Theoriekurve.}
+  Winkel $\alpha$ und zugehörige Theoriekurve $P_{3,0}$.}
   \label{fig:polar3}
 \end{figure}
