@@ -202,10 +202,15 @@ Außerdem wird eine Theoriekurve gemäß der zugeordneten Legendrepolynome einge
 Das Ergebnis ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und
 \ref{fig:polar3} zu sehen. Die verwendeten zugeordneten Legendrepolynome sind
 \begin{align*}
-	P_{1,0}(x)=x \,,\\
-	P_{2,0}(x)=\frac{1}{2}(3x^2-1) \,,\\
-	P_{3,0}(x)=\frac{x}{2}(5x^2-3) \,.
+	P_{1,0}(x)&=x \,,\\
+	P_{2,0}(x)&=\frac{1}{2}(3x^2-1) \,,\\
+	P_{3,0}(x)&=\frac{x}{2}(5x^2-3) \,.
 \end{align*}
+Der Winkel $\theta$ folgt aus dem Winkel $\alpha$ über den Zusammenhang
+\begin{equation*}
+	\theta=\arccos{\frac{1}{2}\cos{\alpha}-\frac{1}{2}} \,.
+\end{equation*}
+
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{build/polar1.pdf}
@@ -227,3 +232,6 @@ Das Ergebnis ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und
   Winkel $\alpha$ und zugehörige Theoriekurve $P_{3,0}$.}
   \label{fig:polar3}
 \end{figure}
+
+Es lässt sich eine ungefähre Anordnung der Punkte um die Theoriekurven herum erkennen,
+jedoch zeigen die Messwerte insgesamt sehr große Abweichungen.
