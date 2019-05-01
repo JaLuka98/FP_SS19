@@ -23,6 +23,12 @@ Die Lösung dieser Gleichung unter den gegebenen Bedingungen für den Druck ist
   \label{eqn:stehendeWelle2}
 \end{equation}
 
+Mithilfe der Relation $\omega = ck$ mit der Kreisfrequenz $\omega = 2 \pi f$ und der Wellenzahl $k = 2 \pi / \lambda$ folgt
+\begin{equation}
+  \omega(k) = \frac{pi c}{L} n\,.
+  \label{eqn:dispersionKlassisch}
+\end{equation}
+
 \subsubsection{Teilchen im Kasten}
 \label{subsubsec:kasten}
 In der Quantenmechanik wird ein Teilchen der Masse $m$ vollständig durch eine orts- und zeitabhängige Wellenfunktion $\psi$ beschrieben. In der nichtrelativistischen Quantenmechanik ist die Bestimmungsgleichung für $\psi$ die zeitabhängige Schrödingergleichung in der Form
@@ -77,17 +83,36 @@ Das Wasserstoffatom besteht aus einem zentralen Proton mit Ladung $+e$ und einem
 \end{equation}
 Um die Symmetrie des Problems zu berücksichtigen, werden Kugelkoordinaten gewählt. Der Laplace-Operator in der Schrödingergleichung hat in diesen Koordinaten einen radialen und einen Winkelteil:
 \begin{equation}
-  \Laplace = \Laplace_r + \frac{1}{r^2} \Laplace_{\theta, \phi}\,.
+  \Laplace = \Laplace_r + \frac{1}{r^2} \Laplace_{\theta, \varphi}\,.
   \label{eqn:laplaceWinkel}
 \end{equation}
 Somit erscheint ein Seperationsansatz sinnvoll. Es stellt sich heraus, dass die vollständige Lösung des Problems durch
 \begin{equation}
-  \psi_{nlm}(r,t) = R_{nl}(r) Y_{lm}(\theta, \phi) \exp(-i E_n t / \hbar)
+  \psi_{nlm}(r,t) = R_{nl}(r) Y_{lm}(\theta, \varphi) \exp(-i E_n t / \hbar)
   \label{eqn:hatomloesung}
 \end{equation}
-gegeben ist. Dabei stellt $R_{nl}$ die Lösung des Radialteils dar. Der Winkelteil wird durch die sogenannten Kugelflächenfunktionen $Y_{lm}$ gelöst.\\
-Bestimmtes Merkmal dieser Lösungen ist ihre Quantisierung. Die Hauptquantenzahl $n$ ist Element der natürlichen Zahlen ohne null. Anschaulich gibt $n$ eine Art Bahn des Elektrons an, also in welchem Abstand sich das Elektron am wahrscheinlichsten aufhält. Die Drehimpulsquantenzahl $l$ geht von 0,1,... bis $n-1$ und beschreibt die räumliche Form des Orbitals. Die magnetische Quantenzahl $m$ kann ganzzahlige Werte von $-l$ bis $l$ annehmen und gibt die Projektion des Drehimpulses auf die $z$-Achse an.\\
-Die Energieeigenwerte $E_n = -E_{\text{Ryd}} \frac{1}{n^2} \approx -\SI{13.6}{\electronvolt} \frac{1}{n^2}$ hängen nur von $n$ ab. Sie sind somit in $l$ und $m$ entartet. Die $m$-Entartung kann durch das Anlegen eines schwachen magnetischen Feldes im Rahmen des Zeeman-Effektes aufgehoben werden. Dann wird die Rotationssymmetrie durch das Ausbilden einer Vorzugsrichtung des Magnetfeldes gebrochen. Die zu einem $l$ gehörenden Niveaus spalten in $(2m+1)$ sogenannte Zeeman-Niveaus auf.
+gegeben ist. Dabei stellt $R_{nl}$ die Lösung des Radialteils dar, auf die nicht näher eingegangen werden sollen, weil sie für das theoretische Verständnis dieses Versuchs nicht weiter relevant sind. Der Winkelteil wird durch die sogenannten Kugelflächenfunktionen $Y_{lm}$ gelöst. Für sie gilt
+\begin{equation}
+  Y_{lm}(\theta,\varphi) = \frac{1}{\sqrt{2\pi}} N_{lm} P_{lm}(\cos\theta) \exp(im\varphi)\,.
+  \label{eqn:kugelflaechenfunktionen}
+\end{equation}
+Dabei gilt für die Normierungskonstante
+\begin{equation}
+  N_{lm} = \sqrt{\frac{2l+1}{2} \frac{(l-m)!}{(l+m)!}}\,.
+  \label{eqn:ylmnormierung}
+\end{equation}
+Die zugeordneten Legendrepolynome sind durch
+\begin{equation}
+  P_{lm}(x) = \frac{(-1)^m}{2^l l!} (1-x^2)^{\frac{m}{2}} \frac{\mathrm{d}^{l+m}}{\mathrm{d}x^{l+m}} (x^2-1)^l
+  \label{eqn:zugeordneteLegendrepolynome}
+\end{equation}
+gegeben.
+
+Bestimmtes Merkmal der Lösungen ist ihre Quantisierung. Die Hauptquantenzahl $n$ ist Element der natürlichen Zahlen ohne null. Anschaulich gibt $n$ eine Art Bahn des Elektrons an, also in welchem Abstand sich das Elektron am wahrscheinlichsten aufhält. Die Drehimpulsquantenzahl $l$ geht von 0,1,... bis $n-1$ und beschreibt die räumliche Form des Orbitals. Die magnetische Quantenzahl $m$ kann ganzzahlige Werte von $-l$ bis $l$ annehmen und gibt die Projektion des Drehimpulses auf die $z$-Achse an.\\
+Die Energieeigenwerte $E_n = -E_{\text{Ryd}}/n^2 \approx -\SI{13.6}{\electronvolt}/n^2$ hängen nur von $n$ ab. Sie sind somit in $l$ und $m$ entartet.
+%Die $m$-Entartung kann durch das Anlegen eines schwachen magnetischen Feldes im Rahmen des Zeeman-Effektes aufgehoben werden. Dann wird die Rotationssymmetrie durch das Ausbilden einer Vorzugsrichtung des Magnetfeldes gebrochen. Die zu einem $l$ gehörenden Niveaus spalten in $(2m+1)$ sogenannte Zeeman-Niveaus auf.
 
 \subsubsection{Der Kugelresonator}
 \label{subsubsec:kugelresonator}
+Wie beim Wasserstoffatom weißt auch der kugelförmige Resonator eine radiale Symmetrie auf. Deswegen werden Kugelkoordinaten verwendet, sodass sich der Laplace-Operator in Gleichung \eqref{eqn:wellengleichung} wie in Gleichung \eqref{eqn:laplaceWinkel} in Radial- und Winkelanteil aufspaltet. Es ist einsichtig, dass der Winkelanteil der Lösung von $p(\vec{r}, t) = p(r,\theta,\varphi,t)$ gleich dem des Wasserstoffatoms sein muss; erneut ergeben sich Kugelflächenfunktionen. Die Radialanteile sind nicht gleich, da es sich bei dem Kugelresonator um ein freies Problem handelt. In der Sprache der Quantenmechanik entspricht das dem Fehlen eines Potenzialterms, klassisch bedeutet das, dass die Wellengleichung homogen ist.\\
+Es ergibt sich, dass die Quantenzahlen $n'$, $l$ und $m$ zur Beschreibung der Moden des Resonators geeignet sind, wobei $n'$ in Ähnlichkeit zu $n$ eine Art radiale Quantenzahl darstellt. Eine $l$-Entartung liegt hier nicht vor. Die Entartung in $m$ bleibt als Einzige noch bestehen. Es sei darauf hingewiesen, dass sich durch die Gegenüberstellung von Lautsprecher und Mikrophon Zylindersymmetrie ausbildet, wodurch sich in dieser Aufstellung größtenteils nur $m=0$-Zustände anregen lassen.

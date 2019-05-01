@@ -8,6 +8,7 @@ from uncertainties import ufloat
 from uncertainties import correlated_values
 from matrix2latex import matrix2latex
 
+from scipy.special import legendre
 
 #Polarplot
 
@@ -21,6 +22,20 @@ m[:,2] = A2
 m[:,3] = A3
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
+
+# Test mit Scipy
+# Erklärung: Pn = legendre(n) erschafft ein Objekt namens Pn, dass ein Legendrepolynom
+# des Grades n ist. Damit kann man plotten, wie unten auch zu sehen ist.
+# Damit kriegst du auch diese Schleifen hin!
+plt.figure(3)
+P1 = legendre(1)
+philin = np.linspace(0, 2*np.pi, 1000)
+theta = np.arccos(1/2*np.cos(alpha/360*2*np.pi)-1/2)
+plt.polar(theta, A1/np.max(A1), "rx", mew=0.5, label="Messwerte")
+plt.polar(philin, np.abs(P1(np.cos(philin))), "b-", label="Theorie", linewidth=0.5)
+plt.legend()
+plt.savefig("build/polar1test.pdf")
+plt.clf()
 
 #Vermutlich P_1,0
 plt.figure(3)
