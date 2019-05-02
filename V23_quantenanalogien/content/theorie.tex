@@ -23,6 +23,13 @@ Die Lösung dieser Gleichung unter den gegebenen Bedingungen für den Druck ist
   \label{eqn:stehendeWelle2}
 \end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/stehendeWelle.png}
+  \caption{Skizze der Luftbewegung und der Druckschwankung bei einer stehenden Welle \cite{stehendeWelle}.}
+  \label{fig:stehendeWelle}
+\end{figure}
+
 Mithilfe der Relation $\omega = ck$ mit der Kreisfrequenz $\omega = 2 \pi f$ und der Wellenzahl $k = 2 \pi / \lambda$ folgt
 \begin{equation}
   \omega(k) = \frac{pi c}{L} n\,.
@@ -54,6 +61,15 @@ Unter Beachtung der Normierung sind die Lösungen
   \psi_n(x,t)_ = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) \exp(-i E t / \hbar)\,.
   \label{eqn:kastenLoesung}
 \end{equation}
+Die ersten Wellenfunktion sind in Figur \ref{fig:kasten} dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/kasten.png}
+  \caption{Schematische Darstellung der ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}.}
+  \label{fig:kasten}
+\end{figure}
+
 Die Energieeigenwerte, also das Spektrum von H, lassen sich durch die Energiedispersionsrelation des freien Teilchens $E = \frac{\hbar^2 k^2}{2m}$ mit der Wellenzahl $k = 2 \pi / \lambda$ zu
 \begin{equation}
   E_n = \frac{\hbar^2 \pi^2}{2 m L^2} n^2
@@ -106,7 +122,15 @@ Die zugeordneten Legendrepolynome sind durch
   P_{lm}(x) = \frac{(-1)^m}{2^l l!} (1-x^2)^{\frac{m}{2}} \frac{\mathrm{d}^{l+m}}{\mathrm{d}x^{l+m}} (x^2-1)^l
   \label{eqn:zugeordneteLegendrepolynome}
 \end{equation}
-gegeben.
+gegeben.\\
+Die Wellenfunktionen werden Atomorbitale genannt. In Abbildungen wie Figur \ref{fig:orbitale} wird die Aufenthaltswahrscheinlichkeit farbig dargestellt, um die räumliche Form der Orbitale darzustellen.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/orbitale.jpg}
+  \caption{Die ersten Orbitale der Lösung der Schrödingergleichung für das Wasserstoffatom \cite{orbitale}.}
+  \label{fig:orbitale}
+\end{figure}
 
 Bestimmtes Merkmal der Lösungen ist ihre Quantisierung. Die Hauptquantenzahl $n$ ist Element der natürlichen Zahlen ohne null. Anschaulich gibt $n$ eine Art Bahn des Elektrons an, also in welchem Abstand sich das Elektron am wahrscheinlichsten aufhält. Die Drehimpulsquantenzahl $l$ geht von 0,1,... bis $n-1$ und beschreibt die räumliche Form des Orbitals. Die magnetische Quantenzahl $m$ kann ganzzahlige Werte von $-l$ bis $l$ annehmen und gibt die Projektion des Drehimpulses auf die $z$-Achse an.\\
 Die Energieeigenwerte $E_n = -E_{\text{Ryd}}/n^2 \approx -\SI{13.6}{\electronvolt}/n^2$ hängen nur von $n$ ab. Sie sind somit in $l$ und $m$ entartet.
