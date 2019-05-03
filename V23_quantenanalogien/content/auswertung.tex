@@ -50,7 +50,7 @@ In Abbildung \ref{fig:roehre} sind die Messdaten sowie die Ausgleichsrechnung gr
 dargestellt.
 Der Literaturwert der Schallgeschwindigkeit beträgt $\SI{342.60}{\meter\per\second}$ \cite{Schallgeschwindigkeit}, sodass sich eine relative Abweichung von $-0{,}85\%$ ergibt.
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{build/roehre.pdf}
   \caption{Grafische Darstellung der Messdaten und der zugehörigen Ausgleichsrechnung
@@ -59,10 +59,9 @@ Der Literaturwert der Schallgeschwindigkeit beträgt $\SI{342.60}{\meter\per\sec
 \end{figure}
 
 Nun sollen die Messungen am Oszilloskop mit denen am Computer verglichen werden.
-Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabelle
-\ref{tab:oszi} augeführt.
+Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabelle \ref{tab:oszi} aufgeführt.
 
-\begin{table}[htp]
+\begin{table}[h!]
 	\begin{center}
     \caption{Am Oszilloskop aufgenommene Messwerte für die Resonanzfrequenzen. Der
     Index kennzeichnet die Anzahl der für den Resonator verwendeten Zylinder.}
@@ -89,7 +88,7 @@ Die Messdaten für die am Oszilloskop gemessenen Resonanzfrequenzen sind in Tabe
 	\end{center}
 \end{table}
 
-In den Abbildungen \ref{fig:zyl2} und \ref{fig:zyl12} sind die mit dem Computer gemessenen
+In den Abbildungen \ref{fig:zyl2} und \ref{fig:zyl12} sind zwei der mit dem Computer gemessenen
 Spektren dargestellt. Die roten senkrechten Linien zeigen die Frequenzen, bei denen
 auch am Oszilloskop eine Resonanz gemessen wurde. Beispielhaft ist hier ein Spektrum
 gezeigt, bei dem beide Messungen gut übereinstimmen und eines, bei denen am Oszilloskop
@@ -98,7 +97,7 @@ Messreihe befinden sich im Anhang.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{build/zyl2.pdf}
+  \includegraphics[width=0.8\textwidth]{build/zyl2.pdf}
   \caption{Am Computer augenommenes Frequenzspektrum für zwei aneinandergelegte
   Zylinder. Die am Oszilloskop gemessenen Resonanzfrequenzen sind als rote vertikale
   Linien eingezeichnet.}
@@ -106,7 +105,7 @@ Messreihe befinden sich im Anhang.
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{build/zyl12.pdf}
+  \includegraphics[width=0.8\textwidth]{build/zyl12.pdf}
   \caption{Am Computer augenommenes Frequenzspektrum für zwölf aneinandergelegte
   Zylinder. Die am Oszilloskop gemessenen Resonanzfrequenzen sind als rote vertikale
   Linien eingezeichnet.}
@@ -118,6 +117,7 @@ Allgemein lässt sich feststellen, dass die Ungenauigkeiten mit steigender Zylin
 bzw. wachsender Röhrenlänge zunehmen. Für wenige Zylinder, also kurze Röhren, stimmen
 die beiden Messungen jedoch grob überein.
 
+\newpage
 \subsection{Das Wasserstoffatom}
 \label{subsec:hatom}
 
@@ -150,7 +150,7 @@ gemessen wurden. Die Messwerte befinden sich in Tabelle \ref{tab:oszires}.
 
 Es zeigt sich eine gute Übereinstimmung.
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{build/hatomalles.pdf}
   \caption{Am Computer augenommenes Frequenzspektrum für den Kugelresonator.
@@ -164,7 +164,7 @@ Die Frequenzsprektren für die Messung der Druckamplituden in Abhängigkeit vom
 Drehwinkel $\alpha$ befinden sich im Anhang. Aus den zugehörigen Daten werden
 die Amplituden ausgelesen. Die Daten sind in Tabelle \ref{tab:alpha} dargestellt.
 
-\begin{table}[htp]
+\begin{table}[h!]
 	\begin{center}
     \caption{Messwerte für drei Peaks bei $f_1=2317$\,Hz, $f_2=3700$\, Hz und
     $f_3=4981$\,Hz in Abhängigkeit vom Verschiebungswinkel $\alpha$.}
@@ -208,7 +208,7 @@ Das Ergebnis ist in den Abbildungen \ref{fig:polar1}, \ref{fig:polar2} und
 \end{align*}
 Der Winkel $\theta$ folgt gemäß \cite{Formel} aus dem Winkel $\alpha$ über den Zusammenhang
 \begin{equation*}
-	\theta=\arccos{\frac{1}{2}\cos{\alpha}-\frac{1}{2}} \,.
+	\theta=\arccos\left(\frac{1}{2}\cos{\alpha}-\frac{1}{2}\right) \,.
 \end{equation*}
 
 Für die Abbildungen werden die Amplituden und die Legendrepolynome auf eins normiert.
@@ -216,14 +216,15 @@ Da sich für den Plot bei $f=3700$\,Hz so keine gute Übereinstimmung zeigt, wir
 die Nomierung so gewählt, dass sich eine möglichst gute Übereinstimmung zeigt.
 Der neue Plot ist in Abbildung \ref{fig:polar2neu} dargestellt.
 
-\begin{figure}
+Es lässt sich eine ungefähre Anordnung der Punkte um die Theoriekurven herum erkennen,
+jedoch zeigen die Messwerte insgesamt sehr große Abweichungen.
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{build/polar1.pdf}
   \caption{Polarplot der Amplitude des Peaks bei $f=2317$\,Hz in Abhängigkeit vom
   Winkel $\alpha$ und zugehörige Theoriekurve $P_{1,0}$.}
   \label{fig:polar1}
 \end{figure}
-
 \begin{figure}[h!]
   \centering
   \begin{subfigure}{0.49\textwidth}
@@ -235,20 +236,16 @@ Der neue Plot ist in Abbildung \ref{fig:polar2neu} dargestellt.
 	\end{subfigure}
 	\begin{subfigure}{0.49\textwidth}
   	\centering
-  	\includegraphics[width=\textwidth]{build/polar2.pdf}
+  	\includegraphics[width=\textwidth]{build/polar2neunormiert.pdf}
   	\caption{Polarplot der Amplitude des Peaks bei $f=3700$\,Hz in Abhängigkeit vom
   	Winkel $\alpha$ und zugehörige Theoriekurve $P_{2,0}$ mit neu gewählter Normierung.}
   	\label{fig:polar2neu}
 	\end{subfigure}
 \end{figure}
-
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{build/polar3.pdf}
   \caption{Polarplot der Amplitude des Peaks bei $f=4981$\,Hz in Abhängigkeit vom
   Winkel $\alpha$ und zugehörige Theoriekurve $P_{3,0}$.}
   \label{fig:polar3}
 \end{figure}
-
-Es lässt sich eine ungefähre Anordnung der Punkte um die Theoriekurven herum erkennen,
-jedoch zeigen die Messwerte insgesamt sehr große Abweichungen.
