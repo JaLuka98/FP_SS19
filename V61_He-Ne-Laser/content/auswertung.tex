@@ -1,6 +1,21 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Überprüfung der Stabilität}
+\label{subsec:stabilitaet}
+Die Messwerte für den realisierten Laser mit einem flachen und einem sphärischen
+Spiegel befinden sich in Tabelle \ref{tab:plankonkav}. In Abbildung \ref{fig:plankonkav}
+sind die gemessenen Stromstärken $I$ gegen die Resonatorlängen $L$ aufgetragen.
+Zudem wird eine lineare Ausgleichrechung der Form
+\begin{equation*}
+  f(L)=a L+b
+\end{equation*}
+durchgeführt. Für die Parameter $a$ und $b$ ergeben sich die Werte
+\begin{align*}
+  a&= \SI{2.61(029)}{\micro\ampere\per\centi\per\metre}\,,\\
+  b&= \SI{214(18)}{\micro\ampere}\,.
+\end{align*}
+
 \begin{figure}
   \centering
   \includegraphics{build/plankonkav.pdf}
@@ -8,6 +23,19 @@
   Resonator aus einem flachen und einem sphärischen Spiegel.}
   \label{fig:plankonkav}
 \end{figure}
+
+Die Messwerte für den Resonator aus zwei sphärischen Spiegeln befinden sich in
+Tabelle \ref{tab:konkavkonkav}. In Abbildung \ref{fig:konkavkonkav} sind die gemessenen Stromstärken gegen die Resonatorlänge aufgetragen. Außerdem wird eine
+Ausgleichsrechnung der Form
+\begin{equation*}
+  f(L)=a L^2 + b L + c
+\end{equation*}
+durchgeführt. Es ergeben sich die Parameter
+\begin{align*}
+  a&= \SI{0.097(017)}{\micro\ampere\per\centi\per\metre\squared}\,, \\
+  b&= \SI{-21(4)}{\micro\ampere\per\centi\per\metre}\,, \\
+  c&= \SI{1.15(020)e3}{\micro\ampere}\,.
+\end{align*}
 
 \begin{figure}
   \centering
@@ -17,12 +45,20 @@
   \label{fig:konkavkonkav}
 \end{figure}
 
+\subsection{Vermessung der Moden}
+\label{subsec:moden}
+
+Die gemessenen Werte für die $TEM_{0,0}$ Mode befinden sich in den Tabellen \ref{tab:tem00a} und \ref{tab:tem00b}. In Abbildung \ref{fig:tem00} sind sie
+grafisch dargestellt.
+
 \begin{figure}
   \centering
   \includegraphics{build/tem00.pdf}
   \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die $TEM_{0,0}$ Mode.}
   \label{fig:tem00}
 \end{figure}
+
+Die Messwerte für die $TEM_{0,1}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt.
 
 \begin{figure}
   \centering
@@ -31,6 +67,20 @@
   \label{fig:tem01}
 \end{figure}
 
+\subsection{Messung der Polarisierung}
+\label{subsec:polarisierung}
+
+In Tabelle \ref{tab:polarisation} befinden sich die Messwerte zur Intensität des
+Laserstrahls in Abhängigkeit von dem Winkel des Polarisationsfilters. Diese Werte
+sind in Abbildung \ref{fig:polarisation} graphisch dargestellt. Es wird eine Ausgleichsfunktion der Form
+\begin{equation*}
+  f(\phi)=I_{\text{max}} cos^2(\phi+\delta)
+\end{equation*}
+durchgeführt. Diese liefert die Parameter
+\begin{align*}
+  I_{\text{max}}&=\SI{56.02(118)}{\micro\ampere} \,, \\
+  \delta&=\SI{919.32(105)} \,.
+\end{align*}
 
 \begin{figure}
   \centering
@@ -39,3 +89,7 @@
   Abhängigkeit vom Winkel des Polarisationsfilters.}
   \label{fig:polarisation}
 \end{figure}
+
+
+\subsection{Bestimmung der Wellenlänge}
+\label{subsec:wellenlaenge}
