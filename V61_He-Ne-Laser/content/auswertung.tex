@@ -49,7 +49,21 @@ durchgeführt. Es ergeben sich die Parameter
 \label{subsec:moden}
 
 Die gemessenen Werte für die $TEM_{0,0}$ Mode befinden sich in den Tabellen \ref{tab:tem00a} und \ref{tab:tem00b}. In Abbildung \ref{fig:tem00} sind sie
-grafisch dargestellt.
+grafisch dargestellt. Die Werte zeigen nicht den theoretisch zu erwartenden gaußförmigen
+Verlauf. In Abbildung \ref{fig:bild} ist ein Bild dieser Mode eingefügt. Auch dort
+ist im Zentrum eine geringere Intensität zu erkennen.
+
+Trotz der Abweichungen wird eine gaußförmige Ausgleichsrechnung der Form
+\begin{equation*}
+  I_{0,0}(L)=I_{\text{max}} \exp\left(-2*\left(\frac{L-d}{\omega}\right)^2\right)
+\end{equation*}
+durchgeführt. Dabei ist $I_{\text{max}}$ der maximale Strom, $d$ eine Verschiebung in
+x-Richtung und $\omega$ der Strahlradius.  Es ergeben sich die Parameter
+\begin{align*}
+  I_{\text{max}}&=\SI{597(29)}{\micro\ampere} \,,\\
+  d&= \SI{-3.2(8)}{\milli\metre} \,, \\
+  \omega&=\SI{27.8(17)}{\milli\metre} \,.
+\end{align*}
 
 \begin{figure}
   \centering
@@ -58,7 +72,26 @@ grafisch dargestellt.
   \label{fig:tem00}
 \end{figure}
 
-Die Messwerte für die $TEM_{0,1}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{data/tem00.png}
+  \caption{Bild der $TEM_{0,0}$ Mode. Deutlich zu erkennen ist eine schwächere Intensität im Zentrum.}
+  \label{fig:bild}
+\end{figure}
+
+
+Die Messwerte für die $TEM_{0,1}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt. Es wird eine Ausgleichsrechnung
+der Form
+\begin{equation*}
+  I_{0,1}=I_max\left(\frac{L-d}{\omega}\right) \exp\left(-2\left(\frac{L-d}{\omega}\right)^2\right)
+\end{equation*}
+durchgeführt.
+Die Ausgleichsrechnung liefert die Parameter
+\begin{align*}
+  I_{\text{max}}&=\SI{1.27(05)e3}{\nano\ampere} \,,\\
+  d&=\SI{0.38(28)}{\milli\metre} \,,\\
+  w&=\SI{15.0(4)}{\milli\metre} \,.
+\end{align*}
 
 \begin{figure}
   \centering

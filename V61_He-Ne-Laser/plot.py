@@ -18,6 +18,12 @@ def cos2fit(phi, I_max, delta):
 def parabelfit(x, a, b, c):
     return a*x*x + b*x + c
 
+def mode0(x, I_max, d, w):
+    return I_max*np.exp(-2*((x-d)/w)**2)
+
+def mode1(x, I_max, d, w):
+    return I_max*(((x-d)/w)**2)*np.exp(-2*((x-d)/w)**2)
+
 #Gitter
 #100 Spalte/mm -> 1*10^5 Spalte pro m
 d_1=6.3 #cm
@@ -49,10 +55,10 @@ print('b=', b)
 linspace=np.linspace(40, 80, 1000)
 plt.plot(linspace, linfit(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
 plt.plot(l, I, 'rx', mew=0.5, label='Messwerte')
+#plt.plot(linspace, (1-linspace/1400), linewidth=0.5, label= 'Theoriekurve')
 plt.xlabel(r'$L/$cm')
 plt.ylabel(r'$I$/µA')
-plt.xlim()
-plt.ylim()
+plt.axis([40,80,0,125])
 plt.tight_layout()
 plt.legend()
 plt.grid()
@@ -77,13 +83,13 @@ print('a=', a)
 print('b=', b)
 print('c=', c)
 
-linspace=np.linspace(70, 155, 100)
+linspace=np.linspace(68, 155, 100)
 plt.plot(linspace, parabelfit(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
 plt.plot(l, I, 'rx', mew=0.5, label='Messwerte')
+#plt.plot(linspace, np.max(I)*(1-(linspace/140))*(1-(linspace/140)), linewidth=0.5, label= 'Theoriekurve')
 plt.xlabel(r'$L/$cm')
 plt.ylabel(r'$I$/µA')
-plt.xlim()
-plt.ylim()
+plt.axis([68,152,0,260])
 plt.tight_layout()
 plt.legend()
 plt.grid()
@@ -101,11 +107,19 @@ m[:,1] = I
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
+params, covariance_matrix = optimize.curve_fit(mode0, s, I)
+I_max, d, w = correlated_values(params, covariance_matrix)
+print('Fit zur TEM00 Mode:')
+print('I_max=', I_max)
+print('d=', d)
+print('w=', w)
+
+linspace=np.linspace(-40, 40, 1000)
+plt.plot(linspace, mode0(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
 plt.plot(s, I, 'rx', mew=0.5, label='Messwerte')
 plt.xlabel(r'$s$/cm')
-plt.ylabel(r'$I$/µA')
-plt.xlim()
-plt.ylim()
+plt.ylabel(r'$I$/nA')
+plt.axis([-33,33,0,830])
 plt.tight_layout()
 plt.legend()
 plt.grid()
@@ -123,11 +137,19 @@ m[:,1] = I
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
+params, covariance_matrix = optimize.curve_fit(mode1, s, I)
+I_max, d, w = correlated_values(params, covariance_matrix)
+print('Fit zur TEM01 Mode:')
+print('I_max=', I_max)
+print('d=', d)
+print('w=', w)
+
+linspace=np.linspace(-40, 40, 1000)
+plt.plot(linspace, mode1(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
 plt.plot(s, I, 'rx', mew=0.5, label='Messwerte')
 plt.xlabel(r'$s/$cm')
-plt.ylabel(r'$I$/µA')
-plt.xlim()
-plt.ylim()
+plt.ylabel(r'$I$/nA')
+plt.axis([-33,33,0,330])
 plt.tight_layout()
 plt.legend()
 plt.grid()
