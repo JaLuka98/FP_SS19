@@ -26,14 +26,20 @@ def mode1(x, I_max, d, w):
 
 #Gitter
 #100 Spalte/mm -> 1*10^5 Spalte pro m
-d_1=6.3 #cm
-d_2=6.2 #cm
-l=95.7 #cm
-
+d_1=ufloat(6.3, 0.2) #cm
+d_2=ufloat(6.2, 0.2) #cm
+l=ufloat(95.7, 0.2) #cm
+g=10**(-5)
 #HIER DIE AUSWERTUNG FÜR DIE WELLENLÄNGE
+d_1=d_1*1e-2
+d_2=d_2*1e-2
+l=l*1e-2
+d=np.mean([d_1, d_2])
+print('Mittelwert der Abstände:', d)
 
-
-
+lamda=g*unp.sin(unp.arctan(d/l))
+print('lambda= ', lamda)
+print('Abweichung von der Theorie:', (lamda*1e9/632.8-1)*100)
 
 #plankonkav
 print('plankonkav:')

@@ -10,7 +10,11 @@ Zudem wird eine lineare Ausgleichrechung der Form
 \begin{equation*}
   f(L)=a L+b
 \end{equation*}
-durchgeführt. Für die Parameter $a$ und $b$ ergeben sich die Werte
+durchgeführt. Für die Berechnungen wird Python 3.7.1, unterstützt von dem Paket
+NumPy \cite{numpy} genutzt. Für die Grafiken
+wird die Python Bibliothek matblotlib \cite{matplotlib} verwendet.
+Die Ausgleichsrechnungen werden mithilfe von SciPy \cite{scipy} durchgeführt.
+Für die Parameter $a$ und $b$ ergeben sich die Werte
 \begin{align*}
   a&= \SI{2.61(029)}{\micro\ampere\per\centi\per\metre}\,,\\
   b&= \SI{214(18)}{\micro\ampere}\,.
@@ -48,7 +52,7 @@ durchgeführt. Es ergeben sich die Parameter
 \subsection{Vermessung der Moden}
 \label{subsec:moden}
 
-Die gemessenen Werte für die $TEM_{0,0}$ Mode befinden sich in den Tabellen \ref{tab:tem00a} und \ref{tab:tem00b}. In Abbildung \ref{fig:tem00} sind sie
+Die gemessenen Werte für die TEM$_{\mathrm{00}}$ Mode befinden sich in den Tabellen \ref{tab:tem00a} und \ref{tab:tem00b}. In Abbildung \ref{fig:tem00} sind sie
 grafisch dargestellt. Die Werte zeigen nicht den theoretisch zu erwartenden gaußförmigen
 Verlauf. In Abbildung \ref{fig:bild} ist ein Bild dieser Mode eingefügt. Auch dort
 ist im Zentrum eine geringere Intensität zu erkennen.
@@ -68,19 +72,19 @@ x-Richtung und $\omega$ der Strahlradius.  Es ergeben sich die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/tem00.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die $TEM_{0,0}$ Mode.}
+  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die TEM$_{\mathrm{00}}$ Mode.}
   \label{fig:tem00}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{data/tem00.png}
-  \caption{Bild der $TEM_{0,0}$ Mode. Deutlich zu erkennen ist eine schwächere Intensität im Zentrum.}
+  \caption{Bild der TEM$_{\mathrm{00}}$ Mode. Deutlich zu erkennen ist eine schwächere Intensität im Zentrum.}
   \label{fig:bild}
 \end{figure}
 
 
-Die Messwerte für die $TEM_{0,1}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt. Es wird eine Ausgleichsrechnung
+Die Messwerte für die TEM$_{\mathrm{00}}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt. Es wird eine Ausgleichsrechnung
 der Form
 \begin{equation*}
   I_{0,1}=I_max\left(\frac{L-d}{\omega}\right) \exp\left(-2\left(\frac{L-d}{\omega}\right)^2\right)
@@ -96,7 +100,7 @@ Die Ausgleichsrechnung liefert die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/tem01.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die $TEM_{0,1}$ Mode.}
+  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die TEM$_{\mathrm{00}}$ Mode.}
   \label{fig:tem01}
 \end{figure}
 
@@ -123,6 +127,29 @@ durchgeführt. Diese liefert die Parameter
   \label{fig:polarisation}
 \end{figure}
 
+In der Ausgleichsrechnung ist eine Phasenverschiebung von etwa -20° ersichtlich.
 
 \subsection{Bestimmung der Wellenlänge}
 \label{subsec:wellenlaenge}
+Zur Bestimmung der Wellenlänge des Lasers wurden die Werte
+\begin{align*}
+  d_1&=\SI{6.3(2)}{\centi\metre} \,,\\
+  d_2&=\SI{6.2(2)}{\centi\metre}  \,,\\
+  l&=\SI{95.7(2)}{\centi\metre} \,.
+\end{align*}
+gemessen.
+Die beiden Messwerte für $d$ werden mithilfe des Pakets \cite{uncertainties}
+gemittelt und es ergibt sich $\SI{6.25(14)}{\centi\metre}$.
+Mithilfe des Zusammenhangs
+\begin{equation*}
+  \lambda= g \sin \left(\arctan\left(\frac{d}{l}\right)\right)
+\end{equation*}
+lässt sich daraus die Wellenlänge berechnen. Dabei ist $l$ der Abstand zwischen
+Gitter und Schirm, $d$ der Abstand der ersten Hauptmaxima vom nullten Hauptmaximum
+auf dem Schirm und g ist die Spaltbreite des Gitters. Das verwendete Gitter hat eine
+Spaltbreite von $10^{-5}$\,m. Damit ergibt sich für die Wellenlänge des Lasers der Wert
+\begin{align*}
+  \lambda=\SI{652(15)}{\nano\metre}\,.
+\end{align*}
+Der theoretisch zu erwartende Wert ist $\lambda= 632,8$\,mm. Der experimentell bestimmte
+Wert weicht davon um $3,0$\,\% ab.
