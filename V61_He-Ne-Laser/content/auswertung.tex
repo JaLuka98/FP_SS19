@@ -23,18 +23,18 @@ Für die Parameter $a$ und $b$ ergeben sich die Werte
 \begin{figure}
   \centering
   \includegraphics{build/plankonkav.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für den
+  \caption{Darstellung der Messwerte sowie der Ausgleichsfunktion für den
   Resonator aus einem flachen und einem sphärischen Spiegel.}
   \label{fig:plankonkav}
 \end{figure}
 
 Die Messwerte für den Resonator aus zwei sphärischen Spiegeln befinden sich in
 Tabelle \ref{tab:konkavkonkav}. In Abbildung \ref{fig:konkavkonkav} sind die gemessenen Stromstärken gegen die Resonatorlänge aufgetragen. Außerdem wird eine
-Ausgleichsrechnung der Form
+Ausgleichsfunktion der Form
 \begin{equation*}
   f(L)=a L^2 + b L + c
 \end{equation*}
-durchgeführt. Es ergeben sich die Parameter
+angesetzt. Es ergeben sich die Parameter
 \begin{align*}
   a&= \SI{0.097(017)}{\micro\ampere\per\centi\per\metre\squared}\,, \\
   b&= \SI{-21(4)}{\micro\ampere\per\centi\per\metre}\,, \\
@@ -44,7 +44,7 @@ durchgeführt. Es ergeben sich die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/konkavkonkav.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für den
+  \caption{Darstellung der Messwerte sowie der Ausgleichsfunktion für den
   Resonator aus zwei sphärischen Spiegeln.}
   \label{fig:konkavkonkav}
 \end{figure}
@@ -57,12 +57,12 @@ grafisch dargestellt. Die Werte zeigen nicht den theoretisch zu erwartenden gau�
 Verlauf. In Abbildung \ref{fig:bild} ist ein Bild dieser Mode eingefügt. Auch dort
 ist im Zentrum eine geringere Intensität zu erkennen.
 
-Trotz der Abweichungen wird eine gaußförmige Ausgleichsrechnung der Form
+Trotz der Abweichungen wird eine Ausgleichsrechnung mit einer gaußförmigen Funktion
 \begin{equation*}
-  I_{0,0}(L)=I_{\text{max}} \exp\left(-2*\left(\frac{L-d}{\omega}\right)^2\right)
+  I_{0,0}(L)=I_{\text{max}} \exp\left(-2 \left(\frac{L-d}{\omega}\right)^2\right)
 \end{equation*}
 durchgeführt. Dabei ist $I_{\text{max}}$ der maximale Strom, $d$ eine Verschiebung in
-x-Richtung und $\omega$ der Strahlradius.  Es ergeben sich die Parameter
+x-Richtung und $\omega$ der Strahlradius. Es ergeben sich die Parameter
 \begin{align*}
   I_{\text{max}}&=\SI{597(29)}{\micro\ampere} \,,\\
   d&= \SI{-3.2(8)}{\milli\metre} \,, \\
@@ -72,7 +72,7 @@ x-Richtung und $\omega$ der Strahlradius.  Es ergeben sich die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/tem00.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die TEM$_{\mathrm{00}}$ Mode.}
+  \caption{Darstellung der Messwerte sowie der Ausgleichsfunktion für die TEM$_{\mathrm{00}}$ Mode.}
   \label{fig:tem00}
 \end{figure}
 
@@ -84,12 +84,11 @@ x-Richtung und $\omega$ der Strahlradius.  Es ergeben sich die Parameter
 \end{figure}
 
 
-Die Messwerte für die TEM$_{\mathrm{00}}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt. Es wird eine Ausgleichsrechnung
-der Form
+Die Messwerte für die TEM$_{\mathrm{01}}$ Mode sind in den Tabellen \ref{tab:tem01a} und \ref{tab:tem01b} aufgeführt. In Abbildung \ref{fig:tem01} sind sie grafisch dargestellt. Als Ausgleichsfunktion wird ein Produkt von Parabel und Gaußverteilung in der Form
 \begin{equation*}
-  I_{0,1}=I_max\left(\frac{L-d}{\omega}\right) \exp\left(-2\left(\frac{L-d}{\omega}\right)^2\right)
+  I_{0,1}=I_{\text{max}}\left(\frac{L-d}{\omega}\right)^2 \exp\left(-2\left(\frac{L-d}{\omega}\right)^2\right)
 \end{equation*}
-durchgeführt.
+angesetzt.
 Die Ausgleichsrechnung liefert die Parameter
 \begin{align*}
   I_{\text{max}}&=\SI{1.27(05)e3}{\nano\ampere} \,,\\
@@ -100,7 +99,7 @@ Die Ausgleichsrechnung liefert die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/tem01.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die TEM$_{\mathrm{00}}$ Mode.}
+  \caption{Darstellung der Messwerte sowie der Ausgleichsfunktion für die TEM$_{\mathrm{01}}$ Mode.}
   \label{fig:tem01}
 \end{figure}
 
@@ -109,11 +108,11 @@ Die Ausgleichsrechnung liefert die Parameter
 
 In Tabelle \ref{tab:polarisation} befinden sich die Messwerte zur Intensität des
 Laserstrahls in Abhängigkeit von dem Winkel des Polarisationsfilters. Diese Werte
-sind in Abbildung \ref{fig:polarisation} graphisch dargestellt. Es wird eine Ausgleichsfunktion der Form
+sind in Abbildung \ref{fig:polarisation} graphisch dargestellt. Die Ausgleichsfunktion ist
 \begin{equation*}
-  f(\phi)=I_{\text{max}} cos^2(\phi+\delta)
+  f(\phi)=I_{\text{max}} \cos^2(\phi+\delta)\,.
 \end{equation*}
-durchgeführt. Diese liefert die Parameter
+Die Ausgleichsrechnung liefert die Parameter
 \begin{align*}
   I_{\text{max}}&=\SI{56.02(118)}{\micro\ampere} \,, \\
   \delta&=\SI{919.32(105)} \,.
@@ -122,7 +121,7 @@ durchgeführt. Diese liefert die Parameter
 \begin{figure}
   \centering
   \includegraphics{build/polarisation.pdf}
-  \caption{Darstellung der Messwerte sowie einer gefitteten Ausgleichsfunktion für die Intensität in
+  \caption{Darstellung der Messwerte sowie der Ausgleichsfunktion für die Intensität in
   Abhängigkeit vom Winkel des Polarisationsfilters.}
   \label{fig:polarisation}
 \end{figure}
@@ -138,8 +137,16 @@ Zur Bestimmung der Wellenlänge des Lasers wurden die Werte
   l&=\SI{95.7(2)}{\centi\metre} \,.
 \end{align*}
 gemessen.
-Die beiden Messwerte für $d$ werden mithilfe des Pakets \cite{uncertainties}
-gemittelt und es ergibt sich $\SI{6.25(14)}{\centi\metre}$.
+Die beiden Messwerte für $d$ werden gemittelt und es ergibt sich $\SI{6.25(14)}{\centi\metre}$
+\footnote{Ist $f$ eine Funktion, die von unsicheren Variablen $x_i$ mit
+Standardabweichungen $\sigma_i$ abhängt, so ist die Unsicherheit von f gegeben durch
+  $\sigma_f = \sqrt{
+    \sum\limits_{i = 1}^N
+      \left( \frac{\partial f}{\partial x_i} \sigma_i \right)^{\!\! 2}
+  }\,.$
+}
+, wobei die Unsicherheit sich zu $\sigma_d = \frac{1}{2} \sqrt{\sigma_{d_1}^2+\sigma_{d_2}^2} = \frac{\sqrt{2}}{10}\,\text{cm}$
+bestimmt.
 Mithilfe des Zusammenhangs
 \begin{equation*}
   \lambda= g \sin \left(\arctan\left(\frac{d}{l}\right)\right)
@@ -151,5 +158,10 @@ Spaltbreite von $10^{-5}$\,m. Damit ergibt sich für die Wellenlänge des Lasers
 \begin{align*}
   \lambda=\SI{652(15)}{\nano\metre}\,.
 \end{align*}
+Die Unsicherheit von $\lambda$ lässt sich mit
+\begin{equation}
+  \sigma_\lambda = \sqrt{\frac{d^{2} g^{2} \sigma_{l}^{2}}{l^{4} \left(\frac{d^{2}}{l^{2}} + 1\right)^{2}} + \frac{g^{2} \sigma_{d}^{2}}{l^{2} \left(\frac{d^{2}}{l^{2}} + 1\right)^{2}} {\left (\frac{d}{l} \right )}}
+\end{equation}
+berechnen.
 Der theoretisch zu erwartende Wert ist $\lambda= 632,8$\,mm. Der experimentell bestimmte
 Wert weicht davon um $3,0$\,\% ab.
