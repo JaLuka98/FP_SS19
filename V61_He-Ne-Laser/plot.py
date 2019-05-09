@@ -173,7 +173,7 @@ m[:,1] = I
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
-params1, covariance_matrix1 = optimize.curve_fit(cos2fit, phi, I)
+params1, covariance_matrix1 = optimize.curve_fit(cos2fit, phi, I, p0=[50, -30])
 errors1 = np.sqrt(np.diag(covariance_matrix1))
 
 print('Fitparameter für die Polarisation:')
