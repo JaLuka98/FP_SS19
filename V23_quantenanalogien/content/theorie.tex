@@ -23,19 +23,30 @@ Die Lösung dieser Gleichung unter den gegebenen Bedingungen für den Druck ist
   p(x,t) = p_\text{m} \cos\left(\frac{n \pi x}{L}\right) \cos(\omega t)\,.
   \label{eqn:stehendeWelle2}
 \end{equation}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{data/stehendeWelle.png}
-  \caption{Skizze der Luftbewegung und der Druckschwankung bei einer stehenden Welle \cite{stehendeWelle}.}
-  \label{fig:stehendeWelle}
-\end{figure}
-
 Mithilfe der Relation $\omega = ck$ mit der Kreisfrequenz $\omega = 2 \pi f$ und der Wellenzahl $k = 2 \pi / \lambda$ folgt
 \begin{equation}
-  \omega(k) = \frac{pi c}{L} n\,.
+  \omega(k) = \frac{\pi c}{L} n\,.
   \label{eqn:dispersionKlassisch}
 \end{equation}
+In Abbildung \ref{fig:stehendeWelle} ist eine stehende Welle in einem Rohr für drei Zeiten zu sehen. An den Orten ohne Luftbewegung können die Teilchen als ortsfest angesehen werden. Die Pfeile drücken die Richtung aus, in die sich die Teilchen im Rohr aufgrund der Schallwelle bewegen. Es sei jedoch darauf hingewiesen, dass die Amplitude der Schwingung im Teilchenort viel kleiner gegenüber der Ausdehnung eines üblichen Rohrs ist und somit eher die Druckschwankung mit der Erscheinung der stehenden Welle assoziiert wird. Die fett gezeichneten Linien drücken gerade diese Druckschwankung aus. Orte ohne Luftbewegung und Orte ohne Druckschwankung sind nicht identisch, sondern um eine Viertel Wellenlänge verschoben.
+
+\begin{figure}[H]
+\centering
+\subcaptionbox{Skizze der Luftbewegung und der Druckschwankung bei einer stehenden Welle \cite{stehendeWelle}.}%
+  [.4\linewidth]{\includegraphics[width=.4\linewidth]{data/stehendeWelle.png}}
+  \label{fig:stehendeWelle}
+\,\,\,\,\,\,\,\,\,\,\,\,
+\subcaptionbox{Schematische Darstellung der ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}.}
+  [.4\linewidth]{\includegraphics[width=.4\linewidth]{data/kasten.png}}
+  \label{fig:kasten}
+\end{figure}
+
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=\textwidth]{data/stehendeWelle.png}
+%  \caption{Skizze der Luftbewegung und der Druckschwankung bei einer stehenden Welle \cite{stehendeWelle}.}
+%  \label{fig:stehendeWelle}
+%\end{figure}
 
 \subsubsection{Teilchen im Kasten}
 \label{subsubsec:kasten}
@@ -62,14 +73,14 @@ Unter Beachtung der Normierung sind die Lösungen
   \psi_n(x,t)_ = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) \exp(-i E t / \hbar)\,.
   \label{eqn:kastenLoesung}
 \end{equation}
-Die ersten Wellenfunktion sind in Figur \ref{fig:kasten} dargestellt.
+Die ersten Wellenfunktion sind in Abbildung \ref{fig:kasten} dargestellt.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{data/kasten.png}
-  \caption{Schematische Darstellung der ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}.}
-  \label{fig:kasten}
-\end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=\textwidth]{data/kasten.png}
+%  \caption{Schematische Darstellung der ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}.}
+%  \label{fig:kasten}
+%\end{figure}
 
 Die Energieeigenwerte, also das Spektrum von H, lassen sich durch die Energiedispersionsrelation des freien Teilchens $E = \frac{\hbar^2 k^2}{2m}$ mit der Wellenzahl $k = 2 \pi / \lambda$ zu
 \begin{equation}
@@ -84,7 +95,7 @@ Diese Gemeinsamkeiten betreffen wichtige Charakteristika der Systeme und erlaube
 \begin{itemize}
   \item Die Bestimmungsgleichungen unterscheiden sich in der Ordnung der zeitlichen Ableitung. Während die Wellengleichung zweiter Ordnung in der Zeit ist, sorgt bei der Schrödingergleichung die erste Ableitung multipliziert mit der imaginären Einheit für die harmonische Zeitabhängigkeit.
   \item Wie bereits erwähnt ist $\psi$ nicht direkt observabel, nur mit dem Betragsquadrat lassen sich statistische Aussagen treffen. Dagegen ist der Druck $p$ klassisch observabel.
-  \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen.
+  \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen. Dies ist auch an den Abbildungen \ref{fig:stehendeWelle} und \ref{fig:kasten} ersichtlich. Dort haben Druckschwankung und Wellenfunktion gleiche Randbedingungen, sodass Druck (als Integral der Druckschwankung) und Wellenfunktion andere Randbedingungen haben müssen.
   \item Die Dispersionsrelationen für die beiden Regime der Physik unterscheiden sich grundlegend. In der klassischen Physik hängen Frequenz und Wellenzahl linear miteinander zusammen, während die Proportionalität in der Quantenmechanik quadratisch ist.
 \end{itemize}
 
@@ -124,13 +135,13 @@ Die zugeordneten Legendrepolynome sind durch
   \label{eqn:zugeordneteLegendrepolynome}
 \end{equation}
 gegeben.\\
-Die Wellenfunktionen werden Atomorbitale genannt. In Abbildung \ref{fig:orbitale} wird die Aufenthaltswahrscheinlichkeit farbig dargestellt, um die räumliche Form der Orbitale darzustellen.
+Die Wellenfunktionen werden Atomorbitale genannt. In Abbildung \ref{fig:kugelflaechenfunktionen} sind die Kugelflächenfunktionen, also der Winkelanteil, gezeigt. Diese tragen maßgeblich zur Form des Orbitals bei.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{data/orbitale.jpg}
-  \caption{Die ersten Orbitale der Lösung der Schrödingergleichung für das Wasserstoffatom \cite{orbitale}.}
-  \label{fig:orbitale}
+  \includegraphics[width=\textwidth]{data/kugelschei.png}
+  \caption{Darstellung des Betragsquadrats der ersten Kugelflächenfunktionen als Isoflächen \cite{kugelflaechenfunktionen}.}
+  \label{fig:kugelflaechenfunktionen}
 \end{figure}
 
 Bestimmtes Merkmal der Lösungen ist ihre Quantisierung. Die Hauptquantenzahl $n$ ist Element der natürlichen Zahlen ohne null. Anschaulich gibt $n$ eine Art Bahn des Elektrons an, also in welchem Abstand sich das Elektron am wahrscheinlichsten aufhält. Die Drehimpulsquantenzahl $l$ geht von 0,1,... bis $n-1$ und beschreibt die räumliche Form des Orbitals. Die magnetische Quantenzahl $m$ kann ganzzahlige Werte von $-l$ bis $l$ annehmen und gibt die Projektion des Drehimpulses auf die $z$-Achse an.\\
@@ -140,4 +151,5 @@ Die Energieeigenwerte $E_n = -E_{\text{Ryd}}/n^2 \approx -\SI{13.6}{\electronvol
 \subsubsection{Der Kugelresonator}
 \label{subsubsec:kugelresonator}
 Wie beim Wasserstoffatom weist auch der kugelförmige Resonator eine radiale Symmetrie auf. Deswegen werden Kugelkoordinaten verwendet, sodass sich der Laplace-Operator in Gleichung \eqref{eqn:wellengleichung} wie in Gleichung \eqref{eqn:laplaceWinkel} in Radial- und Winkelanteil aufspaltet. Es ist einsichtig, dass der Winkelanteil der Lösung von $p(\vec{r}, t) = p(r,\theta,\varphi,t)$ gleich dem des Wasserstoffatoms sein muss; erneut ergeben sich Kugelflächenfunktionen. Die Radialanteile sind nicht gleich, da es sich bei dem Kugelresonator um ein freies Problem handelt. In der Sprache der Quantenmechanik entspricht das dem Fehlen eines Potenzialterms, klassisch bedeutet das, dass die Wellengleichung homogen ist.\\
-Es ergibt sich, dass die Quantenzahlen $n'$, $l$ und $m$ zur Beschreibung der Moden des Resonators geeignet sind, wobei $n'$ in Ähnlichkeit zu $n$ eine Art radiale Quantenzahl darstellt. Eine $l$-Entartung liegt hier nicht vor. Die Entartung in $m$ bleibt als Einzige noch bestehen. Es sei darauf hingewiesen, dass sich durch die Gegenüberstellung von Lautsprecher und Mikrophon Zylindersymmetrie ausbildet, wodurch sich in dieser Aufstellung größtenteils nur $m=0$-Zustände anregen lassen.
+Es ergibt sich, dass die Quantenzahlen $n'$, $l$ und $m$ zur Beschreibung der Moden des Resonators geeignet sind, wobei $n'$ in Ähnlichkeit zu $n$ eine Art radiale Quantenzahl darstellt. Eine $l$-Entartung liegt hier nicht vor. Die Entartung in $m$ bleibt als Einzige noch bestehen. %Es sei darauf hingewiesen, dass sich durch die Gegenüberstellung von Lautsprecher und Mikrophon Zylindersymmetrie ausbildet, wodurch sich in dieser Aufstellung größtenteils nur $m=0$-Zustände anregen lassen.
+Aufgrund der Radialsymmetrie der Anordnung lassen sich größtenteils nur $m=0$-Zustände anregen. Ein Anbringen von sogenannten Zwischenringen an dem Kugelresonator kann dazu dienen, diese Symmetrie zu brechen und die Anregung von $m=\pm1$-Zuständen zu erlauben. Das quantenmechanische Analogon dazu ist der Zeeman-Effekt: Durch das Anlegen eines Magnetfeldes ergibt sich eine Vorzugsrichtung. Die Entartung der Zustände, die sich in der Quantenzahl $m$ unterscheiden, wird aufgehoben und ihre Energien unterscheiden sich.
