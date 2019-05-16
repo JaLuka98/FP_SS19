@@ -1,7 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
 In diesem Versuch werden selbst keine quantenmechanischen Systeme behandelt. Es lassen sich allerdings durch die Betrachtung von akustischen Phänomenen Analogien zu quantenmechanischen Systemen finden, die insbesondere auf ähnlichen mathematischen Strukturen der theoretischen Lösung der Probleme basieren. Auf Unterschiede in den Systemen wird stets hingewiesen, dennoch sind die Analogien ausreichend, um durch die Betrachtung der in diesem Versuch untersuchten Modelle einige Grundlagen der Quantenmechanik kennenzulernen. Im Folgenden sollen zwei konkrete physikalische Systeme untersucht werden, jeweils in einer klassischen und in einer quantenmechanischen Version, um danach die Zusammenhänge zu diskutieren.\\
-Dieses Kapitel basiert zum Teil auf den Ausführungen aus Referenz \cite{anderesProtokoll}, welche zu einem auführlicheren Studium der theoretischen Grundlagen herangezogen werden kann.
+Dieses Kapitel basiert zum Teil auf den Ausführungen aus Referenz \cite{anderesProtokoll}, welche zu einem ausführlicheren Studium der theoretischen Grundlagen herangezogen werden kann.
 
 \subsection{Eindimensionale Systeme}
 \label{subsec:eindimsyst}
@@ -28,17 +28,16 @@ Mithilfe der Relation $\omega = ck$ mit der Kreisfrequenz $\omega = 2 \pi f$ und
   \omega(k) = \frac{\pi c}{L} n\,.
   \label{eqn:dispersionKlassisch}
 \end{equation}
-In Abbildung \ref{fig:stehendeWelle} ist eine stehende Welle in einem Rohr für drei Zeiten zu sehen. An den Orten ohne Luftbewegung können die Teilchen als ortsfest angesehen werden. Die Pfeile drücken die Richtung aus, in die sich die Teilchen im Rohr aufgrund der Schallwelle bewegen. Es sei jedoch darauf hingewiesen, dass die Amplitude der Schwingung im Teilchenort viel kleiner gegenüber der Ausdehnung eines üblichen Rohrs ist und somit eher die Druckschwankung mit der Erscheinung der stehenden Welle assoziiert wird. Die fett gezeichneten Linien drücken gerade diese Druckschwankung aus. Orte ohne Luftbewegung und Orte ohne Druckschwankung sind nicht identisch, sondern um eine Viertel Wellenlänge verschoben.
+In Abbildung \ref{fig:stehendeWelle} ist eine stehende Welle in einem Rohr für drei Zeiten zu sehen. An den Orten ohne Luftbewegung können die Teilchen als ortsfest angesehen werden. Die Pfeile drücken die Richtung aus, in die sich die Teilchen im Rohr aufgrund der Schallwelle bewegen. Es sei jedoch darauf hingewiesen, dass die Amplitude der Schwingung im Teilchenort viel kleiner gegenüber der Ausdehnung eines üblichen Rohrs ist und somit eher die Druckschwankung mit der Erscheinung der stehenden Welle assoziiert wird. Die fett gezeichneten Linien drücken gerade diese Druckschwankung aus. Orte ohne Luftbewegung und Orte ohne Druckschwankung sind nicht identisch, sondern um ein Viertel der Wellenlänge verschoben.
 
 \begin{figure}[H]
 \centering
-\subcaptionbox{Skizze der Luftbewegung und der Druckschwankung bei einer stehenden Welle \cite{stehendeWelle}.}%
+\subcaptionbox{Luftbewegungen und Druckschwankungen bei einer stehenden Welle in einem Rohr \cite{stehendeWelle}\label{fig:stehendeWelle}.}%
   [.4\linewidth]{\includegraphics[width=.4\linewidth]{data/stehendeWelle.png}}
-  \label{fig:stehendeWelle}
 \,\,\,\,\,\,\,\,\,\,\,\,
-\subcaptionbox{Schematische Darstellung der ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}.}
+\subcaptionbox{descriptioner ersten vier Wellenfunktionen im unendlich hohen Potenzialtopf \cite{kasten}\label{fig:kasten}.}
   [.4\linewidth]{\includegraphics[width=.4\linewidth]{data/kasten.png}}
-  \label{fig:kasten}
+\caption{Schematische Darstellungen der beiden hier betrachteten eindimensionalen Probleme.}\label{fig:zweiAbbildungen}
 \end{figure}
 
 %\begin{figure}
@@ -55,7 +54,7 @@ In der Quantenmechanik wird ein Teilchen der Masse $m$ vollständig durch eine o
   i \hbar \frac{\partial \psi(\vec{r},t)}{\partial t} = H \psi(\vec{r},t) = \left(- \frac{\hbar^2}{2 m} \Laplace + V(\vec{r})\right) \psi(\vec{r},t)\,.
   \label{eqn:schroedingerZeitabhaengig}
 \end{equation}
-Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das reduzierte Plancksche Wirkungsquantum und $V$ ein zeitunabhängiges Potenzial. Der hermitesche Hamiltonoperator $H$ verfügt über Energieeigenwerte. Diese werden nach harmonischer Zeitabseperation $\psi(\vec{r},t) = \exp(-i E t / \hbar) \phi(\vec{r})$ in der zeitunabhängigen Schrödingergleichung
+Dabei wurde explizit die Ortsdarstellung gewählt. Es bezeichnet $\hbar$ das reduzierte Plancksche Wirkungsquantum und $V$ ein zeitunabhängiges Potenzial. Der hermitesche Hamiltonoperator $H$ verfügt über Energieeigenwerte. Diese werden nach harmonischer Zeitabseparation $\psi(\vec{r},t) = \exp(-i E t / \hbar) \phi(\vec{r})$ in der zeitunabhängigen Schrödingergleichung
 \begin{equation}
   E \phi(\vec{r}) = H \phi(\vec{r})
   \label{eqn:schroedingerZeitunabhaengig}
@@ -95,7 +94,7 @@ Diese Gemeinsamkeiten betreffen wichtige Charakteristika der Systeme und erlaube
 \begin{itemize}
   \item Die Bestimmungsgleichungen unterscheiden sich in der Ordnung der zeitlichen Ableitung. Während die Wellengleichung zweiter Ordnung in der Zeit ist, sorgt bei der Schrödingergleichung die erste Ableitung multipliziert mit der imaginären Einheit für die harmonische Zeitabhängigkeit.
   \item Wie bereits erwähnt ist $\psi$ nicht direkt observabel, nur mit dem Betragsquadrat lassen sich statistische Aussagen treffen. Dagegen ist der Druck $p$ klassisch observabel.
-  \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen. Dies ist auch an den Abbildungen \ref{fig:stehendeWelle} und \ref{fig:kasten} ersichtlich. Dort haben Druckschwankung und Wellenfunktion gleiche Randbedingungen, sodass Druck (als Integral der Druckschwankung) und Wellenfunktion andere Randbedingungen haben müssen.
+  \item Die Randbedingungen unterscheiden sich. Während die Wellenfunktion an den Rändern des Kastens verschwinden muss, muss die stehende Druckwelle dort Bäuche aufweisen. Dies ist auch in Abbildung \ref{fig:zweiAbbildungen} ersichtlich. Dort haben Druckschwankung und Wellenfunktion gleiche Randbedingungen, sodass Druck (als Integral der Druckschwankung) und Wellenfunktion andere Randbedingungen haben müssen.
   \item Die Dispersionsrelationen für die beiden Regime der Physik unterscheiden sich grundlegend. In der klassischen Physik hängen Frequenz und Wellenzahl linear miteinander zusammen, während die Proportionalität in der Quantenmechanik quadratisch ist.
 \end{itemize}
 
@@ -114,7 +113,7 @@ Um die Symmetrie des Problems zu berücksichtigen, werden Kugelkoordinaten gewä
   \Laplace = \Laplace_r + \frac{1}{r^2} \Laplace_{\theta, \varphi}\,.
   \label{eqn:laplaceWinkel}
 \end{equation}
-Somit erscheint ein Seperationsansatz sinnvoll. Es stellt sich heraus, dass die vollständige Lösung des Problems durch
+Somit erscheint ein Separationsansatz sinnvoll. Es stellt sich heraus, dass die vollständige Lösung des Problems durch
 \begin{equation}
   \psi_{nlm}(r,t) = R_{nl}(r) Y_{lm}(\theta, \varphi) \exp(-i E_n t / \hbar)
   \label{eqn:hatomloesung}
