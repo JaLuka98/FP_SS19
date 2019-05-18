@@ -1,0 +1,33 @@
+\section{Theorie}
+\label{sec:Theorie}
+Im Folgenden werden die Grundzüge der Theorie der thermischen Eigenschaften von Festkörpern erläutert. Die Erklärungen basieren hauptsächlich auf den Ausführungen in Kapitel 6 aus dem Buch "Festkörperphysik" von Rudolf Gross und Achim Marx \cite{grossMarx}.
+
+\subsection{Definition der Wärmekapazität}
+\label{sec:definitionWaermekapazität}
+Für die Wärmekapazität eines Festkörpers gilt
+\begin{equation}
+  C = \frac{\Delta Q}{\Delta T}\,,
+  \label{eqn:C}
+\end{equation}
+wobei $\Delta Q$ die Wärmemänge ist, die nötig ist, um die Temperatur des Körpers um $\Delta T$ zu erhöhen.\\
+Die Größe $C$ ist extensiv. Um eine intensive, nur vom Stoff abhängige Größe zu erhalten, kann sie durch eine andere extensive Größe geteilt werden, um eine sogenannte spezifische Wärmekapazität zu erhalten. Ein Beispiel dafür wäre die molare spezifische Wärmekapazität $c^{\text{mol}} = \frac{C}{n}$ mit der Stoffmenge $n$.\\
+Der erste Hauptsatz der Thermodynamik formuliert eine verallgemeinerte Energieerhaltung als
+\begin{equation}
+  \text{d}U = \delta Q + \delta W = \delta Q - p \text{d}V\,.
+  \label{eqn:ersterHauptsatz}
+\end{equation}
+Dabei ist $U$ die innere Energie, $Q$ die Wärmemenge und $W$ die Arbeit. Differenzielle Änderungen dieser Größen sind mit $\text{d}$ und $\delta$ gekennzeichnet.\\
+Im Allgemeinen hat die Änderung der Temperatur $T$ des Körpers auch Folgen für andere Zustandsvariablen wie den Druck $p$ oder das Volumen $V$. Es ist allerdings oft möglich, diese Variablen durch externe Einflüsse konstant zu halten. Befindet sich der Körper während der Wärmezufuhr zum Beispiel an der Luft, so findet diese bei konstantem Druck, dem Luftdruck, statt. Es könnte auch das Volumen konstant gehalten werden, indem der Körper eingeschlossen wird, sodass keine thermische Ausdehnung stattfinden kann.\\
+Es ergeben sich für diese beiden Fälle verschiedene Wärmekapazitäten, die durch ein Subskript gekennzeichnet und allgemeiner mithilfe von Ableitungen definiert werden. Der Grund für den Unterschied ist folgender: Bei Wärmezufuhr bei konstantem Druck wird ein Teild er zugeführten Wärme in Arbeit für die thermische Ausdehnung umgewandelt. Dies ist bei Wärmezufuhr bei konstantem Volumen nicht der Fall, weswegen $C_p$ bei reellen, nicht idealisierten Körpern stets größer als $C_V$ ist. Unter Betrachtung von Gleichung \ref{eqn:ersterHauptsatz} lassen sich die Wärmekapazitäten durch
+\begin{align}
+  C_V &\equiv \left(\frac{\delta Q}{\partial T}\right)_V = \left(\frac{\partial U}{\partial T}\right)_V\,\\
+  C_p &\equiv \left(\frac{\delta Q}{\partial T}\right)_V
+  \label{eqn:definitionenCVCp}
+\end{align}
+definieren.\\
+Für den Zusammenhang zwischen den beiden Wärmekapazitäten gilt
+\begin{equation}
+  C_p - C_V = V T \frac{alpha^2}{\kappa_T}\,.
+  \label{eqn:CpminusCV}
+\end{equation}
+Dabei sind $\alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)$ der thermische Expansionskoeffizient und $\kappa_T \equiv - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)$ die isotherme Kompressibilität. Es ist möglich, diese Formel geeignet zu modifizieren, um spezifische Wärmekapazitäten zu betrachten.
