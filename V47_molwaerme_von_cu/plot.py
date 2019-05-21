@@ -20,26 +20,7 @@ def debyeFunction(T, theta_D):
 T = np.array([10, 16, 20, 25, 30, 35, 40, 50])
 C_V = np.array([0.0555, 0.225, 0.462, 0.963, 1.693, 2.64, 3.74, 6.15])
 
-theta_D = 345
-
-params, covariance_matrix = optimize.curve_fit(debyeFunction, T, C_V)
-errors = np.sqrt(np.diag(covariance_matrix))
-theta_D = params[0]
-sigma_theta_D = errors[0]
-theta_D_ufloat = ufloat(theta_D, sigma_theta_D)
-print("theta_D = ", theta_D_ufloat)
-
-Tlin = np.linspace(1, 60, 50)
-C_Vplot = debyeFunction(Tlin, theta_D)
-plt.plot(T, C_V, 'rx', label='Messwerte')
-plt.plot(Tlin, C_Vplot, 'b-', label='Ausgleichsfunktion')
-plt.grid()
-plt.xlabel(r'$T$/K')
-plt.ylabel(r'$C_V/$(J/mol K)')
-plt.savefig('build/test.pdf')
-plt.clf()
-
-
+#theta_D = 345
 #Temperaturen und so berechnen
 
 n=5.382 #mol. Folgt aus n=m/M mit der Masse der Probe und der molaren Masse von Cu
@@ -59,11 +40,10 @@ m[:,4] = U41
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
-I*=1e-3 #jetzt in Ampere
-
 Tp=0.00134*Rp**2+2.296*Rp -243.02 +273.15
 Tz=0.00134*Rz**2+2.296*Rz -243.02 +273.15
 I, t, U=np.genfromtxt('data/data2.txt', unpack=True)
+I*=1e-3 #jetzt in Ampere
 E=I*U*t
 
 DeltaT=[]
@@ -79,7 +59,7 @@ DeltaT41=np.append(DeltaT, 0)
 E41=np.append(E, 0)
 
 hr = ['$T_p/$K', '$\Delta T_p/$K','$E$/J', '$C_p$/\frac{mol}{kg K}']
-m = np.zeros((41, 5))
+m = np.zeros((41, 4))
 m[:,0] = Tp
 m[:,1] = DeltaT41
 m[:,2] = E41
@@ -104,14 +84,12 @@ print('Fit für alpha:')
 print('a=', a)
 print('b=', b)
 
-print(alpha)
-
 linspace=np.linspace(50, 320, 1000)
-plt.plot(linspace, alphafunktion(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
-plt.plot(T, alpha, 'rx', mew=0.5, label='Gegebene Werte')
+plt.plot(linspace, 1e6*alphafunktion(linspace, *params), 'b-', label='Ausgleichrechnung', linewidth=0.5)
+plt.plot(T, alpha*1e6, 'rx', mew=0.5, label='Gegebene Werte')
 plt.xlabel(r'$T/$K')
-plt.ylabel(r'$\alpha$/°')
-plt.axis([50,320,0,0.00002])
+plt.ylabel(r'$\alpha/10^{-6}$K')
+plt.axis([50,320,0,20])
 plt.tight_layout()
 plt.legend()
 plt.grid()
@@ -129,7 +107,14 @@ m[:,1] = alpha*1e6
 t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
-plt.errorbar(Tp, unp.nominal_values(C_v), yerr=unp.std_devs(C_v), fmt='rx',mew=0.5, label='Errechnete Werte') #Irgendwas klappt hier mit den errorbars noch nicht so richtig
+hr = ['$C_V$/J/kg K']
+m = np.zeros((41, 2))
+m[:,0] = unp.nominal_values(C_v)
+m[:,1] = unp.std_devs(C_v)
+t=matrix2latex(m, headerRow=hr, format='%.5f')
+print(t)
+
+plt.errorbar(Tp, unp.nominal_values(C_v), fmt='rx',mew=0.5, label='Errechnete Werte') #Irgendwas klappt hier mit den errorbars noch nicht so richtig
 plt.xlabel(r'$T/$K')
 plt.ylabel(r'$C_v$ in J/(mol K)')
 #plt.axis([50,320,0,0.00002])
@@ -137,4 +122,25 @@ plt.tight_layout()
 plt.legend()
 plt.grid()
 plt.savefig('build/cv.pdf')
+plt.clf()
+
+
+
+#Dieses komische Debye Zeug
+
+params, covariance_matrix = optimize.curve_fit(debyeFunction, Tp[0:20], unp.nominal_values(C_v[0:20]))
+errors = np.sqrt(np.diag(covariance_matrix))
+theta_D = params[0]
+sigma_theta_D = errors[0]
+theta_D_ufloat = ufloat(theta_D, sigma_theta_D)
+print("theta_D = ", theta_D_ufloat)
+
+Tlin = np.linspace(1, 180, 200)
+C_Vplot = debyeFunction(Tlin, theta_D)
+plt.plot(Tp[0:20], unp.nominal_values(C_v[0:20]), 'rx', mew=0.5, label='Messwerte')
+plt.plot(Tlin, C_Vplot, 'b-', label='Ausgleichsfunktion', linewidth=0.5)
+plt.grid()
+plt.xlabel(r'$T$/K')
+plt.ylabel(r'$C_V/$(J/mol K)')
+plt.savefig('build/debye.pdf')
 plt.clf()

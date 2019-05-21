@@ -1,2 +1,293 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Bestimmung der Molwärme $C_p$}
+\label{subsec:cp}
+Zur Bestimmung der Molwärme $C_p$ müssen zunächst aus den gemessenen
+Widerständen die Temperaturen berechnet werden. Diese ergeben sich aus dem
+Zusammenhang
+\begin{equation*}
+  T=0.00134R^2\,\frac{\text{K}}{\Omega^2}+2.296R\,\frac{\text{K}}{\Omega}+30.13\text{K} \,.
+\end{equation*}
+Dabei ist $T$ die Temperatur in Kelvin und $R$ der Widerstand in Ohm.
+Die gemessenen Werte sind in Tabelle \ref{tab:messwerte} zu sehen.
+Dargestellt sind die Werte für den Widerstand $R_p$ des Thermometers an der Probe,
+den Widerstand $R_z$ des Thermometers am Kupferzylinder, die Stromstärke $I$ und
+die Spannung $U$ des Stroms, mit dem die Probe erwärmt wurde, sowie die Zeit $t$,
+die die Probe bis zur nächsten Messung erwärmt wurde.
+Die Berechneten Temperaturen sind in Tabelle \ref{tab:cp} dargestellt. Für die
+Temperaturen $T_p$ der Probe werden zudem die Differenzen $\Delta T_p$ der Temperaturen
+in den jeweils aufeinanderfolgenden Messungen berechnet.
+
+\begin{table}[htp]
+  \label{tab:messwerte}
+	\begin{center}
+    \caption{Gemessene Werte.}
+		\begin{tabular}{ccccc}
+    		\toprule
+			{$R_p/\Omega$} & {$R_z/\Omega$} & {$I$/µA} & {$t$/s} & {$U/$V}\\
+			\midrule
+			22,1 & 22,2 & 167,2 & 150 & 17,7\\
+			24,5 & 23,1 & 167,3 & 150 & 17,7\\
+			26,6 & 24,9 & 167,8 & 150 & 17,7\\
+			28,8 & 29,8 & 168,2 & 150 & 17,7\\
+			30,9 & 32,5 & 168,4 & 150 & 17,7\\
+			33,2 & 34,6 & 168,6 & 150 & 17,7\\
+			35,1 & 36,1 & 168,8 & 150 & 17,7\\
+			37,1 & 37,5 & 168,8 & 150 & 17,8\\
+			39,0 & 38,9 & 169,0 & 150 & 17,8\\
+			40,8 & 40,4 & 169,0 & 150 & 17,8\\
+			42,6 & 42,7 & 169,1 & 150 & 17,8\\
+			44,4 & 44,7 & 169,2 & 150 & 17,8\\
+			46,1 & 46,4 & 169,2 & 150 & 17,8\\
+			47,9 & 47,9 & 169,3 & 150 & 17,8\\
+			49,5 & 49,3 & 169,4 & 150 & 17,9\\
+			51,2 & 51,3 & 169,4 & 150 & 17,9\\
+			52,9 & 53,6 & 169,4 & 150 & 17,9\\
+			54,6 & 55,4 & 169,5 & 150 & 17,9\\
+			56,2 & 56,7 & 169,5 & 150 & 17,9\\
+			57,8 & 57,9 & 169,5 & 150 & 17,9\\
+			59,3 & 58,9 & 169,6 & 150 & 17,9\\
+			60,9 & 60,8 & 169,6 & 150 & 17,9\\
+			62,5 & 63,1 & 169,6 & 150 & 17,9\\
+			64,1 & 64,6 & 169,6 & 150 & 17,9\\
+			65,6 & 65,8 & 169,6 & 300 & 17,9\\
+			68,6 & 68,4 & 169,7 & 300 & 17,9\\
+			71,7 & 72,6 & 169,7 & 300 & 17,9\\
+			74,7 & 75,6 & 169,7 & 300 & 17,9\\
+			77,6 & 77,6 & 169,8 & 300 & 17,9\\
+			80,5 & 80,1 & 169,8 & 300 & 17,9\\
+			83,3 & 83,6 & 169,8 & 300 & 17,9\\
+			86,0 & 83,4 & 169,8 & 300 & 17,9\\
+			88,7 & 90,2 & 169,9 & 300 & 17,9\\
+			91,6 & 92,0 & 169,9 & 300 & 17,9\\
+			94,4 & 94,2 & 169,9 & 300 & 17,9\\
+			97,1 & 96,4 & 169,9 & 300 & 17,9\\
+			99,8 & 99,6 & 169,9 & 300 & 17,9\\
+			102,5 & 102,1 & 170,0 & 300 & 17,9\\
+			105,1 & 104,9 & 170,0 & 300 & 17,9\\
+			107,8 & 107,7 & 170,0 & 300 & 17,9\\
+			110,4 & 110,6 & - & -& -\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Die der Probe zugeführte Wärmeenergie lässt sich durch
+\begin{equation*}
+  E=IUt
+\end{equation*}
+berechnen. Damit kann die Molwärme $C_p$ über den Zusammenhang
+\begin{equation*}
+  C_p=\frac{E}{n \Delta T}
+\end{equation*}
+bestimmt werden. Dabei ist $n=\frac{m}{M}$ die Stoffmenge, wobei $m=0.342$\,kg die
+Masse der Probe und $M=63,546$\,g/mol \cite{Molmasse} die Molmasse von Kupfer ist.
+Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \ref{tab:cp}.
+
+
+\begin{table}[htp]
+  \label{tab:ref}
+	\begin{center}
+    \caption{Berechnete Werte für die Temperaturen, die der Probe zugeführt Energie und die
+    Molwärme.}
+		\begin{tabular}{cccc}
+		\toprule
+			{$T_p/$K} & {$\Delta T_p/$K} & {$E$/J} & {$C_p/\frac{\text{mol}}{\text{kg K}}$}\\
+			\midrule
+			81,53 & 5,66 & 443,92 & 14,57\\
+			87,19 & 4,97 & 444,18 & 16,62\\
+			92,15 & 5,21 & 445,51 & 15,87\\
+			97,37 & 4,99 & 446,57 & 16,63\\
+			102,36 & 5,48 & 447,10 & 15,16\\
+			107,83 & 4,54 & 447,63 & 18,33\\
+			112,37 & 4,79 & 448,16 & 17,40\\
+			117,16 & 4,56 & 450,70 & 18,38\\
+			121,71 & 4,33 & 451,23 & 19,38\\
+			126,04 & 4,33 & 451,23 & 19,35\\
+			130,37 & 4,34 & 451,50 & 19,32\\
+			134,71 & 4,11 & 451,76 & 20,43\\
+			138,82 & 4,36 & 451,76 & 19,25\\
+			143,18 & 3,88 & 452,03 & 21,63\\
+			147,07 & 4,13 & 454,84 & 20,45\\
+			151,20 & 4,14 & 454,84 & 20,41\\
+			155,34 & 4,15 & 454,84 & 20,37\\
+			159,49 & 3,91 & 455,11 & 21,62\\
+			163,40 & 3,92 & 455,11 & 21,58\\
+			167,32 & 3,68 & 455,11 & 22,98\\
+			170,99 & 3,93 & 455,38 & 21,52\\
+			174,93 & 3,94 & 455,38 & 21,48\\
+			178,86 & 3,95 & 455,38 & 21,45\\
+			182,81 & 3,70 & 455,38 & 22,84\\
+			186,51 & 7,43 & 455,38 & 11,39\\
+			193,94 & 7,70 & 911,29 & 21,99\\
+			201,64 & 7,48 & 911,29 & 22,65\\
+			209,12 & 7,25 & 911,29 & 23,35\\
+			216,37 & 7,27 & 911,83 & 23,30\\
+			223,64 & 7,04 & 911,83 & 24,05\\
+			230,68 & 6,81 & 911,83 & 24,87\\
+			237,50 & 6,83 & 911,83 & 24,80\\
+			244,33 & 7,36 & 912,36 & 23,04\\
+			251,69 & 7,13 & 912,36 & 23,79\\
+			258,81 & 6,89 & 912,36 & 24,60\\
+			265,71 & 6,91 & 912,36 & 24,53\\
+			272,62 & 6,93 & 912,36 & 24,46\\
+			279,55 & 6,69 & 912,90 & 25,34\\
+			286,24 & 6,97 & 912,90 & 24,34\\
+			293,21 & 6,73 & 912,90 & 25,20\\
+			299,94 & - & - & -\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\subsection{Bestimmung der Molwärme $C_V$}
+\label{subsec:cv}
+
+Nun soll mithile von Gleichung \eqref{eqn:CpminusCV} die Molwärme $C_V$ bestimmt werden.
+Hierfür ist es notwendig, die Temperaturabhängigkeit des thermischen Expansionskoeffizienten
+\alpha zu berücksichtigen. In Tabelle \ref{tab:alpha} befinden sich Daten zu derselben.
+Um kontinuierliche Werte für den thermischen Expansionskoeffizienten zu erhalten wird
+dieser gegen die Temperatur aufgetragen und anschließend wird eine Ausgleichsrechnung der Form
+\begin{equation*}
+  \alpha(T)=\frac{a}{T}+b
+\end{equation*}
+durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sich die Parameter
+\begin{align*}
+  a&=\SI{-873(4)e-6}{\per\kelvin} \,\\
+  b&=\SI{19.411(29)e-6}{} \,.
+\end{align*}
+
+
+\begin{table}[htp]
+  \label{tab:alpha}
+	\begin{center}
+    \caption{Werte für den thermischen Expansionskoeffizienten \alpha in Abhängigkeit von der
+    Temperatur \cite{versuchsanleitung}.}
+		\begin{tabular}{cc}
+		\toprule
+			{$T$/K} & {$\alpha/10^{-6}$ K}\\
+			\midrule
+			70,00 & 7,00\\
+			80,00 & 8,50\\
+			90,00 & 9,75\\
+			100,00 & 10,70\\
+			110,00 & 11,50\\
+			120,00 & 12,10\\
+			130,00 & 12,65\\
+			140,00 & 13,15\\
+			150,00 & 13,60\\
+			160,00 & 13,90\\
+			170,00 & 14,25\\
+			180,00 & 14,50\\
+			190,00 & 14,75\\
+			200,00 & 14,95\\
+			210,00 & 15,20\\
+			220,00 & 15,40\\
+			230,00 & 15,60\\
+			240,00 & 15,75\\
+			250,00 & 15,90\\
+			260,00 & 16,10\\
+			270,00 & 16,25\\
+			280,00 & 16,35\\
+			290,00 & 16,50\\
+			300,00 & 16,65\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[]{build/alpha.pdf}
+  \caption{Auftragung des thermischen Expansionskoeffizienten gegen die Temperatur und
+  Ausgleichsrechnung.}
+  \label{fig:alpha}
+\end{figure}
+
+Mithilfe dieser Daten kann nun aus Gleichung \eqref{eqn:CpminusCV} die Molwärme $C_V$
+berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mol}$ und
+$K=\frac{1}{\kappa}=\SI{137.8e9}{\newton\per\metre\squared}$ verwendet. Es ergeben sich die
+in Tabelle \ref{tab:cv} dargestellten Werte. In Abbildung \ref{fig:cv} sind diese Werte
+graphisch dargestellt. Auf eine Darstellung der Fehlerbalken wird wegen der sehr
+geringen Fehler verzichtet.
+
+\begin{table}[htp]
+  \label{tab:cv}
+	\begin{center}
+    \caption{Berechnete Werte für die Molwärme $C_V$.}
+		\begin{tabular}{cc}
+		\toprule
+			{$C_v/\frac{\text{mol}}{\text{kg K}}$}\\
+			\midrule
+			14,56599 \pm 0,00004\\
+			16,61368 \pm 0,00004\\
+			15,86553 \pm 0,00004\\
+			16,61918 \pm 0,00004\\
+			15,15208 \pm 0,00004\\
+			18,32132 \pm 0,00004\\
+			17,38576 \pm 0,00004\\
+			18,36343 \pm 0,00004\\
+			19,36600 \pm 0,00004\\
+			19,32578 \pm 0,00004\\
+			19,29712 \pm 0,00004\\
+			20,40442 \pm 0,00004\\
+			19,23091 \pm 0,00005\\
+			21,60836 \pm 0,00005\\
+			20,42374 \pm 0,00005\\
+			20,38409 \pm 0,00005\\
+			20,34459 \pm 0,00005\\
+			21,59012 \pm 0,00005\\
+			21,55093 \pm 0,00006\\
+			22,94944 \pm 0,00006\\
+			21,48804 \pm 0,00006\\
+			21,44919 \pm 0,00006\\
+			21,41047 \pm 0,00007\\
+			22,80046 \pm 0,00007\\
+			11,35195 \pm 0,00007\\
+			21,94642 \pm 0,00008\\
+			22,60215 \pm 0,00008\\
+			23,30638 \pm 0,00009\\
+			23,24516 \pm 0,00009\\
+			24,00130 \pm 0,00010\\
+			24,81682 \pm 0,00011\\
+			24,74327 \pm 0,00011\\
+			22,97571 \pm 0,00012\\
+			23,72419 \pm 0,00013\\
+			24,53141 \pm 0,00013\\
+			24,45941 \pm 0,00014\\
+			24,38780 \pm 0,00015\\
+			25,27083 \pm 0,00015\\
+			24,26263 \pm 0,00016\\
+			25,12684 \pm 0,00017\\
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[]{build/cv.pdf}
+  \caption{Auftragung der Molwärme $C_V$ gegen die Temperatur.}
+  \label{fig:cv}
+\end{figure}
+
+\subsection{Bestimmung der Debye-Temperatur}
+\label{subsec:debye}
+
+Für die Werte bis $T_{\text{max}}=170$\,K wird eine Ausgleichrechnung in Form von Gleichung \eqref{eqn:cVDebye}
+durchgehfürt. Dabei werden die Molwärmen $C_V$ wegen des sehr kleinen Felhers als
+nicht fehlerbehfatet betrachtet. Dies ist in Abbildung \ref{fig:debye} dargestellt. Es ergibt sich
+damit für die Debye-Temperatur
+\begin{equation*}
+  \theta_D=\SI{291(5)}{\kelvin} \,.
+\end{equation*}
+
+\begin{figure}
+  \centering
+  \includegraphics[]{build/debye.pdf}
+  \caption{Auftragung der Molwärme $C_V$ gegen die Temperatur im Bereich bis
+  $T_{\text{max}}=170$\,K und Ausgleichsrechnung.}
+  \label{fig:debye}
+\end{figure}
