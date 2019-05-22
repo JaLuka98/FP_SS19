@@ -20,9 +20,9 @@ Temperaturen $T_p$ der Probe werden zudem die Differenzen $\Delta T_p$ der Tempe
 in den jeweils aufeinanderfolgenden Messungen berechnet.
 
 \begin{table}[htp]
-  \label{tab:messwerte}
 	\begin{center}
     \caption{Gemessene Werte.}
+    \label{tab:messwerte}
 		\begin{tabular}{ccccc}
     		\toprule
 			{$R_p/\Omega$} & {$R_z/\Omega$} & {$I$/µA} & {$t$/s} & {$U/$V}\\
@@ -87,10 +87,10 @@ Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \re
 
 
 \begin{table}[htp]
-  \label{tab:ref}
 	\begin{center}
     \caption{Berechnete Werte für die Temperaturen, die der Probe zugeführt Energie und die
     Molwärme.}
+    \label{tab:ref}
 		\begin{tabular}{cccc}
 		\toprule
 			{$T_p/$K} & {$\Delta T_p/$K} & {$E$/J} & {$C_p/\frac{\text{mol}}{\text{kg K}}$}\\
@@ -161,10 +161,10 @@ durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sic
 
 
 \begin{table}[htp]
-  \label{tab:alpha}
 	\begin{center}
     \caption{Werte für den thermischen Expansionskoeffizienten \alpha in Abhängigkeit von der
     Temperatur \cite{versuchsanleitung}.}
+    \label{tab:alpha}
 		\begin{tabular}{cc}
 		\toprule
 			{$T$/K} & {$\alpha/10^{-6}$ K}\\
@@ -207,16 +207,17 @@ durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sic
 \end{figure}
 
 Mithilfe dieser Daten kann nun aus Gleichung \eqref{eqn:CpminusCV} die Molwärme $C_V$
-berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mol}$ und
-$K=\frac{1}{\kappa}=\SI{137.8e9}{\newton\per\metre\squared}$ verwendet. Es ergeben sich die
+berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mol}$
+\cite{molvolumen} und $K=\frac{1}{\kappa}=\SI{137.8e9}{\newton\per\metre\squared}$
+\cite{kompressionsmodul} verwendet. Es ergeben sich die
 in Tabelle \ref{tab:cv} dargestellten Werte. In Abbildung \ref{fig:cv} sind diese Werte
 graphisch dargestellt. Auf eine Darstellung der Fehlerbalken wird wegen der sehr
 geringen Fehler verzichtet.
 
 \begin{table}[htp]
-  \label{tab:cv}
 	\begin{center}
     \caption{Berechnete Werte für die Molwärme $C_V$.}
+    \label{tab:cv}
 		\begin{tabular}{cc}
 		\toprule
 			{$C_v/\frac{\text{mol}}{\text{kg K}}$}\\
@@ -302,7 +303,7 @@ Die Debye Temperatur kann bei bekannter Grenzfrequenz $\omega_D$ aus dem Zusamme
 bestimmt werden. Für diese gilt
 \begin{equation*}
   \omega_D=\left(\frac{18 \pi^2 N_L}{V n}\left(\frac{1}{v_{\text{long}}^3}+
-  \frac{1}{v_{\text{trans}}^3} \right)^{-1} \right)^{\frac{1}{3}}
+  \frac{2}{v_{\text{trans}}^3} \right)^{-1} \right)^{\frac{1}{3}}
 \end{equation*}
 Dabei ist $N_L$ die Loschmitd'sche Zahl, $V$ das Volumen der Probe, $n=\frac{m}{M}$ die Stoffmenge,
 $v_{\text{long}}$ die longitudinale und $v_{\text{trans}}$ die transversale Schallgeschwindigkeit
@@ -314,8 +315,8 @@ in der Probe. Gemäß \cite{versuchsanleitung} gilt
 Durch einsetzen der Stoffmenge wie in Kapitel \ref{subsec:cp}, aller Konstanten,
 sowie der Geschwindigkeiten ergibt dich damit
 \begin{align*}
-  \omega_D&=4.35\cdot 10^{13}\,Hz \,, \\
-  \theta_D=\SI{332.5}{\kelvin} \,.
+  \omega_D&=\SI{4.35e13}{\hertz} \,, \\
+  \theta_D&=\SI{332.5}{\kelvin} \,.
 \end{align*}
 
 DAS HIER HABE ICH NOCH NICHT NACHGERECHNET... DAS MUSS ICH NOCH MACHEN!
