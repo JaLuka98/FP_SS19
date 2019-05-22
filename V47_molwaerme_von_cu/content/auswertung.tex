@@ -20,9 +20,9 @@ Temperaturen $T_p$ der Probe werden zudem die Differenzen $\Delta T_p$ der Tempe
 in den jeweils aufeinanderfolgenden Messungen berechnet.
 
 \begin{table}[htp]
+  \label{tab:messwerte}
 	\begin{center}
     \caption{Gemessene Werte.}
-    \label{tab:messwerte}
 		\begin{tabular}{ccccc}
     		\toprule
 			{$R_p/\Omega$} & {$R_z/\Omega$} & {$I$/µA} & {$t$/s} & {$U/$V}\\
@@ -87,10 +87,10 @@ Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \re
 
 
 \begin{table}[htp]
+  \label{tab:ref}
 	\begin{center}
     \caption{Berechnete Werte für die Temperaturen, die der Probe zugeführt Energie und die
     Molwärme.}
-    \label{tab:cp}
 		\begin{tabular}{cccc}
 		\toprule
 			{$T_p/$K} & {$\Delta T_p/$K} & {$E$/J} & {$C_p/\frac{\text{mol}}{\text{kg K}}$}\\
@@ -161,10 +161,10 @@ durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sic
 
 
 \begin{table}[htp]
+  \label{tab:alpha}
 	\begin{center}
     \caption{Werte für den thermischen Expansionskoeffizienten \alpha in Abhängigkeit von der
     Temperatur \cite{versuchsanleitung}.}
-    \label{tab:alpha}
 		\begin{tabular}{cc}
 		\toprule
 			{$T$/K} & {$\alpha/10^{-6}$ K}\\
@@ -214,9 +214,9 @@ graphisch dargestellt. Auf eine Darstellung der Fehlerbalken wird wegen der sehr
 geringen Fehler verzichtet.
 
 \begin{table}[htp]
+  \label{tab:cv}
 	\begin{center}
     \caption{Berechnete Werte für die Molwärme $C_V$.}
-    \label{tab:cv}
 		\begin{tabular}{cc}
 		\toprule
 			{$C_v/\frac{\text{mol}}{\text{kg K}}$}\\
@@ -291,3 +291,31 @@ damit für die Debye-Temperatur
   $T_{\text{max}}=170$\,K und Ausgleichsrechnung.}
   \label{fig:debye}
 \end{figure}
+
+\subsection{Berechnung der theoretischen Debye-Temperatur}
+\label{subsec:debyetheo}
+
+Die Debye Temperatur kann bei bekannter Grenzfrequenz $\omega_D$ aus dem Zusammenhang
+\begin{equation*}
+  \theta_D=\frac{\hbar \omega_D}{k_B}
+\end{equation*}
+bestimmt werden. Für diese gilt
+\begin{equation*}
+  \omega_D=\left(\frac{18 \pi^2 N_L}{V n}\left(\frac{1}{v_{\text{long}}^3}+
+  \frac{1}{v_{\text{trans}}^3} \right)^{-1} \right)^{\frac{1}{3}}
+\end{equation*}
+Dabei ist $N_L$ die Loschmitd'sche Zahl, $V$ das Volumen der Probe, $n=\frac{m}{M}$ die Stoffmenge,
+$v_{\text{long}}$ die longitudinale und $v_{\text{trans}}$ die transversale Schallgeschwindigkeit
+in der Probe. Gemäß \cite{versuchsanleitung} gilt
+\begin{align*}
+  v_{\text{long}}&= \SI{4.7}{\kilo\metre\per\second} \,,\\
+  v_{\text{trans}}&=\SI{2.26}{\kilo\metre\per\second} \,.
+\end{align*}
+Durch einsetzen der Stoffmenge wie in Kapitel \ref{subsec:cp}, aller Konstanten,
+sowie der Geschwindigkeiten ergibt dich damit
+\begin{align*}
+  \omega_D&=4.35\cdot 10^{13}\,Hz \,, \\
+  \theta_D=\SI{332.5}{\kelvin} \,.
+\end{align*}
+
+DAS HIER HABE ICH NOCH NICHT NACHGERECHNET... DAS MUSS ICH NOCH MACHEN!
