@@ -1,7 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Bestimmung der Molwärme $C_p$}
+\subsection{Bestimmung der isobaren Molwärme $C_p$}
 \label{subsec:cp}
 Zur Bestimmung der Molwärme $C_p$ müssen zunächst aus den gemessenen
 Widerständen die Temperaturen berechnet werden. Diese ergeben sich aus dem
@@ -9,23 +9,23 @@ Zusammenhang
 \begin{equation*}
   T=0.00134R^2\,\frac{\text{K}}{\Omega^2}+2.296R\,\frac{\text{K}}{\Omega}+30.13\text{K} \,.
 \end{equation*}
-Dabei ist $T$ die Temperatur in Kelvin und $R$ der Widerstand in Ohm.
+Dabei ist $T$ die Temperatur und $R$ der Widerstand.\\
 Die gemessenen Werte sind in Tabelle \ref{tab:messwerte} zu sehen.
-Dargestellt sind die Werte für den Widerstand $R_p$ des Thermometers an der Probe,
-den Widerstand $R_z$ des Thermometers am Kupferzylinder, die Stromstärke $I$ und
-die Spannung $U$ des Stroms, mit dem die Probe erwärmt wurde, sowie die Zeit $t$,
+Dargestellt sind die Werte für den Widerstand $R_\text{p}$ des Thermometers an der Probe,
+den Widerstand $R_\text{z}$ des Thermometers am Kupferzylinder, die Stromstärke $I$ und
+die Spannung $U$, mit denen die Probe erwärmt wurde, sowie die Zeit $t$,
 die die Probe bis zur nächsten Messung erwärmt wurde.
-Die Berechneten Temperaturen sind in Tabelle \ref{tab:cp} dargestellt. Für die
-Temperaturen $T_p$ der Probe werden zudem die Differenzen $\Delta T_p$ der Temperaturen
+Die berechneten Temperaturen sind in Tabelle \ref{tab:cp} dargestellt. Für die
+Temperaturen $T_\text{p}$ der Probe werden zudem die Differenzen $\Delta T_\text{p}$ der Temperaturen
 in den jeweils aufeinanderfolgenden Messungen berechnet.
 
 \begin{table}[htp]
 	\begin{center}
-    \caption{Gemessene Werte.}
+    \caption{Direkt während der Durchführung gemessene Werte.}
     \label{tab:messwerte}
 		\begin{tabular}{ccccc}
     		\toprule
-			{$R_p/\Omega$} & {$R_z/\Omega$} & {$I$/µA} & {$t$/s} & {$U/$V}\\
+			{$R_\text{p}/\Omega$} & {$R_\text{z}/\Omega$} & {$I$/µA} & {$t$/s} & {$U/$V}\\
 			\midrule
 			22,1 & 22,2 & 167,2 & 150 & 17,7\\
 			24,5 & 23,1 & 167,3 & 150 & 17,7\\
@@ -73,27 +73,26 @@ in den jeweils aufeinanderfolgenden Messungen berechnet.
 	\end{center}
 \end{table}
 
-Die der Probe zugeführte Wärmeenergie lässt sich durch
+Die der Probe zugeführte Wärmeenergie ist eine elektrische Energie und lässt sich daher durch
 \begin{equation*}
   E=IUt
 \end{equation*}
-berechnen. Damit kann die Molwärme $C_p$ über den Zusammenhang
+berechnen. Damit kann die molare spezifische Wärmekapazität (auch Molwärme gennant) bei konstantem Druck $C_p$ über den Zusammenhang
 \begin{equation*}
   C_p=\frac{E}{n \Delta T}
 \end{equation*}
-bestimmt werden. Dabei ist $n=\frac{m}{M}$ die Stoffmenge, wobei $m=0.342$\,kg die
-Masse der Probe und $M=63,546$\,g/mol \cite{Molmasse} die Molmasse von Kupfer ist.
+bestimmt werden. Dabei ist $n=m/M$ die Stoffmenge, wobei $m = \SI{0.342}{\kilo\gram}$ die
+Masse der Probe und $M = \SI{63.546}{\gram\per\mole}$ \cite{Molmasse} die Molmasse von Kupfer ist.
 Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \ref{tab:cp}.
-
 
 \begin{table}[htp]
 	\begin{center}
-    \caption{Berechnete Werte für die Temperaturen, die der Probe zugeführt Energie und die
+    \caption{Berechnete Werte für die Temperaturen, die der Probe zugeführte Energie und die
     Molwärme.}
-    \label{tab:ref}
+    \label{tab:cp}
 		\begin{tabular}{cccc}
 		\toprule
-			{$T_p/$K} & {$\Delta T_p/$K} & {$E$/J} & {$C_p/\frac{\text{mol}}{\text{kg K}}$}\\
+			{$T_\text{p}/$K} & {$\Delta T_\text{p}/$K} & {$E$/J} & {$C_p/\frac{\text{mol}}{\text{kg K}}$}\\
 			\midrule
 			81,53 & 5,66 & 443,92 & 14,57\\
 			87,19 & 4,97 & 444,18 & 16,62\\
@@ -142,27 +141,26 @@ Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \re
 \end{table}
 
 
-\subsection{Bestimmung der Molwärme $C_V$}
+\subsection{Berechnung der isochoren Molwärme $C_V$}
 \label{subsec:cv}
 
-Nun soll mithile von Gleichung \eqref{eqn:CpminusCV} die Molwärme $C_V$ bestimmt werden.
+Nun soll mithile von Gleichung \eqref{eqn:CpminusCV} die Molwärme bei konstantem Volumen $C_V$ bestimmt werden.
 Hierfür ist es notwendig, die Temperaturabhängigkeit des thermischen Expansionskoeffizienten
-\alpha zu berücksichtigen. In Tabelle \ref{tab:alpha} befinden sich Daten zu derselben.
-Um kontinuierliche Werte für den thermischen Expansionskoeffizienten zu erhalten wird
-dieser gegen die Temperatur aufgetragen und anschließend wird eine Ausgleichsrechnung der Form
+$\alpha$ zu berücksichtigen. In Tabelle \ref{tab:alpha} befinden sich Daten zu diesem.
+Um den Fehler bei der Auswahl des Wertes für eine gegebene Temperatur zu reduzieren, wird eine Ausgleichsrechnung durchgeführt, nach der sich kontinuierliche Werte für $\alpha$ berechnen lassen. Die Funktion für die Ausgleichsrechnung ist durch
 \begin{equation*}
   \alpha(T)=\frac{a}{T}+b
 \end{equation*}
-durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sich die Parameter
+gegeben. Die Interpolation ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sich die Parameter
 \begin{align*}
   a&=\SI{-873(4)e-6}{\per\kelvin} \,\\
   b&=\SI{19.411(29)e-6}{} \,.
 \end{align*}
-
+Es sei darauf hingewiesen, dass dieses Vorgehen eine effektive Theorie darstellt, die keinen Anspruch darauf erhebt, den Verlauf des thermischen Expansionskoeffizienten in Abhängigkeit der Temperatur tatsächlich korrekt zu beschreiben. Alleine die Ergebnisse, insbesondere die geringen Unsicherheiten der Koeffizienten, rechtfertigen diese Interpolation.
 
 \begin{table}[htp]
 	\begin{center}
-    \caption{Werte für den thermischen Expansionskoeffizienten \alpha in Abhängigkeit von der
+    \caption{Gegebene Werte für den thermischen Expansionskoeffizienten $\alpha$ in Abhängigkeit von der
     Temperatur \cite{versuchsanleitung}.}
     \label{tab:alpha}
 		\begin{tabular}{cc}
@@ -201,13 +199,13 @@ durchgeführt. Dies ist in Abbildung \ref{fig:alpha} dargestellt. Es ergeben sic
 \begin{figure}
   \centering
   \includegraphics[]{build/alpha.pdf}
-  \caption{Auftragung des thermischen Expansionskoeffizienten gegen die Temperatur und
-  Ausgleichsrechnung.}
+  \caption{Auftragung des thermischen Expansionskoeffizienten gegen die Temperatur und Graph der
+  Ausgleichsfunktion.}
   \label{fig:alpha}
 \end{figure}
 
 Mithilfe dieser Daten kann nun aus Gleichung \eqref{eqn:CpminusCV} die Molwärme $C_V$
-berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mol}$
+berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mole}$
 \cite{molvolumen} und $K=\frac{1}{\kappa}=\SI{137.8e9}{\newton\per\metre\squared}$
 \cite{kompressionsmodul} verwendet. Es ergeben sich die
 in Tabelle \ref{tab:cv} dargestellten Werte. In Abbildung \ref{fig:cv} sind diese Werte
@@ -277,28 +275,27 @@ geringen Fehler verzichtet.
 \subsection{Bestimmung der Debye-Temperatur}
 \label{subsec:debye}
 
-Für die Werte bis $T_{\text{max}}=170$\,K wird eine Ausgleichrechnung in Form von Gleichung \eqref{eqn:cVDebye}
-durchgehfürt. Dabei werden die Molwärmen $C_V$ wegen des sehr kleinen Felhers als
-nicht fehlerbehfatet betrachtet. Dies ist in Abbildung \ref{fig:debye} dargestellt. Es ergibt sich
-damit für die Debye-Temperatur
+Für die Werte bis $T_{\text{max}}=170$\,K wird eine Ausgleichrechnung durchgeführt. Die Ausgleichsfunktion ist durch Gleichung \eqref{eqn:cVDebye} gegeben.
+Dabei werden die Werte für $C_V$ wegen ihrer sehr geringen Unsicherheiten als nicht fehlerbehaftet betrachtet. Dies ist in Abbildung \ref{fig:debye} dargestellt. Es ergibt sich damit für die Debye-Temperatur
 \begin{equation*}
-  \theta_D=\SI{291(5)}{\kelvin} \,.
+  \Theta_\text{D}=\SI{291(5)}{\kelvin} \,,
 \end{equation*}
+mit einer relativen Unsicherheit von $1{,}72\%$.
 
 \begin{figure}
   \centering
   \includegraphics[]{build/debye.pdf}
   \caption{Auftragung der Molwärme $C_V$ gegen die Temperatur im Bereich bis
-  $T_{\text{max}}=170$\,K und Ausgleichsrechnung.}
+  $T_{\text{max}}=170$\,K und Graph der Ausgleichsfunktion.}
   \label{fig:debye}
 \end{figure}
 
 \subsection{Berechnung der theoretischen Debye-Temperatur}
 \label{subsec:debyetheo}
 
-Die Debye Temperatur kann bei bekannter Grenzfrequenz $\omega_D$ aus dem Zusammenhang
+Die Debye Temperatur kann bei bekannter Grenzfrequenz $\omega_\text{D}$ aus dem Zusammenhang
 \begin{equation*}
-  \theta_D=\frac{\hbar \omega_D}{k_B}
+  \theta_\text{D}=\frac{\hbar \omega_D}{k_B}
 \end{equation*}
 bestimmt werden. Für diese gilt
 \begin{equation*}

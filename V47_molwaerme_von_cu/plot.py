@@ -135,11 +135,12 @@ sigma_theta_D = errors[0]
 theta_D_ufloat = ufloat(theta_D, sigma_theta_D)
 print("theta_D = ", theta_D_ufloat)
 
-Tlin = np.linspace(1, 180, 200)
+Tlin = np.linspace(-1, 180, 200)
 C_Vplot = debyeFunction(Tlin, theta_D)
 plt.plot(Tp[0:20], unp.nominal_values(C_v[0:20]), 'rx', mew=0.5, label='Messwerte')
 plt.plot(Tlin, C_Vplot, 'b-', label='Ausgleichsfunktion', linewidth=0.5)
 plt.grid()
+plt.axis([0, 180, -1, 25])
 plt.xlabel(r'$T$/K')
 plt.ylabel(r'$C_V/$(J/mol K)')
 plt.savefig('build/debye.pdf')

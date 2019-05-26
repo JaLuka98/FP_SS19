@@ -28,10 +28,10 @@ Unter Betrachtung von Gleichung \ref{eqn:ersterHauptsatz} lassen sich die Wärme
 definieren.\\
 Für den Zusammenhang zwischen den beiden Wärmekapazitäten gilt
 \begin{equation}
-  C_p - C_V = V T \frac{\alpha^2}{\kappa_T}\,.
+  C_p - C_V = V T \, \frac{\alpha^2}{\kappa_T}\,.
   \label{eqn:CpminusCV}
 \end{equation}
-Dabei sind $\alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)$ der thermische Expansionskoeffizient und $\kappa_T \equiv - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)$ die isotherme Kompressibilität. Es ist möglich, diese Formel geeignet zu modifizieren, um spezifische Wärmekapazitäten zu betrachten.\\
+Dabei sind $\alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_p$ der thermische Expansionskoeffizient und $\kappa_T \equiv - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T$ die isotherme Kompressibilität. Es ist möglich, diese Formel geeignet zu modifizieren, um spezifische Wärmekapazitäten zu betrachten.\\
 In der experimentellen Praxis ist es deutlich leichter, bei konstantem Druck als bei konstantem Volumen zu messen, da enorme Kräfte nötig wären, um die thermische Expansion des Materials über große Temperaturbereiche zu verhindern. Deswegen ist die obige Formel für die Auswertung von Experimenten für Bedeutung, da sie die Verbindung zwischen der experimentell berechnbaren Größe $C_p$ und der theoretisch vorhergesagten Größe $C_V$ darstellt.
 
 \subsection{Modelle zur Berechnung der Wärmekapazität}
@@ -105,5 +105,15 @@ Für tiefe Temperaturen $T \ll \Theta_\text{E}$ ist das Integral ungefähr
   \int_0^{\infty} \symup{d}\,x \frac{x^4}{(\exp(x)-1)^2} = \frac{4\pi^2}{15}
   \label{eqn:theorieIntegral}
 \end{equation}
-und damit nur ein Zahlenwert, sodass sich die im Experiment gesehene $T^3$-Abhängigkeit ergibt. Für hohe Temperaturen kann die Exponentialfunktion im Nenner entwickelt und das Integral explizit berechnet werden. Es folgt erneut das korrekte Hochtemperaturverhalten als Dulong-Petit-Gesetz.\\
-Insgesamt zeigt sich, dass das Debye-Modell in den beiden Grenzfällen hoher und tiefer Temperaturen die Wärmekapazität korrekt vorhersagt. Im Zwischenbereich ist das Modell aufgrund seiner nicht vollständig korrekten Annahmen nicht exakt, kann jedoch oft als hinreichend genaue Beschreibung der experimentellen Daten dienen.
+und damit nur ein Zahlenwert, sodass sich die im Experiment gesehene $T^3$-Abhängigkeit ergibt. Für hohe Temperaturen kann die Exponentialfunktion im Nenner entwickelt und das Integral explizit berechnet werden. Es folgt erneut das korrekte Hochtemperaturverhalten als Dulong-Petit-Gesetz.
+
+Eine grafische Zusammenfassung der Güte der beiden betrachteten Modelle ist in Abbildung \ref{fig:debyeEinstein} ersichtlich.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=300pt]{data/debyeEinsteinTheory.png}
+  \caption{Darstellung Debye- und Einstein-Kurven für die spezifische molare Wärmekapazität am Beispiel Silber \cite{debyeEinstein}.}
+  \label{fig:debyeEinstein}
+\end{figure}
+
+Insgesamt zeigt sich also, dass das Debye-Modell in den beiden Grenzfällen hoher und tiefer Temperaturen die Wärmekapazität korrekt vorhersagt. Im Zwischenbereich ist das Modell aufgrund seiner nicht vollständig korrekten Annahmen nicht exakt, kann jedoch oft als hinreichend genaue Beschreibung der experimentellen Daten dienen.
