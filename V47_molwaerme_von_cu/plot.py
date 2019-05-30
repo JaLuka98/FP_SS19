@@ -145,3 +145,19 @@ plt.xlabel(r'$T$/K')
 plt.ylabel(r'$C_V/$(J/mol K)')
 plt.savefig('build/debye.pdf')
 plt.clf()
+
+# Calculating Debye Frequency and Temperature analytically
+N_A = 6.02214179*1e23 # in 1/mol
+M = 63.55*1e-3 # in kg/mol
+rho = 8920 # in kg/m^3
+number_density = N_A*rho/M
+
+v_long = 4.7*1e3 # in m/s
+v_trans = 2.26*1e3 # in m/s
+
+omega_D = ((18*np.pi**2*number_density) * (1/v_long**3+2/v_trans**3)**(-1))**(1/3)
+k_B = 1.3806504*1e-23
+hbar = 1.054571628*1e-34
+
+Theta_D = hbar*omega_D/k_B
+print('Debye-Temperatur', Theta_D)

@@ -86,12 +86,23 @@ Die Wärmekapazität bei konstantem Volumen lässt sich durch Ableiten berechnen
 Durch Entwickeln der Exponentialfunktion ist ersichtlich, dass sich für große Temperaturen $T \gg \Theta_\text{E}$ das Dulong-Petit-Gesetz ergibt, was eine experimentelle Bestätigung des Einstein-Modells für diesen Temperaturbereich bedeutet. Für tiefe Temperaturen $T \ll \Theta_\text{E}$ sagt das Einstein-Modell einen exponentiell abfallenden Verlauf der Wärmekapazität vorher. Der starke Abfall gegen 0 für $T$ gegen 0 ist zwar qualitativ korrekt, im Experiment ergibt sich jedoch für viele Materialien ein weicheres $T^3$-Verhalten. Das quantative Versagen des Einstein-Modells im Tieftemperaturlimes ist dadurch begründet, dass in diesem Bereich die akustischen gegenüber den optischen Phononen, die eine nahezu konstante Dispersionsrelation aufweisen, dominieren.
 
 \subsubsection{Das Debye-Modell}
-Das Debye-Modell versucht die Schwächen des Einstein-Modells zu beheben, indem eine lineare Dispersionsrelation mit isotroper Frequenz angesetzt wird. Dadurch wird sich ein besseres Verhalten im Tieftemperaturbereich versprochen, da die akustischen Phononen besser angenähert werden.
-Unter diesen Annahmen ergibt sich die innere Energie schließlich zu
+Das Debye-Modell versucht die Schwächen des Einstein-Modells zu beheben, indem eine lineare Dispersionsrelation mit isotroper Frequenz angesetzt wird. Dadurch wird sich ein besseres Verhalten im Tieftemperaturbereich versprochen, da die akustischen Phononen besser angenähert werden.\\
+Da die Frequenz nun nicht mehr konstant ist, kann die Wärmekapazität durch Integration über alle Kreisfrequenzen bis zu einer Grenzkreisfrequenz, auch Debye-Frequenz gennant, $\omega_\text{D}$ gewonnen werden:
 \begin{equation}
-  U = 9 N k_\text{B} \frac{T^4}{\Theta_\text{D}^3}\int_0^{\Theta_\text{D}/T} \symup{d}\,x \frac{x^3}{\exp(x)-1}\,.
-  \label{eqn:uDebye}
+  C_V = \frac{\partial}{\partial T} \int_0^{\omega_\text{D}} \symup{d}\,\omega \, D(\omega) \frac{\hbar \omega}{\exp(\frac{\hbar \omega}{k_\text{B} T}) - 1}\,.
+  \label{eqn:startOfDebye}
 \end{equation}
+Dabei bezeichnet $D(\omega)$ die Zustandsdichte im Frequenzraum. Diese kann so interpretiert werden: Die Größe $D(\omega) \symup{d}\omega$ gibt an, wie viele Zustände eine Frequenz zwischen $\omega$ und $\omega + \symup{d}\omega$ haben.\\
+Die Debye-Frequenz $\omega_\text{D}$ kann durch die Schallgeschwindigkeit $v_\text{s}$ und die Anzahldichte $N/L^3$ ausgedrückt werden. Im dreidimensionalen Fall ergibt sich unter der Annahme von einer longitudinalen und zwei transversalen Moden die Formel
+\begin{equation}
+  \frac{3}{v_\text{s}^3} = \frac{1}{v_\text{long}^3} + \frac{2}{v_\text{trans}^3}\,.
+  \label{eqn:schallgeschwindigkeit}
+\end{equation}
+Für die Debye-Frequenz ergibt sich dann
+\begin{equation}
+  \omega_{\text{D}}^3 = \frac{18 \pi^2 N}{L^3} \left( \frac{1}{v_\text{long}^3} + \frac{2}{v_\text{trans}^3} \right)^{-1}
+\end{equation}
+
 Dabei ist $\Theta_\text{D}$ die Debye-Temperatur. Sie kann ungefähr als Phononenenergie der Mode mit minimaler Wellenlänge interpretiert werden. Damit ist die Debye-Temperatur gerade die Temperatur, bei der alle Moden angeregt sind.\\
 Die Wärmekapazität folgt durch Ableitung der inneren Energie nach der Temperatur:
 \begin{equation}
