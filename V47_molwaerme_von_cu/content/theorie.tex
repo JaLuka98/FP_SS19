@@ -100,18 +100,28 @@ Die Debye-Frequenz $\omega_\text{D}$ kann durch die Schallgeschwindigkeit $v_\te
 \end{equation}
 Für die Debye-Frequenz ergibt sich dann
 \begin{equation}
-  \omega_{\text{D}}^3 = \frac{18 \pi^2 N}{L^3} \left( \frac{1}{v_\text{long}^3} + \frac{2}{v_\text{trans}^3} \right)^{-1}
+  \omega_{\text{D}}^3 = \frac{18 \pi^2 N}{L^3} \left( \frac{1}{v_\text{long}^3} + \frac{2}{v_\text{trans}^3} \right)^{-1}\,.
+  \label{eqn:debyeFrequenz}
 \end{equation}
-
+Die Zustandsdichte in diesen Größen lautet dann
+\begin{equation}
+  D(\omega) = \frac{9 N}{\omega_\text{D}^3} \omega^2\,.
+  \label{eqn:zustandsdichte}
+\end{equation}
+Nun kann $C_V$ durch Einsetzen der Zustandsdichte in \eqref{eqn:startOfDebye} berechnet werden:
+\begin{equation}
+  C_V = \frac{\partial}{\partial T} \frac{9 N \hbar}{\omega_\text{D}^3} \int_0^{\omega_\text{D}} \symup{d}\,\omega \, \frac{\omega^3}{\exp(\frac{\hbar \omega}{k_\text{B} T}) - 1}\,.
+\end{equation}
+Es wird nun $x = (\hbar \omega)/(k_\text{B} T)$ und $\Theta_\text{D} = \hbar \omega_\text{D} / k_\text{B}$ substituiert.
 Dabei ist $\Theta_\text{D}$ die Debye-Temperatur. Sie kann ungefähr als Phononenenergie der Mode mit minimaler Wellenlänge interpretiert werden. Damit ist die Debye-Temperatur gerade die Temperatur, bei der alle Moden angeregt sind.\\
-Die Wärmekapazität folgt durch Ableitung der inneren Energie nach der Temperatur:
+Die Wärmekapazität ergibt sich schließlich zu
 \begin{equation}
   C_V = 9 N k_\text{B} \frac{T^3}{\Theta_\text{D}^3}\int_0^{\Theta_\text{D}/T} \symup{d}\,x \frac{x^4}{(\exp(x)-1)^2}\,.
   \label{eqn:cVDebye}
 \end{equation}
-Diese Funktion wird auch Debye-Kurve $f\left(\frac{T}{\Theta_\text{D}}\right)$ genannt.
+Diese Funktion wird auch Debye-Kurve $f(T/\Theta_\text{D})$ genannt.
 Das Integral ist nichtelementar, weswegen die konkrete Auswertung dieser Funktion in der Regel numerisch geschieht. \\
-Für tiefe Temperaturen $T \ll \Theta_\text{E}$ ist das Integral ungefähr
+Für tiefe Temperaturen $T \ll \Theta_\text{D}$ ist das Integral ungefähr
 \begin{equation}
   \int_0^{\infty} \symup{d}\,x \frac{x^4}{(\exp(x)-1)^2} = \frac{4\pi^2}{15}
   \label{eqn:theorieIntegral}
