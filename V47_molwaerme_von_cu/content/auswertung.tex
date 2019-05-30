@@ -1,5 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die Berechnungen werden mit Python, Version 3.6.1, durchgeführt, unterstüzt durch die Bibliothek Numpy 1.21.1 \cite{numpy}. Grafiken werden mit Matplotlib 2.0.2 \cite{matplotlib} angefertigt.
+Ausgleichrechnungen werden mithilfe der Python-Bibliothek Scipy 0.19.0 \cite{scipy} durchgeführt.
 
 \subsection{Bestimmung der isobaren Molwärme $C_p$}
 \label{subsec:cp}
@@ -147,7 +149,8 @@ Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \re
 Nun soll mithile von Gleichung \eqref{eqn:CpminusCV} die Molwärme bei konstantem Volumen $C_V$ bestimmt werden.
 Hierfür ist es notwendig, die Temperaturabhängigkeit des thermischen Expansionskoeffizienten
 $\alpha$ zu berücksichtigen. In Tabelle \ref{tab:alpha} befinden sich Daten zu diesem.
-Um den Fehler bei der Auswahl des Wertes für eine gegebene Temperatur zu reduzieren, wird eine Ausgleichsrechnung durchgeführt, nach der sich kontinuierliche Werte für $\alpha$ berechnen lassen. Die Funktion für die Ausgleichsrechnung ist durch
+Um den Fehler bei der Auswahl des Wertes für eine gegebene Temperatur zu reduzieren, wird eine Ausgleichsrechnung durchgeführt, nach der sich kontinuierliche Werte für $\alpha$ berechnen lassen.
+Die Funktion für die Ausgleichsrechnung ist durch
 \begin{equation*}
   \alpha(T)=\frac{a}{T}+b
 \end{equation*}
@@ -295,34 +298,22 @@ mit einer relativen Unsicherheit von $1{,}72\%$.
 
 Die Debye-Frequenz und die Debye-Temperatur sollen nun analytisch aus den Eigenschaften des Materials bestimmt werden, um einen Vergleich zur experimentellen Bestimmung im vorherigen Kapitel zu ziehen.
 
-Die Debye-Frequenz wird aus Gleichung \eqref{debyeFrequenz} bestimmt. Die Anzahldichte $N/L^3$ wird gemäß der Formel $N_\text{A} \rho / M$ bestimmt, wobei $N_\text{A}$ die Avogadro-Konstante ist, $\rho = \SI{8960}{\kilo\gram\per\cubic\meter}$ \cite{density} die Dichte und $M = \SI{63.546}{\gram\per\mole}$ \cite{Molmasse} die molare Masse von Kupfer ist.
-
-Für die Debye-Frequenz ergibt sich
-\begin{equation}
-  \omega_\text{D} = 
-\end{equation}
-
-Die Debye Temperatur kann bei bekannter Grenzfrequenz $\omega_\text{D}$ aus dem Zusammenhang
-\begin{equation*}
-  \theta_\text{D}=\frac{\hbar \omega_D}{k_B}
-\end{equation*}
-bestimmt werden. Für diese gilt
-\begin{equation*}
-  \omega_D=\left(\frac{18 \pi^2 N_L}{V n}\left(\frac{1}{v_{\text{long}}^3}+
-  \frac{2}{v_{\text{trans}}^3} \right)^{-1} \right)^{\frac{1}{3}}
-\end{equation*}
-Dabei ist $N_L$ die Loschmitd'sche Zahl, $V$ das Volumen der Probe, $n=\frac{m}{M}$ die Stoffmenge,
-$v_{\text{long}}$ die longitudinale und $v_{\text{trans}}$ die transversale Schallgeschwindigkeit
-in der Probe. Gemäß \cite{versuchsanleitung} gilt
+Die Debye-Frequenz wird aus Gleichung \eqref{eqn:debyeFrequenz} bestimmt.
+Die Anzahldichte $N/L^3$ wird gemäß der Formel $N_\text{A} \rho / M$ bestimmt, wobei $N_\text{A}$ die Avogadro-Konstante ist,
+$\rho = \SI{8960}{\kilo\gram\per\cubic\meter}$ \cite{density} die Dichte und $M = \SI{63.546}{\gram\per\mole}$ \cite{Molmasse} die molare Masse von Kupfer ist.
+Gemäß \cite{versuchsanleitung} gilt für die Geschwindigkeiten
 \begin{align*}
   v_{\text{long}}&= \SI{4.7}{\kilo\metre\per\second} \,,\\
   v_{\text{trans}}&=\SI{2.26}{\kilo\metre\per\second} \,.
 \end{align*}
-Durch einsetzen der Stoffmenge wie in Kapitel \ref{subsec:cp}, aller Konstanten,
-sowie der Geschwindigkeiten ergibt dich damit
-\begin{align*}
-  \omega_D&=\SI{4.35e13}{\hertz} \,, \\
-  \theta_D&=\SI{332.5}{\kelvin} \,.
-\end{align*}
+All diese Werte werden als fehlerlos angesehen. Dies ist als Näherung sehr geringer Unsicherheiten gerechtfertigt, weil diese Materialkonstanten genau gemessen werden können.
 
-DAS HIER HABE ICH NOCH NICHT NACHGERECHNET... DAS MUSS ICH NOCH MACHEN!
+Für die Debye-Frequenz ergibt sich
+\begin{equation}
+  \omega_\text{D} \approx \SI{4.353e13}{\per\second}\,.
+\end{equation}
+Die Debye-Temperatur beträgt dann
+\begin{equation*}
+  \theta_\text{D} = \frac{\hbar \omega_D}{k_B} \approx \SI{332.48}{\kelvin} \,.
+\end{equation*}
+Dieser Wert wird als Theoriewert angesehen. Die Abweichung des experimentell bestimmten Wertes $\SI{291(5)}{\kelvin}$ von diesem beträgt $-12.48\%$.
