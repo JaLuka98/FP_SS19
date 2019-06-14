@@ -11,6 +11,17 @@ Die von den Messgeräten abgelesenen Werte werden im Folgenden als fehlerbehafte
   \Delta R_i &= \pm \SI{0.1}{\ohm}\,.
 \end{align*}
 
+Diese Fehler pflanzen sich mithilfe des "Gauß'sches Fehlerfortpflanzungsgesetz" fort:
+Ist $f$ eine Funktion, die von unsicheren Variablen $x_i$ mit
+Standardabweichungen $\sigma_i$ abhängt, so ist die Unsicherheit von f
+\begin{equation*}
+  \sigma_f = \sqrt{
+    \sum\limits_{i = 1}^N
+      \left( \frac{\partial f}{\partial x_i} \sigma_i \right)^{\!\! 2}
+  }\,.
+  \label{eqn:gaussfehler}
+\end{equation*}
+
 \subsection{Bestimmung der isobaren Molwärme $C_p$}
 \label{subsec:cp}
 Zur Bestimmung der Molwärme $C_p$ müssen zunächst aus den gemessenen
@@ -19,7 +30,10 @@ Zusammenhang
 \begin{equation*}
   T=0,00134R^2\,\frac{\text{K}}{\Omega^2}+2,296R\,\frac{\text{K}}{\Omega}+30,13\text{K} \,.
 \end{equation*}
-Dabei ist $T$ die Temperatur und $R$ der Widerstand.\\
+Dabei ist $T$ die Temperatur und $R$ der Widerstand. Die Unsicherheit der Temperatur ist gegeben durch
+\begin{equation*}
+  \sigma_T = \SI{0.000268}{\kelvin\per\ohm} R + \SI{0.2296}{\kelvin}\,.
+\end{equation*}
 Die gemessenen Werte sind in Tabelle \ref{tab:messwerte} zu sehen.
 Dargestellt sind die Werte für den Widerstand $R_\text{p}$ des Thermometers an der Probe,
 den Widerstand $R_\text{z}$ des Thermometers am Kupferzylinder, die Stromstärke $I$ und
@@ -27,7 +41,10 @@ die Spannung $U$, mit denen die Probe erwärmt wurde, sowie die Zeit $t$,
 die die Probe vom vorherigen bis zum aufgenommenen Messwert erwärmt wurde.
 Die berechneten Temperaturen sind in Tabelle \ref{tab:cp} dargestellt. Für die
 Temperaturen $T_\text{p}$ der Probe werden zudem die Differenzen $\Delta T_\text{p}$ der Temperaturen
-in den jeweils aufeinanderfolgenden Messungen berechnet.
+in den jeweils aufeinanderfolgenden Messungen berechnet. Die Unsicherheiten der Temperaturdifferenzen berechnen sich aus
+\begin{equation*}
+  \sigma_{\Delta T} = \sqrt{\sigma_{T_1}^2+\sigma_{T_2}^2}\,.
+\end{equation*}
 
 \begin{table}[htp]
 	\begin{center}
@@ -94,6 +111,14 @@ berechnen. Damit kann die molare spezifische Wärmekapazität (auch Molwärme ge
 bestimmt werden. Dabei ist $n=m/M$ die Stoffmenge, wobei $m = \SI{0.342}{\kilo\gram}$ die
 Masse der Probe und $M = \SI{63.546}{\gram\per\mole}$ \cite{Molmasse} die Molmasse von Kupfer ist.
 Die berechneten Werte von $\Delta T$, $E$ und $C_p$ befinden sich in Tabelle \ref{tab:cp}.
+Die daraus resultierende Unsicherheit auf $C_p$ ist
+\begin{equation*}
+  \sigma_{C_p} =
+  \sqrt{
+  \left(\frac{E \sigma_n}{\Delta T n^{2}}\right)^2
+  + \left(\frac{E \sigma_{\Delta T}}{(\Delta T)^2 n}\right) + \left(\frac{\sigma_E}{\Delta T n}\right)^2
+  }
+\end{equation*}
 
 \begin{table}[htp]
 	\begin{center}
@@ -221,6 +246,10 @@ berechnet werden. Dabei werden die Werte $V_0=\SI{7.11e-6}{\metre\cubic\per\mole
 \cite{kompressionsmodul} verwendet. Es ergeben sich die
 in Tabelle \ref{tab:cv} dargestellten Werte. In Abbildung \ref{fig:cv} sind diese Werte
 graphisch dargestellt. Dabei werden die Fehler in $t-$Richtung nicht berücksichtigt.
+Die Unsicherheit von $C_V$ ist
+\begin{equation*}
+  \sigma_{C_V} = \sqrt{(18 T V_0 \alpha \kappa \sigma_\alpha)^2 + (9 V_0 \alpha^2 \kappa \sigma_T)^2 + \sigma_{C_{p}}^{2}}
+\end{equation*}
 
 \begin{table}[htp]
 	\begin{center}

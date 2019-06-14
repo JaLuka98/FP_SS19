@@ -17,9 +17,10 @@ def error(f, err_vars=None):
     return latex(sqrt(s), symbol_names=latex_names)
 
 
-Rmax = var('g, d, l')
+Rmax = var('C_p, alpha, T, kappa, V0, Tp')
 
-f = g*atan(d/l)
+f = C_p - 9*alpha**2 * kappa * V0* Tp
+
 
 print(error(f))
 
