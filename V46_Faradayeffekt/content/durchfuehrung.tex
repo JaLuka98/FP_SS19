@@ -1,2 +1,48 @@
 \section{Aufbau und Durchführung}
 \label{sec:aufbauUndDurchfuehrung}
+
+Im Versuch wird der in Abbildung \ref{fig:aufbau} dargestellte Versuchsaufbau verwendet.
+Die verwendeten Halbleiter sind für infrarotes Licht durchlässig, sodass das Experiment
+darauf ausgerichtet werden muss. Daher werden als Lichtquelle Halogenlampen verwendet,
+deren Spektrum zu großen Teilen aus Infrarotlicht besteht.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/aufbau.png}
+  \caption{Schematische Darstellung des Versuchsaufbaus. \cite{anleitung}}
+  \label{fig:aufbau}
+\end{figure}
+
+Nachdem das Licht durch eine Konensorlinse gebündelt wurde, fällt es auf einen
+sog. Lichtzerhacker. Dies ist ein rotierendes Rad, das das zuvor zeitlich kontinuierlich
+vorliegende Licht in kurze Lichtpulse zerhackt. Danach fällt es auf einen Polarisator.
+In diesem Versuch wird dafür ein Glan-Thompson-Prisma verwendet. Dieses besteht aus
+doppelbrechendem Material. Dadruch wird der zunächst unpolarisierte Strahl linear
+polarisiert. Dieser linear polarisierte Strahl trifft dann auf die Probe, die ich
+im magnetischen Feld eienes Elektromagneten befindet. Darauf folgt ein Interferenzfilter,
+in dem eine bestimmte Lichtfrequenz herausgefiltert wird.
+
+Diese trifft auf ein zweites Glan-Thompson-Prisma, das hier als Analysator dient.
+Aus dem Prisma treten zwei senkrecht zueinander polarisierte Strahlen aus, die durch zwei
+Photowiderstände gemessen werden. Die an den Photowiderständen
+gemessenen Spannungen werden auf einen Differenzverstärker gegeben. Die Ausgangsspannung
+desselben ist dann proportional zur Differenz der beiden gemessenen Spannungen. Sie
+ist genau dann null, wenn beide Wellen identisch sind. Die Frequenz des Differenzverstärkers
+wird  mithilfe des Selektivverstärkers auf die des Zerhackers abgestimmt. Die Ausgangsspannung
+wird auf ein Oszilloskop gegeben.
+
+Zur Messung des Winkels $\theta$ wird bei maximalem magnetischen Feld die Lichtentensität
+der beiden Strahlen auf den gleichen Wert einstellt. Danach wird das erste Glan-Thompson-Prisma
+gedreht und die Ausgangsspannung damit auf ein Minimum geregelt. Der entsprechende
+Winkel wird notiert. Danach wird das magnetische Feld umgepolt und es wird erneut
+durch Drehung des ersten Glan-Thompson-Prismas ein Minimum der Ausgangsspannung gesucht,
+dessen Winkel notiert wird. Der Winkel $\theta$ lässt sich dann durch den Zusammenhang
+\begin{equation}
+  \theta  = \frac{1}{2} (\theta_r - \theta_l)
+\label{eqn:drehwinkel}
+\end{equation}
+bestimmen.
+
+Mithilfe der beschriebenen Apparatur und des erklärten Verfahrens werden im Versuch zwei dotierte
+und eine hochreine Galliumarsenidprobe untersucht. Um später die effektive Masse berechnen zu
+können, wird außerdem das magnetische Feld am Ort der Probe mit einer Hall-Sonde gemessen.
