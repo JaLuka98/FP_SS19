@@ -53,8 +53,8 @@ print(t)
 Tp=0.00134*Rp**2+2.296*Rp -243.02 +273.15
 Tz=0.00134*Rz**2+2.296*Rz -243.02 +273.15
 I, t, U=np.genfromtxt('data/data2.txt', unpack=True)
-I*=1e-3 #jetzt in Ampere
 I=unp.uarray(I, 0.1)
+I*=1e-3 #jetzt in Ampere
 t=unp.uarray(t, 3)
 U=unp.uarray(U, 0.1)
 
@@ -129,11 +129,11 @@ hr = ['$C_V$/J/kg K']
 m = np.zeros((41, 2))
 m[:,0] = unp.nominal_values(C_v)
 m[:,1] = unp.std_devs(C_v)
-t=matrix2latex(m, headerRow=hr, format='%.5f')
+t=matrix2latex(m, headerRow=hr, format='%.2f')
 print(t)
 
 
-plt.errorbar(unp.nominal_values(Tp[1:41]), unp.nominal_values(C_v[1:41]), yerr=unp.std_devs(C_v[1:41]), fmt='rx',mew=0.5, ecolor='b', elinewidth=0.5,  label='Errechnete Werte') #Irgendwas klappt hier mit den errorbars noch nicht so richtig
+plt.errorbar(unp.nominal_values(Tp[1:41]), unp.nominal_values(C_v[1:41]), yerr=unp.std_devs(C_v[1:41]), xerr=unp.std_devs(Tp[1:41]), fmt='rx',mew=0.5, ecolor='b', elinewidth=0.5,  label='Errechnete Werte') #Irgendwas klappt hier mit den errorbars noch nicht so richtig
 plt.xlabel(r'$T/$K')
 plt.ylabel(r'$C_v$ in J/(mol K)')
 #plt.axis([50,320,0,0.00002])
@@ -156,7 +156,7 @@ print("theta_D = ", theta_D_ufloat)
 
 Tlin = np.linspace(-1, 180, 200)
 C_Vplot = debyeFunction(Tlin, theta_D)
-plt.errorbar(unp.nominal_values(Tp[1:21]), unp.nominal_values(C_v[1:21]), yerr=unp.std_devs(C_v[1:21]), fmt='rx',mew=0.5, ecolor='b', elinewidth=0.5, label='Messwerte')
+plt.errorbar(unp.nominal_values(Tp[1:21]), unp.nominal_values(C_v[1:21]), label='Messwerte', yerr=unp.std_devs(C_v[1:21]), fmt='rx',mew=0.5, ecolor='b', elinewidth=0.5)
 plt.plot(Tlin, C_Vplot, 'g-', label='Ausgleichsfunktion', linewidth=0.5)
 plt.grid()
 plt.legend()
