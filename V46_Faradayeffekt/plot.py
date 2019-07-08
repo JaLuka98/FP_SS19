@@ -51,8 +51,8 @@ t = matrix2latex(m, headerRow=hr, format='%.4f')
 print(t)
 
 theta_frei_rein = theta_rein/L  #  in rad/m
-plt.plot(lamb, theta_frei_rein, 'rx')
-plt.xlabel(r'$\lambda/\mu$m')
+plt.plot(lamb**2, theta_frei_rein, 'rx')
+plt.xlabel(r'$\lambda^2/\mu\mathrm{m}^2')
 plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
 plt.grid()
 plt.axis([0.875, 2.875, -2.5, 32.5])
@@ -83,8 +83,8 @@ t = matrix2latex(m, headerRow=hr, format='%.4f')
 print(t)
 
 theta_frei_dotiert_136 = theta_dotiert_136/L  #  in rad/m
-plt.plot(lamb, theta_frei_dotiert_136, 'rx')
-plt.xlabel(r'$\lambda/\mu$m')
+plt.plot(lamb**2, theta_frei_dotiert_136, 'rx')
+plt.xlabel(r'$\lambda^2/\mu\mathrm{m}^2')
 plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
 plt.grid()
 plt.axis([0.875, 2.875, 15, 50])
@@ -115,8 +115,8 @@ t = matrix2latex(m, headerRow=hr, format='%.4f')
 print(t)
 
 theta_frei_dotiert_1296 = theta_dotiert_1296/L  #  in rad/m
-plt.plot(lamb, theta_frei_dotiert_1296, 'rx')
-plt.xlabel(r'$\lambda/\mu$m')
+plt.plot(lamb**2, theta_frei_dotiert_1296, 'rx')
+plt.xlabel(r'$\lambda^2/\mu\mathrm{m}^2')
 plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
 plt.grid()
 plt.axis([0.875, 2.875, 25, 95])
@@ -129,10 +129,11 @@ plt.clf()
 
 x, nArr = np.genfromtxt('data/n.txt', unpack=True)
 n = ufloat(np.mean(nArr), stats.sem(nArr))
+print(n)
 
 theta_136 = theta_frei_dotiert_136 - theta_frei_rein
 params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_136)
-a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix*1e12)))  # *1e12 um von micro meter squared auf m^2 zu kommen
+a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix))*1e12)  # *1e12 um von micro meter squared auf m^2 zu kommen
 N = 1.2e18  # in cm^-3
 N *= 1e6  # in m^-3
 print('------------------------------------------------------------')
@@ -142,19 +143,19 @@ print('------------------------------------------------------------')
 
 linLin = np.linspace(0, 10, 1000)
 plt.plot(lamb**2, theta_136, 'rx', label='Messwerte', zorder=2)
-plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3)
+plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3, linewidth=0.5)
 plt.legend()
 plt.grid()
 plt.axis([0, 8, 0, 50])
-#plt.gcf().subplots_adjust(bottom=0.18)
+plt.gcf().subplots_adjust(bottom=0.18)
 plt.xlabel(r'$\lambda^2 / \mu m^2$')
-plt.ylabel(r'$\frac{\Theta}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
+plt.ylabel(r'$\frac{\Theta_\mathrm{frei}}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
 plt.savefig('build/differenz_136.pdf')
 plt.clf()
 
 theta_1296 = theta_frei_dotiert_1296 - theta_frei_rein
 params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_1296)
-a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix*1e12)))
+a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix))*1e12)
 N = 2.8e18  # in cm^-3
 N *= 1e6  # in m^-3
 print('------------------------------------------------------------')
@@ -165,12 +166,12 @@ print('------------------------------------------------------------')
 
 linLin = np.linspace(0, 10, 1000)
 plt.plot(lamb**2, theta_1296, 'rx', label='Messwerte', zorder=2)
-plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3)
+plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3, linewidth=0.5)
 plt.legend()
 plt.grid()
 plt.axis([0, 8, 0, 100])
-#plt.gcf().subplots_adjust(bottom=0.18)
+plt.gcf().subplots_adjust(bottom=0.18)
 plt.xlabel(r'$\lambda^2 / \mu m^2$')
-plt.ylabel(r'$\frac{\Theta}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
+plt.ylabel(r'$\frac{\Theta_\mathrm{frei}}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
 plt.savefig('build/differenz_1296.pdf')
 plt.clf()

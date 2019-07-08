@@ -41,12 +41,12 @@ Die auf eine Einheitslänge normierten, gemessenen Faraday-Rotationswinkel sind 
   \label{fig:rein}
 \end{figure}
 
-Die erste dotierte Probe ist $\SI{136}{\milli\meter}$ dick. Die gemessene Wellenlängenabhängigkeit von $\theta_{1,2}$ und die Faraday-Rotationswinkel $\theta$ sind in Tabelle \ref{tab:ersteDotiert} zu sehen.
+Die erste dotierte Probe ist $\SI{136}{\milli\meter}$ dick. Die gemessene Wellenlängenabhängigkeit von $\theta_{1,2}$ und die Faraday-Rotationswinkel $\theta$ sind in Tabelle \ref{tab:136} zu sehen.
 
 \begin{table}[htp]
   \centering
   \caption{Wellenlängen $\lambda$ der verwendeten Interferenzfilter, gemessene Winkel $\theta_{1,2}$ und Faraday-Rotationswinkel $\theta$ für die erste n-dotierte GaAs-Probe mit einer Dotierungskonzentration von $N = \SI{1.2e18}{\per\cubic\centi\meter}$.}
-  \label{tab:ersteDotiert}
+  \label{tab:136}
     \begin{tabular}{S[table-format=1.3] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]}
     \toprule
       {$\lambda/\mu$m} & {$\theta_1$/rad} & {$\theta_2$/rad} & {$\theta$/rad}\\
@@ -64,21 +64,21 @@ Die erste dotierte Probe ist $\SI{136}{\milli\meter}$ dick. Die gemessene Wellen
     \end{tabular}
 \end{table}
 
-Eine grafische Darstellung der auf die Länge normierten, gemessenen Faraday-Rotationswinkel in Abhängigkeit der Wellenlänge ist in Abbildung \ref{fig:ersteDotiert} zu sehen.
+Eine grafische Darstellung der auf die Länge normierten, gemessenen Faraday-Rotationswinkel in Abhängigkeit der Wellenlänge ist in Abbildung \ref{fig:136} zu sehen.
 
 \begin{figure}[H]
   \centering
   \includegraphics{build/dotiert_136.pdf}
   \caption{Gemessene Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta}{L}$ in Abhängigkeit der Wellenlänge $\lambda$.}
-  \label{fig:ersteDotiert}
+  \label{fig:136}
 \end{figure}
 
-Die dritte vermessene Probe hat eine Dotierungskonzentration  und weist eine Dicke von $\SI{1296}{\milli\meter}$ auf. Die aufgenommenen Messwerte für $\theta_{1,2}$ in Abhängigkeit der Wellenlänge der verwendeten Interferenzfilter und die daraus nach Gleichung \eqref{eqn:drehwinkel} berechneten Rotationswinkel sind in Tabelle \ref{tab:zweiteDotiert} zu finden.
+Die dritte vermessene Probe hat eine Dotierungskonzentration  und weist eine Dicke von $\SI{1296}{\milli\meter}$ auf. Die aufgenommenen Messwerte für $\theta_{1,2}$ in Abhängigkeit der Wellenlänge der verwendeten Interferenzfilter und die daraus nach Gleichung \eqref{eqn:drehwinkel} berechneten Rotationswinkel sind in Tabelle \ref{tab:1296} zu finden.
 
 \begin{table}[htp]
   \centering
   \caption{Wellenlängen $\lambda$ der verwendeten Interferenzfilter, gemessene Winkel $\theta_{1,2}$ und Faraday-Rotationswinkel $\theta$ für die zweite n-dotierte GaAs-Probe mit einer Dotierungskonzentration von $N = \SI{2.8e18}{\per\cubic\centi\meter}$.}
-  \label{tab:zweiteDotiert}
+  \label{tab:1296}
     \begin{tabular}{S[table-format=1.3] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]}
     \toprule
       {$\lambda/\mu$m} & {$\theta_1$/rad} & {$\theta_2$/rad} & {$\theta$/rad}\\
@@ -96,14 +96,73 @@ Die dritte vermessene Probe hat eine Dotierungskonzentration  und weist eine Dic
     \end{tabular}
 \end{table}
 
-Die auf eine Einheitslänge normierten, gemessenen Faraday-Rotationswinkel sind Abbildung \ref{fig:dotiert_1296} gegen die Wellenlänge des Interferenzfilters aufgetragen.
+Die auf eine Einheitslänge normierten, gemessenen Faraday-Rotationswinkel sind Abbildung \ref{fig:1296} gegen die Wellenlänge des Interferenzfilters aufgetragen.
 
 \begin{figure}[H]
   \centering
   \includegraphics{build/dotiert_1296.pdf}
   \caption{Gemessene Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta}{L}$ in Abhängigkeit der Wellenlänge $\lambda$.}
-  \label{fig:dotiert_1296}
+  \label{fig:1296}
 \end{figure}
 
 \subsection{Bestimmung der effektiven Masse $m^{*}$}
 \label{subsec:bestimmungEffektiveMasse}
+
+Nun wird die effektive Masse $m^{*}$ der Leitungselektronen in GaAs bestimmt. Dazu werden die die ermittelten Rotationswinkel pro Einheitslänge für die hochreine Probe jeweils von den Rotationswinkeln beider dotierter Proben subtrahiert, da sich dann die Beiträge der Atomrümpfe herausheben. Danach wird eine Ausgleichsrechnung nach Gleichung \eqref{eqn:theta_frei} angesetzt, um die effektive Masse aus der Steigung der Geraden $\theta_\text{frei}(\lambda^2)$ zu ermitteln.
+
+Dazu wird der Brechungsindex $n$ von GaAs benötigt, der jedoch im Allgemeinen als Dispersion eine Funktion der Wellenlänge ist. Da $n$ im betrachteten Wellenlängenbereich jedoch nicht stark variiert, wird der Mittelwert aus Literaturwerten für die verschiedenen Wellenlängen gebildet. Diese sind in \ref{tab:n} zu finden.
+
+\begin{table}[htp]
+  \centering
+  \caption{Brechungsindices von Galliumarsenid für die in diesem Versuch vorliegenden Wellenlängen \cite{n}. Das Zitat ist aus https://refractiveindex.info/?shelf=main\&book=GaAs\&page=Adachi.}
+  \label{tab:n}
+    \begin{tabular}{S[table-format=1.3] S[table-format=1.4]}
+    \toprule
+      {$\lambda/\mu$m} & n\\
+      \midrule
+      1.06	&  3.4635 \\
+      1.29	&  3.4125 \\
+      1.45	&  3.3926 \\
+      1.72	&  3.3717 \\
+      1.96	&  3.3603 \\
+      2.156	&  3.3538 \\
+      2.34	&  3.3492 \\
+      2.51	&  3.3458 \\
+      2.65	&  3.3436 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Der Mittelwert von $n$ auf Basis dieser $N=9$ Werte wird als arithmetisches Mittel $\overline{n} = \sum\limits_{i = 1}^N n_i$ berechnet, während für den Fehler des Mittelwerts $\sigma_{\overline{n}} = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i = 1}^N (n_i-\overline{n})^2}$ gilt. Es ergibt sich
+\begin{equation}
+  n = \num{3.377(13)}\,.
+  \label{eqn:n}
+\end{equation}
+
+Die Messwerte und der Graph der Ausgleichsrechnung für die Differenz zwischen hochreiner und erster dotierter Probe ist in Abbildung \ref{fig:differenz136} zu sehen. Für die Ausgleichsfunktion $y$ gilt $y(\lambda^2)=a\lambda^2$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/differenz_136.pdf}
+  \caption{Differenzen der gemessenen Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta_\text{frei}}{L}$ für die hochreine und die erste dotierte Probe in Abhängigkeit des Quadrats der Wellenlänge $\lambda$ und Graph der Ausgleichsfunktion.}
+  \label{fig:differenz136}
+\end{figure}
+
+Die Steigung für diese Ausgleichsrechnung beträgt $a_1 = \SI{5.8(4)e12}{\radian\per\cubic\meter}$. Aus dem Vergleich von Ausgleichsfunktion und Gleichung \eqref{eqn:theta_frei} ergibt sich der Zusammenhang
+\begin{equation}
+  m^{*} = \sqrt{\frac{NBe^3}{8\pi^2 \epsilon_0 a c^3 n}}
+\end{equation}
+für die effektive Masse. Durch Gauß'sche Fehlerfortpflanzung ergibt sich die Unsicherheit auf $m^{*}$ zu $\sigma_{m^{*}} = \frac{\alpha}{2} (\alpha a n)^{-1/2} \sqrt{(a \sigma_{\bar{n}})^2+(n \sigma_a)^2}$ mit der Abkürzung $\alpha = (8\pi^2 \epsilon_0 c^3)/(N B e^3)$.
+Für die vorliegende Ausgleichsrechnung mithilfe der ersten dotierten Probe ergibt sich dann $m^{*}_1 = \SI{6.62(24)e-32}{\kilo\gram}$ mit einer relativen Unsicherheit von $3{,}63\%$.
+Der Literaturwert für die effektive Masse von Leitungselektronen in Galliumarsenid beträgt $0{,}063 m_e \approx \SI{6.013e-31}{\kilo\gram}$\cite{https://ecee.colorado.edu/~bart/book/effmass.htm. Muss noch gemacht werden.}. Die relative Abweichung zu desem Literaturwert beträgt $10{,}09\%$.
+
+In Abbildung \ref{fig:differenz1296} sind die Messwerte und der Graph der Ausgleichsrechnung für die Differenz zwischen hochreiner und zweiter dotierter Probe zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/differenz_1296.pdf}
+  \caption{Differenzen der gemessenen Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta_\text{frei}}{L}$ für die hochreine und die zweite dotierte Probe in Abhängigkeit des Quadrats der Wellenlänge $\lambda$ und Graph der Ausgleichsfunktion.}
+  \label{fig:differenz1296}
+\end{figure}
+
+Die Ausgleichsrechnung ergibt $a_2 = \SI{1.17(7)e13}{\radian\per\cubic\meter}$, sodass die effektive Masse mithilfe der zweiten Probe zu $m^{*}_2 = \SI{7.09(22)e-32}{\kilo\gram}$ bestimmt. Die relative Unsicherheit dieses Wertes beträgt $3{,}10\%$ und die Abweichung zu dem Literaturwert ist $17.91\%$.
