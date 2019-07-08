@@ -16,6 +16,17 @@ def linearFunction(x,a):
     return a*x
 
 
+def mStarred(a, N, B, n):
+    e_0 = constants.value(u'elementary charge')
+    #eps_0 = constants.value(u'epsilon_0') doesnt work for whatever reason
+    eps_0 = 8.8541878128e-12
+    c = constants.value(u'speed of light in vacuum')
+    return unp.sqrt(N*B*e_0**3/(8*np.pi*np.pi*eps_0*a*c**3*n))
+
+
+B = 325  # in mT
+B *= 1e-3  # in T
+
 #Einlesen Daten reine Probe
 grad1_rein, minuten1_rein, grad2_rein, minuten2_rein, lamb = np.genfromtxt('data/rein.txt', unpack=True)
 L = 0.0051
@@ -28,11 +39,9 @@ theta1_rein = theta1_rein/360 * 2*np.pi
 theta2_rein = theta2_rein/360 * 2*np.pi
 #Berechnung des Drehwinkels
 theta_rein = 1/2*(theta2_rein - theta1_rein)
-print(360*theta_rein/(2*np.pi))
 
 hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
 size = np.size(lamb)
-print(lamb)
 m = np.zeros((size, 4))
 m[:, 0] = lamb
 m[:, 1] = theta1_rein[0:size]
@@ -62,11 +71,9 @@ theta1_dotiert_136 = theta1_dotiert_136/360 * 2*np.pi
 theta2_dotiert_136 = theta2_dotiert_136/360 * 2*np.pi
 #Berechnung des Drehwinkels
 theta_dotiert_136 = 1/2*(theta2_dotiert_136 - theta1_dotiert_136)
-print(360*theta_dotiert_136/(2*np.pi))
 
 hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
 size = np.size(lamb)
-print(lamb)
 m = np.zeros((size, 4))
 m[:, 0] = lamb
 m[:, 1] = theta1_dotiert_136[0:size]
@@ -96,11 +103,9 @@ theta1_dotiert_1296 = theta1_dotiert_1296/360 * 2*np.pi
 theta2_dotiert_1296 = theta2_dotiert_1296/360 * 2*np.pi
 #Berechnung des Drehwinkels
 theta_dotiert_1296 = 1/2*(theta2_dotiert_1296 - theta1_dotiert_1296)
-print(360*theta_dotiert_1296/(2*np.pi))
 
 hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
 size = np.size(lamb)
-print(lamb)
 m = np.zeros((size, 4))
 m[:, 0] = lamb
 m[:, 1] = theta1_dotiert_1296[0:size]
@@ -122,11 +127,17 @@ plt.clf()
 ### Bestimmung der effektiven Masse ###
 #######################################
 
+x, nArr = np.genfromtxt('data/n.txt', unpack=True)
+n = ufloat(np.mean(nArr), stats.sem(nArr))
+
 theta_136 = theta_frei_dotiert_136 - theta_frei_rein
 params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_136)
-a = correlated_values(params, covariance_matrix)
+a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix*1e12)))  # *1e12 um von micro meter squared auf m^2 zu kommen
+N = 1.2e18  # in cm^-3
+N *= 1e6  # in m^-3
 print('------------------------------------------------------------')
 print('Fit parameter für die erste Probe (136): ', a)
+print('Effektive masse für die erste Probe: ', mStarred(a, N, B, n))
 print('------------------------------------------------------------')
 
 linLin = np.linspace(0, 10, 1000)
@@ -143,10 +154,14 @@ plt.clf()
 
 theta_1296 = theta_frei_dotiert_1296 - theta_frei_rein
 params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_1296)
-a = correlated_values(params, covariance_matrix)
+a = ufloat(params[0]*1e12, np.sqrt(np.diag(covariance_matrix*1e12)))
+N = 2.8e18  # in cm^-3
+N *= 1e6  # in m^-3
 print('------------------------------------------------------------')
-print('Fit parameter für die erste Probe (136): ', a)
+print('Fit parameter für die zweite Probe (1296): ', a)
+print('Effektive masse für die zweite Probe: ', mStarred(a, N, B, n))
 print('------------------------------------------------------------')
+
 
 linLin = np.linspace(0, 10, 1000)
 plt.plot(lamb**2, theta_1296, 'rx', label='Messwerte', zorder=2)

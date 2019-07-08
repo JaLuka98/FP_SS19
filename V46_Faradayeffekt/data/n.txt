@@ -1,0 +1,10 @@
+# Lambda/µm	n	from https://refractiveindex.info/?shelf=main&book=GaAs&page=Adachi
+1.06	3.4635
+1.29	3.4125
+1.45	3.3926
+1.72	3.3717
+1.96	3.3603
+2.156	3.3538
+2.34	3.3492
+2.51	3.3458
+2.65	3.3436
