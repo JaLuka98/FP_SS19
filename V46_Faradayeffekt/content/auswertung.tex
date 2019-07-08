@@ -1,2 +1,109 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Das Magnetfeld am Ort der Probe beträgt
+\begin{equation}
+  B = \SI{325}{\milli\tesla}\,.
+\end{equation}
+Eine Messung außerhalb des Einflusses des Elektromagneten zeigt ein verschwindendes Feld, sodass dieser Wert unkorrigiert für die folgende Auswertung verwendet wird.
+
+\subsection{Darstellung der Abhängigkeit des Faraday-Rotationswinkels pro Einheitslänge von der Wellenlänge}
+\label{subsec:winkelAbhaengigkeitWellenlänge}
+
+Die hochreine Probe weist eine Dicke von $\SI{51}{\milli\meter}$ auf. Die aufgenommenen Messwerte für $\theta_{1,2}$ in Abhängigkeit der Wellenlänge $\lambda$ der verwendeten Interferenzfilter und die daraus berechneten Faraday-Rotationswinkel sind in Tabelle \ref{tab:rein} zu finden.
+
+\begin{table}[htp]
+  \centering
+  \caption{Wellenlängen $\lambda$ der verwendeten Interferenzfilter, gemessene Winkel $\theta_{1,2}$ und Faraday-Rotationswinkel $\theta$ für die reine GaAs-Probe.}
+  \label{tab:rein}
+    \begin{tabular}{S[table-format=1.3] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]}
+    \toprule
+      {$\lambda/\mu$m} & {$\theta_1$/rad} & {$\theta_2$/rad} & {$\theta$/rad}\\
+      \midrule
+      1.06  & 1.2566 & 1.5533 & 0.1483\\
+      1.29  & 1.3017 & 1.4864 & 0.0923\\
+      1.45  & 1.3351 & 1.5111 & 0.0879\\
+      1.72  & 1.3613 & 1.4602 & 0.0494\\
+      1.96  & 1.3220 & 1.3933 & 0.0356\\
+      2.156 & 1.3002 & 1.3802 & 0.0400\\
+      2.34  & 0.8726 & 0.9584 & 0.0429\\
+      2.51  & 0.5541 & 0.5934 & 0.0196\\
+      2.65  & 1.2537 & 1.2580 & 0.0021\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Die auf eine Einheitslänge normierten, gemessenen Faraday-Rotationswinkel sind Abbildung \ref{fig:rein} gegen die Wellenlänge des Interferenzfilters aufgetragen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/rein.pdf}
+  \caption{Gemessene Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta}{L}$ in Abhängigkeit der Wellenlänge $\lambda$.}
+  \label{fig:rein}
+\end{figure}
+
+Die erste dotierte Probe ist $\SI{136}{\milli\meter}$ dick. Die gemessene Wellenlängenabhängigkeit von $\theta_{1,2}$ und die Faraday-Rotationswinkel $\theta$ sind in Tabelle \ref{tab:ersteDotiert} zu sehen.
+
+\begin{table}[htp]
+  \centering
+  \caption{Wellenlängen $\lambda$ der verwendeten Interferenzfilter, gemessene Winkel $\theta_{1,2}$ und Faraday-Rotationswinkel $\theta$ für die erste n-dotierte GaAs-Probe mit einer Dotierungskonzentration von $N = \SI{1.2e18}{\per\cubic\centi\meter}$.}
+  \label{tab:ersteDotiert}
+    \begin{tabular}{S[table-format=1.3] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]}
+    \toprule
+      {$\lambda/\mu$m} & {$\theta_1$/rad} & {$\theta_2$/rad} & {$\theta$/rad}\\
+      \midrule
+      1.06  & 1.3584 & 1.4646 & 0.0530\\
+      1.29  & 1.3569 & 1.4631 & 0.0530\\
+      1.45  & 1.4311 & 1.5009 & 0.0349\\
+      1.72  & 1.4049 & 1.4660 & 0.0305\\
+      1.96  & 1.3264 & 1.4122 & 0.0429\\
+      2.156 & 1.2915 & 1.3948 & 0.0516\\
+      2.34  & 0.8435 & 0.9628 & 0.0596\\
+      2.51  & 0.5468 & 0.6486 & 0.0509\\
+      2.65  & 1.2013 & 1.3002 & 0.0494\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Eine grafische Darstellung der auf die Länge normierten, gemessenen Faraday-Rotationswinkel in Abhängigkeit der Wellenlänge ist in Abbildung \ref{fig:ersteDotiert} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/dotiert_136.pdf}
+  \caption{Gemessene Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta}{L}$ in Abhängigkeit der Wellenlänge $\lambda$.}
+  \label{fig:ersteDotiert}
+\end{figure}
+
+Die dritte vermessene Probe hat eine Dotierungskonzentration  und weist eine Dicke von $\SI{1296}{\milli\meter}$ auf. Die aufgenommenen Messwerte für $\theta_{1,2}$ in Abhängigkeit der Wellenlänge der verwendeten Interferenzfilter und die daraus nach Gleichung \eqref{eqn:drehwinkel} berechneten Rotationswinkel sind in Tabelle \ref{tab:zweiteDotiert} zu finden.
+
+\begin{table}[htp]
+  \centering
+  \caption{Wellenlängen $\lambda$ der verwendeten Interferenzfilter, gemessene Winkel $\theta_{1,2}$ und Faraday-Rotationswinkel $\theta$ für die zweite n-dotierte GaAs-Probe mit einer Dotierungskonzentration von $N = \SI{2.8e18}{\per\cubic\centi\meter}$.}
+  \label{tab:zweiteDotiert}
+    \begin{tabular}{S[table-format=1.3] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]}
+    \toprule
+      {$\lambda/\mu$m} & {$\theta_1$/rad} & {$\theta_2$/rad} & {$\theta$/rad}\\
+      \midrule
+      1.06  & 1.3162 & 1.4791 & 0.0814\\
+      1.29  & 1.3584 & 1.4471 & 0.0443\\
+      1.45  & 1.3686 & 1.5009 & 0.0661\\
+      1.72  & 1.3337 & 1.4689 & 0.0676\\
+      1.96  & 1.2930 & 1.4049 & 0.0560\\
+      2.156 & 1.2653 & 1.4253 & 0.0799\\
+      2.34  & 0.7854 & 0.9701 & 0.0923\\
+      2.51  & 0.4625 & 0.6457 & 0.0916\\
+      2.65  & 1.1286 & 1.3526 & 0.1119\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Die auf eine Einheitslänge normierten, gemessenen Faraday-Rotationswinkel sind Abbildung \ref{fig:dotiert_1296} gegen die Wellenlänge des Interferenzfilters aufgetragen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/dotiert_1296.pdf}
+  \caption{Gemessene Faraday-Rotationswinkel pro Einheitslänge $\frac{\theta}{L}$ in Abhängigkeit der Wellenlänge $\lambda$.}
+  \label{fig:dotiert_1296}
+\end{figure}
+
+\subsection{Bestimmung der effektiven Masse $m^{*}$}
+\label{subsec:bestimmungEffektiveMasse}

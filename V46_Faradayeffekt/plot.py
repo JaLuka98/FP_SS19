@@ -25,11 +25,65 @@ theta2_rein = theta2_rein/360 * 2*np.pi
 theta_rein = 1/2*(theta2_rein - theta1_rein)
 print(360*theta_rein/(2*np.pi))
 
+hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
+size = np.size(lamb)
+print(lamb)
+m = np.zeros((size, 4))
+m[:, 0] = lamb
+m[:, 1] = theta1_rein[0:size]
+m[:, 2] = theta2_rein[0:size]
+m[:, 3] = theta_rein[0:size]
+t = matrix2latex(m, headerRow=hr, format='%.4f')
+print(t)
+
+theta_frei_rein = theta_rein/L  #  in rad/m
+plt.plot(lamb, theta_frei_rein, 'rx')
+plt.xlabel(r'$\lambda/\mu$m')
+plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
+plt.grid()
+plt.axis([0.875, 2.875, -2.5, 32.5])
+plt.savefig('build/rein.pdf')
+plt.clf()
+
 #Einlesen Daten erste dotierte Probe
-grad1_dotiert_1296, minuten1_dotiert_1296, grad2_dotiert_1296, minuten2_dotiert_1296, lamb = np.genfromtxt('data/dotiert_1296.txt', unpack=True)
-L = 0.0051
+grad1_dotiert_136, minuten1_dotiert_136, grad2_dotiert_136, minuten2_dotiert_136, lamb = np.genfromtxt('data/dotiert_136.txt', unpack=True)
+L = 0.00136
 
 #Berechnung der Winkel erste dotierte Probe
+theta1_dotiert_136 = grad1_dotiert_136 + minuten1_dotiert_136/60
+theta2_dotiert_136 = grad2_dotiert_136 + minuten2_dotiert_136/60
+#Winkel in rad umrechnen
+theta1_dotiert_136 = theta1_dotiert_136/360 * 2*np.pi
+theta2_dotiert_136 = theta2_dotiert_136/360 * 2*np.pi
+#Berechnung des Drehwinkels
+theta_dotiert_136 = 1/2*(theta2_dotiert_136 - theta1_dotiert_136)
+print(360*theta_dotiert_136/(2*np.pi))
+
+hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
+size = np.size(lamb)
+print(lamb)
+m = np.zeros((size, 4))
+m[:, 0] = lamb
+m[:, 1] = theta1_dotiert_136[0:size]
+m[:, 2] = theta2_dotiert_136[0:size]
+m[:, 3] = theta_dotiert_136[0:size]
+t = matrix2latex(m, headerRow=hr, format='%.4f')
+print(t)
+
+theta_frei_dotiert_136 = theta_dotiert_136/L  #  in rad/m
+plt.plot(lamb, theta_frei_dotiert_136, 'rx')
+plt.xlabel(r'$\lambda/\mu$m')
+plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
+plt.grid()
+plt.axis([0.875, 2.875, 15, 50])
+plt.savefig('build/dotiert_136.pdf')
+plt.clf()
+
+#Einlesen Daten zweite dotierte Probe
+grad1_dotiert_1296, minuten1_dotiert_1296, grad2_dotiert_1296, minuten2_dotiert_1296, lamb = np.genfromtxt('data/dotiert_1296.txt', unpack=True)
+L = 0.001296
+
+#Berechnung der Winkel zweite dotierte Probe
 theta1_dotiert_1296 = grad1_dotiert_1296 + minuten1_dotiert_1296/60
 theta2_dotiert_1296 = grad2_dotiert_1296 + minuten2_dotiert_1296/60
 #Winkel in rad umrechnen
@@ -38,3 +92,25 @@ theta2_dotiert_1296 = theta2_dotiert_1296/360 * 2*np.pi
 #Berechnung des Drehwinkels
 theta_dotiert_1296 = 1/2*(theta2_dotiert_1296 - theta1_dotiert_1296)
 print(360*theta_dotiert_1296/(2*np.pi))
+
+hr = [r'$\lambda/\mu$m', r'$\theta_1$/rad', r'$\theta_2$/rad', r'$\theta$/rad']
+size = np.size(lamb)
+print(lamb)
+m = np.zeros((size, 4))
+m[:, 0] = lamb
+m[:, 1] = theta1_dotiert_1296[0:size]
+m[:, 2] = theta2_dotiert_1296[0:size]
+m[:, 3] = theta_dotiert_1296[0:size]
+t = matrix2latex(m, headerRow=hr, format='%.4f')
+print(t)
+
+theta_frei_dotiert_1296 = theta_dotiert_1296/L  #  in rad/m
+plt.plot(lamb, theta_frei_dotiert_1296, 'rx')
+plt.xlabel(r'$\lambda/\mu$m')
+plt.ylabel(r'$\frac{\theta}{L}/\frac{\mathrm{rad}}{\mathrm{mm}}$')
+plt.grid()
+plt.axis([0.875, 2.875, 25, 95])
+plt.savefig('build/dotiert_1296.pdf')
+plt.clf()
+
+theta = theta_frei_dotiert_136 - theta_frei_rein
