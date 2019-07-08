@@ -11,6 +11,11 @@ from scipy import stats
 from uncertainties import correlated_values
 from matrix2latex import matrix2latex
 
+
+def linearFunction(x,a):
+    return a*x
+
+
 #Einlesen Daten reine Probe
 grad1_rein, minuten1_rein, grad2_rein, minuten2_rein, lamb = np.genfromtxt('data/rein.txt', unpack=True)
 L = 0.0051
@@ -113,4 +118,44 @@ plt.axis([0.875, 2.875, 25, 95])
 plt.savefig('build/dotiert_1296.pdf')
 plt.clf()
 
-theta = theta_frei_dotiert_136 - theta_frei_rein
+#######################################
+### Bestimmung der effektiven Masse ###
+#######################################
+
+theta_136 = theta_frei_dotiert_136 - theta_frei_rein
+params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_136)
+a = correlated_values(params, covariance_matrix)
+print('------------------------------------------------------------')
+print('Fit parameter für die erste Probe (136): ', a)
+print('------------------------------------------------------------')
+
+linLin = np.linspace(0, 10, 1000)
+plt.plot(lamb**2, theta_136, 'rx', label='Messwerte', zorder=2)
+plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3)
+plt.legend()
+plt.grid()
+plt.axis([0, 8, 0, 50])
+#plt.gcf().subplots_adjust(bottom=0.18)
+plt.xlabel(r'$\lambda^2 / \mu m^2$')
+plt.ylabel(r'$\frac{\Theta}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
+plt.savefig('build/differenz_136.pdf')
+plt.clf()
+
+theta_1296 = theta_frei_dotiert_1296 - theta_frei_rein
+params, covariance_matrix = optimize.curve_fit(linearFunction, lamb**2, theta_1296)
+a = correlated_values(params, covariance_matrix)
+print('------------------------------------------------------------')
+print('Fit parameter für die erste Probe (136): ', a)
+print('------------------------------------------------------------')
+
+linLin = np.linspace(0, 10, 1000)
+plt.plot(lamb**2, theta_1296, 'rx', label='Messwerte', zorder=2)
+plt.plot(linLin, linearFunction(linLin, *params), 'b-', label='Anpassungsfunktion', zorder=3)
+plt.legend()
+plt.grid()
+plt.axis([0, 8, 0, 100])
+#plt.gcf().subplots_adjust(bottom=0.18)
+plt.xlabel(r'$\lambda^2 / \mu m^2$')
+plt.ylabel(r'$\frac{\Theta}{L} / \frac{\mathrm{rad}}{\mathrm{m}}$')
+plt.savefig('build/differenz_1296.pdf')
+plt.clf()
