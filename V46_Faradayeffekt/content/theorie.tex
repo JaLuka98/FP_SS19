@@ -14,7 +14,7 @@ Welle als aus einer links- und einer rechtszirkular polarisierten Welle zuasmmen
 verstehen lässt. Er wird daher auch zirkulare Doppelbrechung genannt.
 
 Im vom B-Feld durchflossenen Medium werden durch die Gitteratome und die Bandelektronen
-Dipolmomente erzeugt,die zu einer Polarisation
+Dipolmomente erzeugt, die zu einer Polarisation
 \begin{equation}
   \vec{P} = \epsilon_0 \chi \vec{E}
   \label{eqn:polarisation}
@@ -27,7 +27,7 @@ Dieser hat (für einfache Fälle) die Form
   \chi =
   \left( \begin{matrix}
          \chi_{\mathrm{xx}} & -i \chi_{\mathrm{xy}} & 0 \\
-         -i \chi_{\mathrm{yx}} & \chi_{\mathrm{xx}} & 0 \\
+         -i \chi_{\mathrm{yx}} & \chi_{\mathrm{xx}} & 0 \,.\\
          0 & 0 & \chi_{\mathrm{zz}}  \\
   \end{matrix} \right)
   \label{eqn:chitensor}
@@ -44,7 +44,7 @@ Tensor besitzt nur Diagonalelemente:
   \end{matrix} \right)
   \label{eqn:chitensor2}
 \end{align}
-Daran ist erkennbar, das zunächst isotrope Materie zu anisotroper Materie wird,
+Daran ist erkennbar, dass zunächst isotrope Materie zu anisotroper Materie wird,
 wenn sie von einem B-Feld durchflossen wird.
 
 Der Winkel, um den das Licht beim Durchlaufen des Mediums gedreht wird, lässt sich zu
@@ -65,20 +65,25 @@ bestimmt werden. Dabei ist $e_0$ die Elektronladung, $m$ die Masse des Elektrons
 die Anzahl an Elektronen pro Volumen und $\omega_0$ die Resonanzfrequenz.
 
 
-\subsection{Bandtsruktur von Festkörpern}
+\subsection{Bandstruktur von Festkörpern}
 \label{subsec:bandstruktur}
 
 Kristalle haben im Allgemeinen eine komplizierte Bandstruktur. Je nach Beschaffenheit
 der Bandstruktur werden Metalle, Halbleiter und Isolatoren voneinander unterschieden.
-Bei Metallen ist das Leitungsband halb besetzt, was eine gute elektrische leitfähigkeit
+Skizzen dazu befinden sich in Abbildung \ref{fig:bandstruktur}
+Bei Metallen ist das Leitungsband halb besetzt, was eine gute elektrische Leitfähigkeit
 mit sich bringt. Bei Halbleitern befindet sich zwischen dem Leitungsband und dem
-Valenzband eine kleine Bandlücke, die durch Energiezufuhr leicht überwunden
-werden kann \cite{Gefährliche Formulierung}, sodass Elektronen ins Leitungsband gelangen und das Material elektrisch
+Valenzband eine kleine Bandlücke, die durch Energiezufuhr überwunden
+werden kann, sodass Elektronen ins Leitungsband gelangen und das Material elektrisch
 leitend wird. In Isolatoren ist diese Bandlücke so groß, dass die praktisch nicht
 überwunden werden kann und damit auch keine Elektronen ins Leitsungsband gelangen.
 
-\cite{Könnten hier Bilder helfen?}
-
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{data/bandstruktur.png}
+  \caption{Skizze der Bandstruktur für Metalle, Halbleiter und Isolatoren \cite{wiki}.}
+  \label{fig:bandstruktur}
+\end{figure}
 
 \subsection{Dotierung von Halbleitern}
 \label{subsec:dotierung}
@@ -86,25 +91,25 @@ Durch Dotierung kann die elektrische Leitfähigkeit eines Halbleiters beeinfluss
 Dabei werden Atome eines anderen Stoffes in das Gitter des Halbleiters gebracht.
 Bei der n-Dotierung wird ein höherwertiges Element (Donator) ins Gitter gebracht, welches
 dann ein Elektron abgeben kann, das sich daraufhin quasi frei im Gitter bewegen kann.
-Dies entspricht im Bändermodell einem Elektron im Valenzband, welches leicht
-ins Leitungsband angehoben werden kann. An der Stelle
+Dies entspricht im Bändermodell einem Elektron nahe dem Leitungsband, welches leicht
+ins dieses angehoben werden kann. An der Stelle
 des Donators entsteht eine ortsfeste positive Ladung.
 Die p-Dotierung ist das Gegenstück zur n-Dotierung. Hier wird ein niedrigerwertiges
-Element (Akzeptor) ind das Gitter eingebracht. Da hier ein Elektron zu wenig vorliegt,
+Element (Akzeptor) in das Gitter eingebracht. Da hier ein Elektron zu wenig vorliegt,
 entsteht ein sog. Defektelektron, also ein Elektronenloch. Dieses verhält sich
 wie eine positive Ladung. Im Bändermodell entspricht das ebenfalls einer Ladung
-im Valenzband, welches leicht ins Leitungsband angehoben werden kann. An der Stelle
+nahe dem Valenzband. An der Stelle
 des Akzeptors bleibt eine ortsfeste negative Ladung zurück.
 
 \subsection{Effektive Masse}
 \label{subsec:effmass}
-Die Bandstruktur von Festkörpern ist oft so kompliziert, dass für einfache Berechnungen
+Die Bandstruktur von Festkörpern ist oft so kompliziert, dass es für einfache Berechnungen
 einiger Approximationen bedarf. Für Halbleiter lässt sich die Bandkante des Leitungsbandes
 näherungsweise beschreiben durch eine Funktion $\epsilon(\vec{k})$. Dabei ist
 $\epsilon$ die Elektronenenergie und $\vec{k}$ der Wellenzahlvektor. Dies lässt sich
 in eine Taylorreihe entwickeln:
 \begin{align}
-  \epsilon(k) = \epsilon (0) + \frac{1}{2} \sum_{i=1}^3 \left(\frac{\partial \epsilon^2}{\partial k^2_{\mathrm{i}}}\right)_{k=0} k_{\mathrm{i}}^2 + ...
+  \epsilon(k) = \epsilon (0) + \frac{1}{2} \sum_{i=1}^3 \left(\frac{\partial \epsilon^2}{\partial k^2_{\mathrm{i}}}\right)_{k=0} k_{\mathrm{i}}^2 + ... \,.
   \label{eqn:taylor}
 \end{align}
 Durch Vergleich mit der Beziehung
@@ -114,21 +119,19 @@ Durch Vergleich mit der Beziehung
 \end{equation}
 für die Elektronenenergie findet man
 \begin{equation}
-   m^*_{\mathrm{i}} := \frac{\hbar}{\left(\frac{\partial \epsilon^2}{\partial k^2_{\mathrm{i}}}\right)_{k=0}}
+   m^*_{\mathrm{i}} := \frac{\hbar}{\left(\frac{\partial \epsilon^2}{\partial k^2_{\mathrm{i}}}\right)_{k=0}} \,.
    \label{eqn:effmass}
 \end{equation}
 Für sehr symmetrische Kristalle liegen kugelförmige Energieflächen vor. In diesem
 Band können Elektronen dann betrachtet werden wie freie Teilchen. Dies kann auf
 Gleichung \ref{eqn:theta2} angewandt werden und man erhält
-\cite{Hier müssen wir uns einig sein. Ich bin dafür, theta frei als Winkel pro Länge zu definieren, so wie ich es auch in der neueren Anleitung ist.}
 \begin{align}
   \theta_{\mathrm{frei}} = \frac{e^3_0}{8 \pi^2 \epsilon_0 c^3}\frac{1}{\left(m^{*}\right)^2} \lambda^2 \frac{NBL}{n} \,.
   \label{eqn:theta_frei}
 \end{align}
-Hier ist $\lambda$ die Wellenlänge des Lichts. Es wurden alle Massen durch die effektiven
+$\theta_{\mathrm{frei}}$ ist als die Faraday-Rotation pro Einheitslänge zu verstehen und
+$\lambda$ ist die Wellenlänge des Lichts. Es wurden alle Massen durch die effektiven
 Massen ersetzt, was die Bestimmung der effektiven Masse der Elektronen mithilfe der
 Faraday-Rotation ermöglicht. Es ist darauf hinzuweisen, dass dueser Zusammenhang nur
 gültig ist, wenn die Elektronen als frei angenommen werden können, da nur in diesem
 Fall $\omega_0 \rightarrow 0$ gilt.
-
-\cite{Rechtschreibung und weiteres prüfen}
